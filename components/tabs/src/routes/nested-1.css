@@ -1,0 +1,31 @@
+.c-tabs.is-first {
+	padding-bottom: 1em;
+	margin-bottom: 1em;
+	border-bottom: 1px solid silver;
+}
+.c-tabs .c-tabs__tablist {
+	display: flex;
+	border-bottom: 2px solid silver;
+	margin-bottom: 1em;
+}
+.c-tabs .c-tabs__tab {
+	box-sizing: border-box;
+	border: none;
+	background-color: transparent;
+	font-size: 1.25em;
+	padding: 0.25em 0.5em;
+	cursor: pointer;
+	position: relative;
+	top: 3px;
+}
+.c-tabs .c-tabs__tab.active {
+	background-color: silver;
+	border-bottom: 4px solid gray;
+}
+.c-tabs .c-tabs__tab:hover {
+	background-color: silver;
+}
+.c-tabs .c-tabs__tab:disabled {
+	background-color: transparent;
+	cursor: not-allowed;
+}

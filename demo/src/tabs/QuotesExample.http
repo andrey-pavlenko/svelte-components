@@ -1,0 +1,16 @@
+GET https://programming-quotes-api.herokuapp.com/Authors
+Accept: application/json
+
+
+###
+GET https://programming-quotes-api.herokuapp.com/Quotes/author/Douglas Crockford
+Accept: application/json
+
+
+HTTP/1.1 200  - OK
+connection: close
+date: Fri, 06 May 2022 06:18:06 GMT
+content-type: application/json; charset=utf-8
+server: Kestrel
+content-length: 3489
+via: 1.1 vegur

@@ -1,0 +1,18 @@
+{
+  "name": "documetator",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "marked": "^4.0.15",
+    "sveld": "^0.15.0"
+  }
+}

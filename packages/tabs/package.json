@@ -1,0 +1,22 @@
+{
+  "name": "@apsc/tabs",
+  "version": "0.0.1",
+  "type": "module",
+  "types": "index.d.ts",
+  "main": "index.js",
+  "author": "Andrey Pavlenko",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrey-pavlenko/svelte-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrey-pavlenko/svelte-components/issues"
+  },
+  "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./index.js",
+    "./style.css": "./style.css"
+  },
+  "svelte": "./index.js"
+}

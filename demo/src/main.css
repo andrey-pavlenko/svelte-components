@@ -1,0 +1,40 @@
+@import 'tailwindcss/base.css';
+@import 'tailwindcss/components.css';
+@import 'tailwindcss/utilities.css';
+
+@import './styles/documentation.css';
+
+@layer base {
+  div,
+  span {
+    max-height: 999999px;
+  }
+}
+
+@layer components {
+  a {
+    @apply text-blue-600;
+  }
+
+  .\%_input_appearence {
+    @apply px-1 box-border;
+    @apply outline-none ring-blue-400 focus:ring-1;
+  }
+
+  .input {
+    @apply %_input_appearence;
+    @apply border border-gray-300 rounded-md;
+
+    &:disabled {
+      @apply opacity-60 cursor-not-allowed;
+    }
+  }
+
+  select.input {
+    @apply px-2 py-1 bg-white;
+  }
+
+  button.input {
+    @apply px-4 border-gray-500;
+  }
+}

@@ -1,0 +1,54 @@
+@layer components {
+  .documentation {
+    * {
+      @apply leading-tight;
+    }
+
+    p {
+      @apply mt-0 mb-2 last:mb-0;
+    }
+
+    pre {
+      @apply mt-0 mb-2 last:mb-0;
+    }
+
+    code {
+      &::before,
+      &::after {
+        content: unset;
+      }
+    }
+
+    hr {
+      @apply my-4 border-t-gray-400;
+    }
+
+    & :not(pre) > code {
+      @apply px-1 bg-gray-200 rounded-sm;
+    }
+
+    .component__source {
+      @apply float-right;
+    }
+
+    .component__name {
+      @apply my-4;
+    }
+
+    .component-tbl-header {
+      @apply my-3;
+    }
+
+    .prop__type {
+      code {
+        @apply whitespace-pre;
+      }
+    }
+
+    .prop__description {
+      pre {
+        white-space: break-spaces;
+      }
+    }
+  }
+}
