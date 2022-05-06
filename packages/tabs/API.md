@@ -28,12 +28,12 @@ export interface TabsContext {
 export const contextName = Symbol(&#39;TABS&#39;);
 </code></pre>
 <p>Simple style. Source <code>style.css</code></p>
-<pre><code class="language-css">.c-tabs .c-tabs__tablist {
+<pre><code class="language-css">.c-tabs__tablist {
   display: flex;
   border-bottom: 2px solid silver;
   margin-bottom: 1em;
 }
-.c-tabs .c-tabs__tab {
+.c-tabs__tab {
   box-sizing: border-box;
   border: none;
   background-color: transparent;
@@ -42,7 +42,7 @@ export const contextName = Symbol(&#39;TABS&#39;);
   position: relative;
   top: 3px;
 }
-.c-tabs .c-tabs__tab.active {
+.c-tabs__tab.active {
   background-color: silver;
   border-bottom: 4px solid gray;
 }

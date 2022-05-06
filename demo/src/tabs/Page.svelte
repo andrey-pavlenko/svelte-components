@@ -16,13 +16,11 @@
     class="not-prose float-right text-white no-underline px-2 rounded-md bg-blue-400 hover:bg-blue-600"
     href="/">Home</a
   >
-  <h1 class="mb-0">Tabs</h1>
-  <h3 class="mt-0 text-gray-500">
-    <ul>
-      <li>Состоит из главного компонента, включающего дочерние</li>
-      <li>Без встроенных стилей</li>
-    </ul>
-  </h3>
+  <h1 class="text-2xl">A set of components for organizing a tabbed interface</h1>
+  <ul class="leading-6 mb-8">
+    <li>no inline styles</li>
+    <li>with context to control tab switching</li>
+  </ul>
 
   <Tabs>
     <TabList>

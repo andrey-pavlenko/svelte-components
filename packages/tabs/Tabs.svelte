@@ -103,12 +103,12 @@ export const contextName = Symbol('TABS');
 
 Simple style. Source `style.css`
 ```css
-.c-tabs .c-tabs__tablist {
+.c-tabs__tablist {
   display: flex;
   border-bottom: 2px solid silver;
   margin-bottom: 1em;
 }
-.c-tabs .c-tabs__tab {
+.c-tabs__tab {
   box-sizing: border-box;
   border: none;
   background-color: transparent;
@@ -117,7 +117,7 @@ Simple style. Source `style.css`
   position: relative;
   top: 3px;
 }
-.c-tabs .c-tabs__tab.active {
+.c-tabs__tab.active {
   background-color: silver;
   border-bottom: 4px solid gray;
 }
