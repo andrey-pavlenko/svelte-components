@@ -8,6 +8,7 @@ export default defineConfig({
   optimizeDeps: {
     include: ['highlight.js', 'highlight.js/lib/core']
   },
+  base: './',
   build: {
     outDir: '../docs',
     emptyOutDir: true,
