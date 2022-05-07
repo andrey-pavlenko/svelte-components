@@ -1,0 +1,27 @@
+.c-notifications {
+	position: fixed;
+	padding: 0.5rem 1rem;
+	width: 50vw;
+	right: 0;
+	bottom: 0;
+}
+
+.c-notifications__item {
+	background-color: silver;
+	margin: 0.5rem 0;
+	padding: 1rem;
+	display: flex;
+}
+
+.c-notifications__item__message {
+	flex-grow: 1;
+}
+
+.c-notifications__item__close {
+	font-size: 2rem;
+	line-height: 1.25rem;
+	cursor: default;
+}
+.c-notifications__item__close::before {
+	content: '\00D7';
+}
