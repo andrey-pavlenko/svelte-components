@@ -1,12 +1,13 @@
 {
-  "name": "apsc",
+  "name": "@apsc/scope",
   "version": "0.0.1",
   "description": "A set of useful Svelte components",
   "main": "index.js",
   "scripts": {
     "dev:demo": "pnpm run dev -C demo",
     "build:demo": "pnpm run build -C demo",
-    "package": "pnpm run package -C components/tabs"
+    "package": "pnpm run package -C components/tabs",
+    "publish": "cd packages/tabs && pnpm publish --no-git-checks --access public"
   },
   "repository": {
     "type": "git",
