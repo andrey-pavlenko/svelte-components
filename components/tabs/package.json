@@ -1,6 +1,6 @@
 {
   "name": "@apsc/tabs",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "types": "index.d.ts",
   "main": "index.js",
@@ -16,6 +16,7 @@
     "lint": "eslint --ignore-path .gitignore ."
   },
   "author": "Andrey Pavlenko",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andrey-pavlenko/svelte-components.git"
