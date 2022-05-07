@@ -20,6 +20,7 @@
   <ul class="leading-6 mb-8">
     <li>no inline styles</li>
     <li>with context to control tab switching</li>
+    <li><a href="https://www.npmjs.com/package/@apsc/tabs">NPM</a></li>
   </ul>
 
   <Tabs>
