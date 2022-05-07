@@ -6,7 +6,7 @@
   "scripts": {
     "dev:demo": "pnpm run dev -C demo",
     "build:demo": "pnpm run build -C demo",
-    "package": "pnpm run package -C components/tabs",
+    "package": "cd components/tabs && pnpm run package",
     "publish": "cd packages/tabs && pnpm publish --no-git-checks --access public"
   },
   "repository": {

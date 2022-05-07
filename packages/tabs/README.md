@@ -1,4 +1,4 @@
-# A set of components for organizing a tabbed interface [Demo](http://localhost:3000/#/tabs)
+# A set of components for organizing a tabbed interface [Demo](https://andrey-pavlenko.github.io/svelte-components/#/tabs)
 
 - no inline styles
 - with context to control tab switching
@@ -6,7 +6,9 @@
 ## Install
 
 ```sh
-pnpm add -D svelte@next <component_name>
+npm i -D @apsc/tabs
+# or
+pnpm add -D @apsc/tabs
 ```
 
 ## Usage

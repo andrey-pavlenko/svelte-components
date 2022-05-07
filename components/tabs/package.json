@@ -1,6 +1,6 @@
 {
   "name": "@apsc/tabs",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "type": "module",
   "types": "index.d.ts",
   "main": "index.js",
@@ -23,6 +23,11 @@
   "bugs": {
     "url": "https://github.com/andrey-pavlenko/svelte-components/issues"
   },
+  "keywords": [
+    "svelte",
+    "components",
+    "tabs"
+  ],
   "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",

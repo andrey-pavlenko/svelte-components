@@ -1,6 +1,5 @@
 # svelte-components
 
-`import * @apsc`
+## [Demo and docs](https://andrey-pavlenko.github.io/svelte-components)
 
-
-[quotes](https://programming-quotes-api.herokuapp.com/index.html)
+A set of Svelte components
