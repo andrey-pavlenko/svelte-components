@@ -1,0 +1,182 @@
+[
+  {
+    "author": "Edsger W. Dijkstra",
+    "en": "Computer Science is no more about computers than astronomy is about telescopes."
+  },
+  {
+    "author": "Edsger W. Dijkstra",
+    "en": "Simplicity is prerequisite for reliability."
+  },
+  {
+    "author": "Edsger W. Dijkstra",
+    "en": "The computing scientist’s main challenge is not to get confused by the complexities of his own making."
+  },
+  {
+    "author": "Edsger W. Dijkstra",
+    "en": "If debugging is the process of removing software bugs, then programming must be the process of putting them in."
+  },
+  {
+    "author": "Edsger W. Dijkstra",
+    "en": "A program is like a poem: you cannot write a poem without writing it. Yet people talk about programming as if it were a production process and measure „programmer productivity“ in terms of „number of lines of code produced“. In so doing they book that number on the wrong side of the ledger: We should always refer to „the number of lines of code spent“."
+  },
+  {
+    "author": "Tony Hoare",
+    "en": "There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies. The first method is far more difficult."
+  },
+  {
+    "author": "Jeff Hammerbacher",
+    "en": "The best minds of my generation are thinking about how to make people click ads."
+  },
+  {
+    "author": "Edsger W. Dijkstra",
+    "en": "The tools we use have a profound and devious influence on our thinking habits, and therefore on our thinking abilities."
+  },
+  {
+    "author": "Edsger W. Dijkstra",
+    "en": "How do we convince people that in programming simplicity and clarity — in short: what mathematicians call \"elegance\" — are not a dispensable luxury, but a crucial matter that decides between success and failure?"
+  },
+  {
+    "author": "Fred Brooks",
+    "en": "Adding manpower to a late software project makes it later."
+  },
+  {
+    "author": "Michael Stal",
+    "en": "Sometimes there is a silver bullet for boosting software engineering productivity. But you need to shoot the right person."
+  },
+  {
+    "author": "Fred Brooks",
+    "en": "Nine women can't make a baby in one month."
+  },
+  {
+    "author": "Jeff Sickel",
+    "en": "Deleted code is debugged code."
+  },
+  {
+    "author": "Ken Thompson",
+    "en": "When in doubt, use brute force."
+  },
+  {
+    "author": "Fred Brooks",
+    "en": "When a task cannot be partitioned because of sequential constraints, the application of more effort has no effect on the schedule. The bearing of a child takes nine months, no matter how many women are assigned."
+  },
+  {
+    "author": "Fred Brooks",
+    "en": "If each part of the task must be separately coordinated with each other part, the effort increases as n(n-1)/2. Three workers require three times as much pairwise intercommunication as two; four require six times as much as two."
+  },
+  {
+    "author": "Fred Brooks",
+    "en": "Having a system architect is the most important single step toward conceptual integrity. After teaching a software engineering laboratory more than 20 times, I came to insist that student teams as small as four people choose a manager and a separate architect."
+  },
+  {
+    "author": "Fred Brooks",
+    "en": "The programmer, like the poet, works only slightly removed from pure thought-stuff. He builds his castles in the air, from air, creating by exertion of the imagination. Few media of creation are so flexible, so easy to polish and rework, so readily capable of realizing grand conceptual structures."
+  },
+  {
+    "author": "Fred Brooks",
+    "en": "The first false assumption that underlies the scheduling of systems programming is that all will go well, i.e., that each task will hike only as long as it \"ought\" to take. A large programming effort, however, consists of many tasks, some chained end-to-end. The probability that each will go well becomes vanishingly small."
+  },
+  {
+    "author": "Donald Knuth",
+    "en": "We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of all evil. Yet we should not pass up our opportunities in that critical 3%."
+  },
+  {
+    "author": "Ken Thompson",
+    "en": "One of my most productive days was throwing away 1,000 lines of code."
+  },
+  {
+    "author": "Grace Hopper",
+    "en": "One accurate measurement is worth more than a thousand expert opinions."
+  },
+  {
+    "author": "Fred Brooks",
+    "en": "What one programmer can do in one month, two programmers can do in two months."
+  },
+  {
+    "author": "Rick Osborne",
+    "en": "Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live."
+  },
+  {
+    "author": "John Ousterhout",
+    "en": "A program that produces incorrect results twice as fast is infinitely slower."
+  },
+  {
+    "author": "Poul Anderson",
+    "en": "I have yet to see any problem, however complicated, which when looked at in the right way, did not become more complicated."
+  },
+  {
+    "author": "Robert C. Martin",
+    "en": "Cleaning code does NOT take time. NOT cleaning code does take time."
+  },
+  {
+    "author": "David Gelernter",
+    "en": "Beauty is more important in computing than anywhere else in technology because software is so complicated. Beauty is the ultimate defense against complexity."
+  },
+  {
+    "author": "Edward V. Berard",
+    "en": "Walking on water and developing software from a specification are easy if both are frozen."
+  },
+  {
+    "author": "Brian Kernighan",
+    "en": "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it."
+  },
+  {
+    "author": "Brian Kernighan",
+    "en": "Controlling complexity is the essence of computer programming."
+  },
+  {
+    "author": "Chris Wenham",
+    "en": "Debugging time increases as a square of the program’s size."
+  },
+  {
+    "author": "Seymour Cray",
+    "en": "The trouble with programmers is that you can never tell what a programmer is doing until it’s too late."
+  },
+  {
+    "author": "Ron Jeffries",
+    "en": "Code never lies, comments sometimes do."
+  },
+  {
+    "author": "Laurence J. Peter",
+    "en": "Some problems are so complex that you have to be highly intelligent and well informed just to be undecided about them."
+  },
+  {
+    "author": "Poul-Henning Kamp",
+    "en": "Make a guess, double the number, and then move to the next larger unit of time. This rule scales tasks in a very interesting way: a one-minute task explodes by a factor of 120 to take two hours. A one-hour job explodes by \"only\" a factor 48 to take two days, while a one-day job grows by a factor of 14 to take two weeks."
+  },
+  {
+    "author": "Albert Einstein",
+    "en": "I have no special talent. I am only passionately curious."
+  },
+  {
+    "author": "Robert C. Martin",
+    "en": "The proper use of comments is to compensate for our failure to express ourself in code."
+  },
+  {
+    "author": "Rob Pike",
+    "en": "When there is no type hierarchy you don’t have to manage the type hierarchy."
+  },
+  {
+    "author": "Steve Jobs",
+    "en": "Everybody should learn to program a computer, because it teaches you how to think."
+  },
+  {
+    "author": "Chris Sacca",
+    "en": "Simplicity is hard to build, easy to use, and hard to charge for. Complexity is easy to build, hard to use, and easy to charge for."
+  },
+  {
+    "author": "Bill Gates",
+    "en": "Measuring programming progress by lines of code is like measuring aircraft building progress by weight."
+  },
+  {
+    "author": "William Wulf",
+    "en": "More computing sins are committed in the name of efficiency (without necessarily achieving it) than for any other single reason - including blind stupidity."
+  },
+  {
+    "author": "Edsger W. Dijkstra",
+    "en": "Testing can be a very effective way to show the presence of bugs, but it is hopelessly inadequate for showing their absence."
+  },
+  {
+    "author": "Albert Einstein",
+    "en": "Imagination is more important than knowledge."
+  }
+]

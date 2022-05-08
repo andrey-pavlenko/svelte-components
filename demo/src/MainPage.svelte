@@ -8,5 +8,10 @@
       <a href="/tabs">Tabs</a> &ndash; A set of components for organizing a tabbed interface
       <a href="https://www.npmjs.com/package/@apsc/tabs" target="_blank">NPM</a>
     </li>
+    <li>
+      <a href="/glob-notify">GlobNotify</a> &ndash; Component for notifications globally for the
+      entire application
+      <a href="https://www.npmjs.com/package/@apsc/glob-notyfy" target="_blank">NPM</a>
+    </li>
   </ul>
 </section>

@@ -1,0 +1,29 @@
+{
+  "name": "@apsc/glob-notify",
+  "version": "0.0.1",
+  "type": "module",
+  "types": "index.d.ts",
+  "main": "index.js",
+  "author": "Andrey Pavlenko",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrey-pavlenko/svelte-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrey-pavlenko/svelte-components/issues"
+  },
+  "keywords": [
+    "svelte",
+    "components",
+    "notification"
+  ],
+  "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
+  "exports": {
+    "./package.json": "./package.json",
+    "./bootstrap-like.css": "./bootstrap-like.css",
+    ".": "./index.js",
+    "./style.css": "./style.css"
+  },
+  "svelte": "./index.js"
+}

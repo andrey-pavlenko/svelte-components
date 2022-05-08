@@ -1,14 +1,14 @@
 {
-  "total": 4,
+  "total": 2,
   "components": [
     {
-      "moduleName": "Tab",
-      "filePath": "Tab.svelte",
+      "moduleName": "Notifications",
+      "filePath": "Notifications.svelte",
       "props": [
         {
           "name": "class",
           "kind": "let",
-          "description": "Custom CSS class to add to the `c-tabs__tab` base class for custom styling purposes",
+          "description": "Custom CSS class to add to the `c-notifications` base class for custom styling purposes",
           "type": "string",
           "value": "''",
           "isFunction": false,
@@ -17,68 +17,9 @@
           "reactive": false
         },
         {
-          "name": "selectedClass",
+          "name": "style",
           "kind": "let",
-          "description": "The CSS class that will be added when `Tab` becomes selected. *Default value from `Tabs.selectedTabClass`*",
-          "type": "string",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "constant": false,
-          "reactive": false
-        },
-        {
-          "name": "disabled",
-          "kind": "let",
-          "description": "Disable `Tab` for pointer, but it's possible to select tab by function `Tabs.selectTab(index)`. *Default `undefined`*",
-          "type": "boolean | undefined",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "constant": false,
-          "reactive": false
-        }
-      ],
-      "moduleExports": [],
-      "slots": [
-        {
-          "name": "__default__",
-          "default": true,
-          "slot_props": "{ index: any, id: any }"
-        }
-      ],
-      "events": [],
-      "typedefs": [],
-      "componentComment": "\nThis is a child component for `TabList`\n@order 20\n\n```tsx\n<Tab>A</Tab>\n```"
-    },
-    {
-      "moduleName": "TabList",
-      "filePath": "List.svelte",
-      "props": [
-        {
-          "name": "class",
-          "kind": "let",
-          "description": "Custom CSS class to add to the `c-tabs__tablist` base class for custom styling purposes",
-          "type": "string",
-          "value": "''",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "constant": false,
-          "reactive": false
-        }
-      ],
-      "moduleExports": [],
-      "slots": [{ "name": "__default__", "default": true, "slot_props": "{}" }],
-      "events": [],
-      "typedefs": [],
-      "componentComment": "\n@order 10\nThis is a child component for `Tabs` and a container for many `Tab` components\n\n```tsx\n<TabList>\n  <Tab>A</Tab>\n  <Tab>B</Tab>\n</TabList>\n```"
-    },
-    {
-      "moduleName": "TabPanel",
-      "filePath": "Panel.svelte",
-      "props": [
-        {
-          "name": "class",
-          "kind": "let",
-          "description": "Custom CSS class to add to the `c-tabs__tabpanel` base class for custom styling purposes",
+          "description": "Custom styles will be passed to the `style` attribute",
           "type": "string",
           "value": "''",
           "isFunction": false,
@@ -87,102 +28,132 @@
           "reactive": false
         },
         {
-          "name": "hiddenClass",
+          "name": "transitionFn",
           "kind": "let",
-          "description": "The CSS class that will be added when `TabPanel` becomes **unselected**. *Default value from `Tabs.hiddenPanelClass`*",
-          "type": "string",
+          "description": "Transition function for notification, default `slide`",
+          "isFunction": false,
+          "isFunctionDeclaration": false,
+          "constant": false,
+          "reactive": false
+        },
+        {
+          "name": "transitionParams",
+          "kind": "let",
+          "description": "Transition function parameters",
+          "type": "{}",
+          "value": "{}",
           "isFunction": false,
           "isFunctionDeclaration": false,
           "constant": false,
           "reactive": false
         }
       ],
-      "moduleExports": [],
-      "slots": [
+      "moduleExports": [
         {
-          "name": "__default__",
-          "default": true,
-          "slot_props": "{ index: any, tabId: any, panelId: any }"
-        }
-      ],
-      "events": [],
-      "typedefs": [],
-      "componentComment": "\n@order 30\nThis is a child component for `Tabs` and a container for tab body\n\n```tsx\n<Tabs>\n  <TabList><Tab>A</Tab><Tab>B</Tab></TabList>\n  <TabPanel>A</TabPanel>\n  <TabPanel>B</TabPanel>\n</Tabs>\n```"
-    },
-    {
-      "moduleName": "Tabs",
-      "filePath": "Tabs.svelte",
-      "props": [
-        {
-          "name": "class",
-          "kind": "let",
-          "description": "Custom CSS class to add to the `c-tabs` base class for custom styling purposes",
-          "type": "string",
-          "value": "''",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "constant": false,
-          "reactive": false
-        },
-        {
-          "name": "selectedTabClass",
-          "kind": "let",
-          "description": "The CSS class that will be added to the child `Tab` component when it becomes selected",
-          "type": "string",
-          "value": "'active'",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "constant": false,
-          "reactive": false
-        },
-        {
-          "name": "hiddenPanelClass",
-          "kind": "let",
-          "description": "The CSS class for the **unselected** TabPanel. Applies when `mode = hide`. More in the `mode` prop",
-          "type": "string",
-          "value": "''",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "constant": false,
-          "reactive": false
-        },
-        {
-          "name": "mode",
-          "kind": "let",
-          "description": "`TabPanel` hiding and showing mode.\n\n`remove`: The panel will be removed from the DOM.\n`hide`: the panel will be hidden by the style from the `hiddenPanelClass` CSS class, or if `hiddenPanelClass` is not specified with the style `display: none`",
-          "type": "\"remove\" | \"hide\"",
-          "value": "'hide'",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "constant": false,
-          "reactive": false
-        },
-        {
-          "name": "selectedIndex",
+          "name": "notifications",
           "kind": "const",
-          "description": "Index of selected `Tab` component\n```js\nlet selectedIndex;\ntabsRef.selectedIndex.subscrive(\n  (index) => selectedIndex = index\n);\n```\n```js\nlet selectedIndex = tabsRef.selectedIndex;\n$: if ($selectedIndex === 0) {\n  console.log('First tab selected');\n}\n```",
-          "type": "Readable<number>",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "constant": true,
-          "reactive": false
-        },
-        {
-          "name": "selectTab",
-          "kind": "const",
-          "description": "Select `Tab` component by index. Allows arguments for `Array.prototype.at(number)`\n```js\n// Select first Tab\ntabsRef.selectTab(0);\n// Select last Tab\ntabsRef.selectTab(-1);\n```",
-          "type": "(number) => void",
+          "description": "Store of notifications",
+          "type": "{\n subscribe: Subscriber<NotificationData[]>;\n clear: () => void;\n push: (n: NotificationData) => symbol;\n pop: (id: symbol) => void\n}",
           "isFunction": false,
           "isFunctionDeclaration": false,
           "constant": true,
           "reactive": false
         }
       ],
-      "moduleExports": [],
-      "slots": [{ "name": "__default__", "default": true, "slot_props": "{}" }],
+      "slots": [
+        {
+          "name": "__default__",
+          "default": true,
+          "fallback": "<div\n        transition:transitionFn={transitionParams}\n        class={'c-notifications__item' + (notification.type ? ' ' + notification.type : '')}\n      >\n        <span class=\"c-notifications__item__message\"\n          >{@html notification.message || 'No message'}</span\n        >\n        <span\n          role=\"button\"\n          aria-label=\"Close notification\"\n          class=\"c-notifications__item__close\"\n          on:click={() => notifications.pop(notification.id)}\n        />\n      </div>",
+          "slot_props": "{ notification: NotificationData }"
+        }
+      ],
       "events": [],
-      "typedefs": [],
-      "componentComment": "\n@order 0\nThis is the root component. It's a container for one `TabList` and many `TabPanel`\n```tsx\n<Tabs>\n  <TabList>\n    <Tab>A</Tab>\n    <Tab>B</Tab>\n  </TabList>\n  <TabPanel>A</TabPanel>\n  <TabPanel>B</TabPanel>\n</Tabs>\n```\n\nChild components of `Tabs` have access to the context by `contextName`\n```ts\nexport type TabId = symbol;\nexport type PanelId = symbol;\nexport type TabsMode = 'remove' | 'hide';\nexport interface TabsContext {\n\tmode: TabsMode;\n\tregisterTab: () => TabId;\n\tregisterPanel: () => PanelId;\n\tselectTab: (tab: TabId | number) => void;\n\tselectedTab: Writable<symbol | null>;\n\tselectedPanel: Writable<symbol | null>;\n\tselectedIndex: Readable<number>;\n\tselectedTabClass: string;\n\thiddenPanelClass: string;\n}\nexport const contextName = Symbol('TABS');\n```\n\nSimple style. Source `style.css`\n```css\n.c-tabs__tablist {\n  display: flex;\n  border-bottom: 2px solid silver;\n  margin-bottom: 1em;\n}\n.c-tabs__tab {\n  box-sizing: border-box;\n  border: none;\n  background-color: transparent;\n  font-size: 1.25em;\n  padding: 0.25em 0.5em;\n  position: relative;\n  top: 3px;\n}\n.c-tabs__tab.active {\n  background-color: silver;\n  border-bottom: 4px solid gray;\n}\n```"
+      "typedefs": [
+        {
+          "type": "{\n id: symbol;\n type?: string;\n timeout?: number;\n message?: string;\n}",
+          "name": "NotificationData",
+          "ts": "interface NotificationData {\n id: symbol;\n type?: string;\n timeout?: number;\n message?: string;\n}"
+        }
+      ],
+      "componentComment": "\n@order 0\nThe `Notifications` component has one instance for the entire application. Use the `Notifications` component at the top level of your markup, before any components that send notifications.\n\nThe default slot (optional) of the `Notifications` component is the markup for the notification element.\n```tsx\n<Notifications />\n<Application />\n```\n\nThe `Notifications` component exports the `notifications` custom store corresponding to the store contract.\n```js\n{\n  subscribe: Subscriber<NotificationData[]>,\n  clear: () => void,\n  push: (notification: NotificationData) => symbol,\n  pop: (id: symbol) => void\n}\n```\n\nYou can subscribe to changes in the store, and append and remove notifications anywhere in your app.\n```svelte\n<script>\n  import { Notifications, notifications } from '@apsc/glob-notify';\n  function handleNotify() {\n    notifications.push({ message: 'Hello from NyApp' })\n  }\n</script>\n<Notifications />\n<h1>Welcome to MyApp</h1>\n<button on:click={handleNotify}>Notify</button>\n```\n\nThe selectors used are in simple styles in `style.css`\n```css\n.c-notifications {\n  position: fixed;\n  padding: 0.5rem 1rem;\n  width: 50vw;\n  right: 0;\n  bottom: 0;\n  z-index: 1;\n}\n.c-notifications__item {\n  background-color: silver;\n  margin: 0.5rem 0;\n  padding: 1rem;\n  display: flex;\n}\n.c-notifications__item__message {\n  flex-grow: 1;\n}\n.c-notifications__item__close {\n  font-size: 2rem;\n  line-height: 1.25rem;\n  cursor: default;\n}\n.c-notifications__item__close::before {\n  content: '\\00D7';\n}\n```\n\nThere is also a `bootstrap-like.css` style set."
+    },
+    {
+      "moduleName": "notifications",
+      "filePath": "Notifications.svelte",
+      "props": [
+        {
+          "name": "class",
+          "kind": "let",
+          "description": "Custom CSS class to add to the `c-notifications` base class for custom styling purposes",
+          "type": "string",
+          "value": "''",
+          "isFunction": false,
+          "isFunctionDeclaration": false,
+          "constant": false,
+          "reactive": false
+        },
+        {
+          "name": "style",
+          "kind": "let",
+          "description": "Custom styles will be passed to the `style` attribute",
+          "type": "string",
+          "value": "''",
+          "isFunction": false,
+          "isFunctionDeclaration": false,
+          "constant": false,
+          "reactive": false
+        },
+        {
+          "name": "transitionFn",
+          "kind": "let",
+          "description": "Transition function for notification, default `slide`",
+          "isFunction": false,
+          "isFunctionDeclaration": false,
+          "constant": false,
+          "reactive": false
+        },
+        {
+          "name": "transitionParams",
+          "kind": "let",
+          "description": "Transition function parameters",
+          "type": "{}",
+          "value": "{}",
+          "isFunction": false,
+          "isFunctionDeclaration": false,
+          "constant": false,
+          "reactive": false
+        }
+      ],
+      "moduleExports": [
+        {
+          "name": "notifications",
+          "kind": "const",
+          "description": "Store of notifications",
+          "type": "{\n subscribe: Subscriber<NotificationData[]>;\n clear: () => void;\n push: (n: NotificationData) => symbol;\n pop: (id: symbol) => void\n}",
+          "isFunction": false,
+          "isFunctionDeclaration": false,
+          "constant": true,
+          "reactive": false
+        }
+      ],
+      "slots": [
+        {
+          "name": "__default__",
+          "default": true,
+          "fallback": "<div\n        transition:transitionFn={transitionParams}\n        class={'c-notifications__item' + (notification.type ? ' ' + notification.type : '')}\n      >\n        <span class=\"c-notifications__item__message\"\n          >{@html notification.message || 'No message'}</span\n        >\n        <span\n          role=\"button\"\n          aria-label=\"Close notification\"\n          class=\"c-notifications__item__close\"\n          on:click={() => notifications.pop(notification.id)}\n        />\n      </div>",
+          "slot_props": "{ notification: NotificationData }"
+        }
+      ],
+      "events": [],
+      "typedefs": [
+        {
+          "type": "{\n id: symbol;\n type?: string;\n timeout?: number;\n message?: string;\n}",
+          "name": "NotificationData",
+          "ts": "interface NotificationData {\n id: symbol;\n type?: string;\n timeout?: number;\n message?: string;\n}"
+        }
+      ],
+      "componentComment": "\n@order 0\nThe `Notifications` component has one instance for the entire application. Use the `Notifications` component at the top level of your markup, before any components that send notifications.\n\nThe default slot (optional) of the `Notifications` component is the markup for the notification element.\n```tsx\n<Notifications />\n<Application />\n```\n\nThe `Notifications` component exports the `notifications` custom store corresponding to the store contract.\n```js\n{\n  subscribe: Subscriber<NotificationData[]>,\n  clear: () => void,\n  push: (notification: NotificationData) => symbol,\n  pop: (id: symbol) => void\n}\n```\n\nYou can subscribe to changes in the store, and append and remove notifications anywhere in your app.\n```svelte\n<script>\n  import { Notifications, notifications } from '@apsc/glob-notify';\n  function handleNotify() {\n    notifications.push({ message: 'Hello from NyApp' })\n  }\n</script>\n<Notifications />\n<h1>Welcome to MyApp</h1>\n<button on:click={handleNotify}>Notify</button>\n```\n\nThe selectors used are in simple styles in `style.css`\n```css\n.c-notifications {\n  position: fixed;\n  padding: 0.5rem 1rem;\n  width: 50vw;\n  right: 0;\n  bottom: 0;\n  z-index: 1;\n}\n.c-notifications__item {\n  background-color: silver;\n  margin: 0.5rem 0;\n  padding: 1rem;\n  display: flex;\n}\n.c-notifications__item__message {\n  flex-grow: 1;\n}\n.c-notifications__item__close {\n  font-size: 2rem;\n  line-height: 1.25rem;\n  cursor: default;\n}\n.c-notifications__item__close::before {\n  content: '\\00D7';\n}\n```\n\nThere is also a `bootstrap-like.css` style set."
     }
   ]
 }

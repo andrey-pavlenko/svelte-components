@@ -17,49 +17,69 @@ pnpm add -D @apsc/glob-notify
 ## Usage
 
 ```tsx
-<Tabs>
-	<TabList>
-		<Tab>A</Tab>
-		<Tab>B</Tab>
-	</TabList>
-	<TabPanel>A</TabPanel>
-	<TabPanel>B</TabPanel>
-</Tabs>
+<Notifications />
+<Application />
+```
+
+The `Notifications` component has one instance for the entire application. Use the `Notifications` component at the top level of your markup, before any components that send notifications.
+
+The default slot (optional) of the `Notifications` component is the markup for the notification element.
+
+The `Notifications` component exports the `notifications` custom store corresponding to the store contract.
+
+```js
+{
+  subscribe: Subscriber<NotificationData[]>,
+  clear: () => void,
+  push: (notification: NotificationData) => symbol,
+  pop: (id: symbol) => void
+}
+```
+
+You can subscribe to changes in the store, and append and remove notifications anywhere in your app.
+
+```svelte
+<script>
+  import { Notifications, notifications } from '@apsc/glob-notify';
+  function handleNotify() {
+    notifications.push({ message: 'Hello from NyApp' })
+  }
+</script>
+<Notifications />
+<h1>Welcome to MyApp</h1>
+<button on:click={handleNotify}>Notify</button>
 ```
 
 ## Styling
 
-### Base
-
-```js
-import '@apsc/tabs/style.css';
-```
-
-### Custom
-
-`tabs-style.css`
+The selectors used are in simple styles in `style.css`
 
 ```css
-.c-tabs__tablist {
-	display: flex;
-	border-bottom: 2px solid silver;
-	margin-bottom: 1em;
+.c-notifications {
+  position: fixed;
+  padding: 0.5rem 1rem;
+  width: 50vw;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
-.c-tabs__tab {
-	box-sizing: border-box;
-	border: none;
-	background-color: transparent;
-	font-size: 1.25em;
-	padding: 0.25em 0.5em;
-	position: relative;
-	top: 3px;
+.c-notifications__item {
+  background-color: silver;
+  margin: 0.5rem 0;
+  padding: 1rem;
+  display: flex;
 }
-.c-tabs__tab.active {
-	background-color: silver;
-	border-bottom: 4px solid gray;
+.c-notifications__item__message {
+  flex-grow: 1;
+}
+.c-notifications__item__close {
+  font-size: 2rem;
+  line-height: 1.25rem;
+  cursor: default;
+}
+.c-notifications__item__close::before {
+  content: '\00D7';
 }
 ```
 
-```js
-import './tabs-style.css';
-```
+There is also a `bootstrap-like.css` style set.

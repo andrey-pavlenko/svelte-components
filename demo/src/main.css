@@ -34,7 +34,8 @@
     @apply px-2 py-1 bg-white;
   }
 
-  button.input {
+  button.input,
+  input[type='submit'].input {
     @apply px-4 border-gray-500;
   }
 }

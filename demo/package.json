@@ -10,6 +10,7 @@
 		"check": "svelte-check --tsconfig ./tsconfig.json"
 	},
 	"devDependencies": {
+		"@apsc/glob-notify": "workspace:../packages/glob-notify",
 		"@apsc/tabs": "workspace:../packages/tabs",
 		"@sveltejs/vite-plugin-svelte": "^1.0.0-next.30",
 		"@tailwindcss/typography": "^0.5.2",

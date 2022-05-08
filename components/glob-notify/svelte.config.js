@@ -11,7 +11,7 @@ const config = {
 		adapter: adapter(),
 		package: {
 			dir: '../../packages/glob-notify',
-			exports: (path) => /index\.(js|ts)/i.test(path) || /style\.css/i.test(path)
+			exports: (path) => /index\.(js|ts)/i.test(path) || /\.css$/i.test(path)
 		}
 	}
 };

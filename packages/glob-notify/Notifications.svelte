@@ -1,96 +1,81 @@
-<script lang="ts" context="module">
-  import { writable } from 'svelte/store';
-  import type { NotificationData } from './types';
-
-  let hasInstance = false;
-
-  /**
-   * Store of notifications
-   *
-   * @type {{
-   *  subscribe: Subscriber<NotificationData[]>;
-   *  clear: () => void;
-   *  push: (n: NotificationData) => symbol;
-   *  pop: (id: symbol) => void
-   * }}
-   */
-  export const notifications = (function () {
-    const { subscribe, set, update } = writable<NotificationData[]>([]);
-
+<script context="module">import { writable } from 'svelte/store';
+let hasInstance = false;
+/**
+ * Store of notifications
+ *
+ * @type {{
+ *  subscribe: Subscriber<NotificationData[]>;
+ *  clear: () => void;
+ *  push: (n: NotificationData) => symbol;
+ *  pop: (id: symbol) => void
+ * }}
+ */
+export const notifications = (function () {
+    const { subscribe, set, update } = writable([]);
     return {
-      subscribe,
-      clear() {
-        set([]);
-      },
-      push<T extends Omit<NotificationData, 'id'>>(notification: T): symbol {
-        if (!hasInstance) {
-          throw new Error('No Notification component instance');
+        subscribe,
+        clear() {
+            set([]);
+        },
+        push(notification) {
+            if (!hasInstance) {
+                throw new Error('No Notification component instance');
+            }
+            const withId = { id: Symbol('Notification'), ...notification };
+            update((ns) => [...ns, withId]);
+            if (notification.timeout && notification.timeout > 0) {
+                setTimeout(() => this.pop(withId.id), notification.timeout);
+            }
+            return withId.id;
+        },
+        pop(id) {
+            update((ns) => {
+                const index = ns.findIndex((n) => n.id === id);
+                if (index >= 0) {
+                    ns.splice(index, 1);
+                }
+                return ns;
+            });
         }
-        const withId = { id: Symbol('Notification'), ...notification };
-        update((ns) => [...ns, withId]);
-        if (notification.timeout && notification.timeout > 0) {
-          setTimeout(() => this.pop(withId.id), notification.timeout);
-        }
-        return withId.id;
-      },
-      pop(id: symbol) {
-        update((ns) => {
-          const index = ns.findIndex((n) => n.id === id);
-          if (index >= 0) {
-            ns.splice(index, 1);
-          }
-          return ns;
-        });
-      }
     };
-  })();
+})();
 </script>
 
-<script lang="ts">
-  import type { TransitionConfig } from 'svelte/types/runtime/transition';
-  import { onDestroy, onMount } from 'svelte';
-  import { slide } from 'svelte/transition';
-
-  let classes = '';
-  /**
-   * Custom CSS class to add to the `c-notifications` base class for custom styling purposes
-   */
-  export { classes as class };
-
-  /**
-   * Custom styles will be passed to the `style` attribute
-   */
-  export let style = '';
-
-  /**
-   * Transition function for notification, default `slide`
-   */
-  export let transitionFn: (node: Element, params: Record<string, unknown>) => TransitionConfig =
-    slide;
-
-  /**
-   * Transition function parameters
-   */
-  export let transitionParams: Record<string, unknown> = {};
-
-  onMount(() => {
+<script>import { onDestroy, onMount } from 'svelte';
+import { slide } from 'svelte/transition';
+let classes = '';
+/**
+ * Custom CSS class to add to the `c-notifications` base class for custom styling purposes
+ */
+export { classes as class };
+/**
+ * Custom styles will be passed to the `style` attribute
+ */
+export let style = '';
+/**
+ * Transition function for notification, default `slide`
+ */
+export let transitionFn = slide;
+/**
+ * Transition function parameters
+ */
+export let transitionParams = {};
+onMount(() => {
     if (hasInstance) {
-      throw new Error('The Notifications component already has an instance');
+        throw new Error('The Notifications component already has an instance');
     }
     hasInstance = true;
-  });
-
-  onDestroy(() => (hasInstance = false));
-
-  /**
-   * @typedef {{
-   *  id: symbol;
-   *  type?: string;
-   *  timeout?: number;
-   *  message?: string;
-   * }} NotificationData
-   * @slot {{ notification: NotificationData }}
-   */
+});
+onDestroy(() => (hasInstance = false));
+/**
+ * @typedef {{
+ *  id: symbol;
+ *  type?: string;
+ *  timeout?: number;
+ *  message?: string;
+ * }} NotificationData
+ * @slot {{ notification: NotificationData }}
+ */
 </script>
 
 <!-- 

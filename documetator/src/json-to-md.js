@@ -13,15 +13,28 @@ export function jsonToMarkdown(json, { debug = false } = {}) {
     : () => void 0;
 
   function renderComponent(component) {
-    const { moduleName, filePath, componentComment, props, slots } = component;
+    const { moduleName, filePath, componentComment, props, slots, typedefs, moduleExports } =
+      component;
+    if (Array.isArray(moduleExports)) {
+      if (moduleExports.find((exps) => exps.name === moduleName)) {
+        console.warn(
+          `${filePath} moduleExports includes the module ${moduleName}. It's probably a re-export. Skipping`
+        );
+        return '';
+      }
+    }
 
     _log(`Render component ${moduleName}`);
     const md = [
       filePath ? `<div class="component__source">Source <code>${filePath}</code></div>` : '',
       moduleName ? `<h1 class="component__name">${moduleName.trim()}</h1>` : '',
       componentComment ? `<div class="component__comment">${marked(componentComment)}</div>` : '',
+      Array.isArray(typedefs) && typedefs.length > 0 ? renderTypedefs(typedefs) : '',
       Array.isArray(props) && props.length > 0 ? renderProps(props) : '',
-      Array.isArray(slots) && slots.length > 0 ? renderSlots(slots) : ''
+      Array.isArray(slots) && slots.length > 0 ? renderSlots(slots) : '',
+      Array.isArray(moduleExports) && moduleExports.length > 0
+        ? renderModuleExports(moduleExports)
+        : ''
     ]
       .filter((s) => !!s)
       .join('\n')
@@ -51,16 +64,63 @@ export function jsonToMarkdown(json, { debug = false } = {}) {
     return header + tableStart + rows + tableEnd;
   }
 
+  function renderTypedefs(typedefs) {
+    function renderTypedef(typedef) {
+      let { name, type } = typedef;
+      name = `<td class="typedef__name">${name ?? ''}</td>`;
+      type = type
+        ? `<td class="typedef__type">${marked(
+            '```\n' + type.replaceAll(/\n{2,}/g, '\n') + '\n```'
+          )}</td>`
+        : '<td></td>';
+      return `<tr>${[name, type].join('\n')}</tr>`;
+    }
+
+    const header = `<h2 class="component-tbl-header">Typedefs</h2>`;
+    const tableStart = `<table><tr><th>Name</th><th>Type</th></tr>`;
+    const tableEnd = `</table>`;
+
+    const rows = typedefs.map(renderTypedef).join('\n');
+    return header + tableStart + rows + tableEnd;
+  }
+
+  function renderModuleExports(exports) {
+    function renderExport(exp) {
+      let { name, type, description } = exp;
+      name = `<td class="exports__name">${name ?? ''}</td>`;
+      type = type
+        ? `<td class="exports__type">${marked(
+            '```\n' + type.replaceAll(/\n{2,}/g, '\n') + '\n```'
+          )}</td>`
+        : '<td></td>';
+      description = `<td class="exports__description">${description ?? ''}</td>`;
+      return `<tr>${[name, type, description].join('\n')}</tr>`;
+    }
+
+    const header = `<h2 class="component-tbl-header">Module exports</h2>`;
+    const tableStart = `<table><tr><th>Name</th><th>Type</th><th>Description</th></tr>`;
+    const tableEnd = `</table>`;
+
+    const rows = exports.map(renderExport).join('\n');
+    return header + tableStart + rows + tableEnd;
+  }
+
   function renderSlots(slots) {
     function renderSlot(slot) {
-      let { name, slot_props } = slot;
+      let { name, slot_props, fallback } = slot;
       _log(`Render slot ${name}`);
       name = `<td class="slot__name">${name ?? ''}</td>`;
       let def = `<td class="slot__default">${slot['default'] ? '<code>true</code>' : ''}</td>`;
       slot_props = `<td class="slot__props">${
         slot_props ? `<code>${sanitizeLtGt(slot_props)}</code>` : ''
       }</td>`;
-      return `<tr>${[name, def, slot_props].join('\n')}</tr>`;
+      fallback = fallback
+        ? `<tr><th colspan="3">Fallback</th></tr>
+<tr><td class="slot__fallback" colspan="3">${marked(
+            '```\n' + fallback.replaceAll(/\n{2,}/g, '\n') + '\n```'
+          )}</td></tr>`
+        : '';
+      return `<tr>${[name, def, slot_props].join('\n')}</tr>${fallback}`;
     }
 
     const header = `<h2 class="component-tbl-header">Slots</h2>`;
@@ -74,7 +134,10 @@ export function jsonToMarkdown(json, { debug = false } = {}) {
   const components = json.components
     .sort((a, b) => getComponentOrder(a) - getComponentOrder(b))
     .map(rmComponentOrder);
-  const md = components.map((c) => renderComponent(c, _log)).join('\n<hr>\n');
+  const md = components
+    .map((c) => renderComponent(c, _log))
+    .filter((s) => !!s)
+    .join('\n<hr>\n');
   return md;
 }
 
