@@ -1,5 +1,6 @@
-# Component for notifications globally for the entire application [Demo](https://andrey-pavlenko.github.io/svelte-components/#/glob-notify)
+# Component for notifications globally for the entire application [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/glob-notify)
 
+- no dependencies
 - no inline styles
 - one instance for the entire application
 - with custom notification transition
@@ -8,9 +9,15 @@
 
 ## Install
 
+### NPM
+
 ```sh
 npm i -D @apsc/glob-notify
-# or
+```
+
+### PNPM
+
+```sh
 pnpm add -D @apsc/glob-notify
 ```
 

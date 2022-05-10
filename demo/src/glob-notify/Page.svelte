@@ -3,9 +3,6 @@
   import 'svelte-highlight/styles/atom-one-dark.css';
   import API from './API.svelte';
   import BaseExample from './BaseExample.svelte';
-  // import NestedExample from './NestedExample.svelte';
-  // import QuotesExample from './QuotesExample.svelte';
-  // import './styles.css';
 </script>
 
 <svelte:head>
@@ -18,6 +15,7 @@
   >
   <h1 class="text-2xl max-w-lg">Component for notifications globally for the entire application</h1>
   <ul class="leading-6 mb-8">
+    <li>no dependencies</li>
     <li>no inline styles</li>
     <li>one instance for the entire application</li>
     <li>with custom notification transition</li>

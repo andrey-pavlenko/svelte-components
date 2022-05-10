@@ -1,13 +1,20 @@
-# A set of components for organizing a tabbed interface [Demo](https://andrey-pavlenko.github.io/svelte-components/#/tabs)
+# A set of components for organizing a tabbed interface [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/tabs)
 
+- no dependencies
 - no inline styles
 - with context to control tab switching
 
 ## Install
 
+### NPM
+
 ```sh
 npm i -D @apsc/tabs
-# or
+```
+
+### PNPM
+
+```sh
 pnpm add -D @apsc/tabs
 ```
 

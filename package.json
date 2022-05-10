@@ -4,12 +4,14 @@
   "description": "A set of useful Svelte components",
   "main": "index.js",
   "scripts": {
-    "dev:demo": "pnpm run dev -C demo",
-    "build:demo": "pnpm run build -C demo",
+    "dev:demo": "pnpm run -C demo dev",
+    "build:demo": "pnpm run -C demo build",
     "package:tabs": "cd components/tabs && pnpm run package",
     "publish:tabs": "cd packages/tabs && pnpm publish --no-git-checks --access public",
     "package:glob-notify": "cd components/glob-notify && pnpm run package",
-    "publish:glob-notify": "cd packages/glob-notify && pnpm publish --no-git-checks --access public"
+    "publish:glob-notify": "cd packages/glob-notify && pnpm publish --no-git-checks --access public",
+    "package": "pnpm run package:tabs && pnpm run package:glob-notify",
+    "publish": "pnpm run publish:tabs && pnpm run publish:glob-notify"
   },
   "repository": {
     "type": "git",
