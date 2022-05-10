@@ -6,8 +6,10 @@
   "scripts": {
     "dev:demo": "pnpm run dev -C demo",
     "build:demo": "pnpm run build -C demo",
-    "package": "cd components/tabs && pnpm run package",
-    "publish": "cd packages/tabs && pnpm publish --no-git-checks --access public"
+    "package:tabs": "cd components/tabs && pnpm run package",
+    "publish:tabs": "cd packages/tabs && pnpm publish --no-git-checks --access public",
+    "package:glob-notify": "cd components/glob-notify && pnpm run package",
+    "publish:glob-notify": "cd packages/glob-notify && pnpm publish --no-git-checks --access public"
   },
   "repository": {
     "type": "git",
