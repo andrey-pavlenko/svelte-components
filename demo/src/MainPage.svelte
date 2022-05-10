@@ -11,7 +11,7 @@
     <li>
       <a href="/glob-notify">GlobNotify</a> &ndash; Component for notifications globally for the
       entire application
-      <a href="https://www.npmjs.com/package/@apsc/glob-notyfy" target="_blank">NPM</a>
+      <a href="https://www.npmjs.com/package/@apsc/glob-notify" target="_blank">NPM</a>
     </li>
   </ul>
 </section>
