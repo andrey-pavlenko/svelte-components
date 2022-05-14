@@ -1,14 +1,14 @@
 {
-  "total": 2,
+  "total": 1,
   "components": [
     {
-      "moduleName": "Notifications",
-      "filePath": "Notifications.svelte",
+      "moduleName": "ColorPicker",
+      "filePath": "ColorPicker.svelte",
       "props": [
         {
           "name": "class",
           "kind": "let",
-          "description": "Custom CSS class to add to the `c-notifications` base class for custom styling purposes",
+          "description": "Custom CSS class to add to the `c-color-picker` base class for custom styling purposes",
           "type": "string",
           "value": "''",
           "isFunction": false,
@@ -28,132 +28,33 @@
           "reactive": false
         },
         {
-          "name": "transitionFn",
+          "name": "color",
           "kind": "let",
-          "description": "Transition function for notification, default `slide`",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "constant": false,
-          "reactive": false
-        },
-        {
-          "name": "transitionParams",
-          "kind": "let",
-          "description": "Transition function parameters",
-          "type": "{}",
-          "value": "{}",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "constant": false,
-          "reactive": false
-        }
-      ],
-      "moduleExports": [
-        {
-          "name": "notifications",
-          "kind": "const",
-          "description": "Store of notifications",
-          "type": "{\n subscribe: Subscriber<NotificationData[]>;\n clear: () => void;\n push: (n: NotificationData) => symbol;\n pop: (id: symbol) => void\n}",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "constant": true,
-          "reactive": false
-        }
-      ],
-      "slots": [
-        {
-          "name": "__default__",
-          "default": true,
-          "fallback": "<div\n        transition:transitionFn={transitionParams}\n        class={'c-notifications__item' + (notification.type ? ' ' + notification.type : '')}\n      >\n        <span class=\"c-notifications__item__message\"\n          >{@html notification.message || 'No message'}</span\n        >\n        <span\n          role=\"button\"\n          aria-label=\"Close notification\"\n          class=\"c-notifications__item__close\"\n          on:click={() => notifications.pop(notification.id)}\n        />\n      </div>",
-          "slot_props": "{ notification: NotificationData }"
-        }
-      ],
-      "events": [],
-      "typedefs": [
-        {
-          "type": "{\n id: symbol;\n type?: string;\n timeout?: number;\n message?: string;\n}",
-          "name": "NotificationData",
-          "ts": "interface NotificationData {\n id: symbol;\n type?: string;\n timeout?: number;\n message?: string;\n}"
-        }
-      ],
-      "componentComment": "\n@order 0\nThe `Notifications` component has one instance for the entire application. Use the `Notifications` component at the top level of your markup, before any components that send notifications.\n\nThe default slot (optional) of the `Notifications` component is the markup for the notification element.\n```tsx\n<Notifications />\n<Application />\n```\n\nThe `Notifications` component exports the `notifications` custom store corresponding to the store contract.\n```js\n{\n  subscribe: Subscriber<NotificationData[]>,\n  clear: () => void,\n  push: (notification: NotificationData) => symbol,\n  pop: (id: symbol) => void\n}\n```\n\nYou can subscribe to changes in the store, and append and remove notifications anywhere in your app.\n```svelte\n<script>\n  import { Notifications, notifications } from '@apsc/glob-notify';\n  function handleNotify() {\n    notifications.push({ message: 'Hello from NyApp' })\n  }\n</script>\n<Notifications />\n<h1>Welcome to MyApp</h1>\n<button on:click={handleNotify}>Notify</button>\n```\n\nThe selectors used are in simple styles in `style.css`\n```css\n.c-notifications {\n  position: fixed;\n  padding: 0.5rem 1rem;\n  width: 50vw;\n  right: 0;\n  bottom: 0;\n  z-index: 1;\n}\n.c-notifications__item {\n  background-color: silver;\n  margin: 0.5rem 0;\n  padding: 1rem;\n  display: flex;\n}\n.c-notifications__item__message {\n  flex-grow: 1;\n}\n.c-notifications__item__close {\n  font-size: 2rem;\n  line-height: 1.25rem;\n  cursor: default;\n}\n.c-notifications__item__close::before {\n  content: '\\00D7';\n}\n```\n\nThere is also a `bootstrap-like.css` style set."
-    },
-    {
-      "moduleName": "notifications",
-      "filePath": "Notifications.svelte",
-      "props": [
-        {
-          "name": "class",
-          "kind": "let",
-          "description": "Custom CSS class to add to the `c-notifications` base class for custom styling purposes",
+          "description": "Color value. **Reactive**.\nNote! Components only use **hexadecimal** colors e.g. `#000`, `#f1f2f3`. Do not use a non-hexadecimal color value such as `red` or `rgb(128,128,128)`.",
           "type": "string",
-          "value": "''",
+          "value": "'#000'",
           "isFunction": false,
           "isFunctionDeclaration": false,
           "constant": false,
-          "reactive": false
+          "reactive": true
         },
         {
-          "name": "style",
+          "name": "debounce",
           "kind": "let",
-          "description": "Custom styles will be passed to the `style` attribute",
-          "type": "string",
-          "value": "''",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "constant": false,
-          "reactive": false
-        },
-        {
-          "name": "transitionFn",
-          "kind": "let",
-          "description": "Transition function for notification, default `slide`",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "constant": false,
-          "reactive": false
-        },
-        {
-          "name": "transitionParams",
-          "kind": "let",
-          "description": "Transition function parameters",
-          "type": "{}",
-          "value": "{}",
+          "description": "Color value update debounce interval",
+          "type": "number",
+          "value": "0",
           "isFunction": false,
           "isFunctionDeclaration": false,
           "constant": false,
           "reactive": false
         }
       ],
-      "moduleExports": [
-        {
-          "name": "notifications",
-          "kind": "const",
-          "description": "Store of notifications",
-          "type": "{\n subscribe: Subscriber<NotificationData[]>;\n clear: () => void;\n push: (n: NotificationData) => symbol;\n pop: (id: symbol) => void\n}",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "constant": true,
-          "reactive": false
-        }
-      ],
-      "slots": [
-        {
-          "name": "__default__",
-          "default": true,
-          "fallback": "<div\n        transition:transitionFn={transitionParams}\n        class={'c-notifications__item' + (notification.type ? ' ' + notification.type : '')}\n      >\n        <span class=\"c-notifications__item__message\"\n          >{@html notification.message || 'No message'}</span\n        >\n        <span\n          role=\"button\"\n          aria-label=\"Close notification\"\n          class=\"c-notifications__item__close\"\n          on:click={() => notifications.pop(notification.id)}\n        />\n      </div>",
-          "slot_props": "{ notification: NotificationData }"
-        }
-      ],
+      "moduleExports": [],
+      "slots": [],
       "events": [],
-      "typedefs": [
-        {
-          "type": "{\n id: symbol;\n type?: string;\n timeout?: number;\n message?: string;\n}",
-          "name": "NotificationData",
-          "ts": "interface NotificationData {\n id: symbol;\n type?: string;\n timeout?: number;\n message?: string;\n}"
-        }
-      ],
-      "componentComment": "\n@order 0\nThe `Notifications` component has one instance for the entire application. Use the `Notifications` component at the top level of your markup, before any components that send notifications.\n\nThe default slot (optional) of the `Notifications` component is the markup for the notification element.\n```tsx\n<Notifications />\n<Application />\n```\n\nThe `Notifications` component exports the `notifications` custom store corresponding to the store contract.\n```js\n{\n  subscribe: Subscriber<NotificationData[]>,\n  clear: () => void,\n  push: (notification: NotificationData) => symbol,\n  pop: (id: symbol) => void\n}\n```\n\nYou can subscribe to changes in the store, and append and remove notifications anywhere in your app.\n```svelte\n<script>\n  import { Notifications, notifications } from '@apsc/glob-notify';\n  function handleNotify() {\n    notifications.push({ message: 'Hello from NyApp' })\n  }\n</script>\n<Notifications />\n<h1>Welcome to MyApp</h1>\n<button on:click={handleNotify}>Notify</button>\n```\n\nThe selectors used are in simple styles in `style.css`\n```css\n.c-notifications {\n  position: fixed;\n  padding: 0.5rem 1rem;\n  width: 50vw;\n  right: 0;\n  bottom: 0;\n  z-index: 1;\n}\n.c-notifications__item {\n  background-color: silver;\n  margin: 0.5rem 0;\n  padding: 1rem;\n  display: flex;\n}\n.c-notifications__item__message {\n  flex-grow: 1;\n}\n.c-notifications__item__close {\n  font-size: 2rem;\n  line-height: 1.25rem;\n  cursor: default;\n}\n.c-notifications__item__close::before {\n  content: '\\00D7';\n}\n```\n\nThere is also a `bootstrap-like.css` style set."
+      "typedefs": [],
+      "componentComment": "\n@order 0\n\nA component for picking a color with transparency. The color value is hexadecimal.\n\nDependence: `lodash.debounce`\n\nInspired by:\n- [svelte-awesome-color-picker](https://svelte-awesome-color-picker.vercel.app/)\n- [svelte-color-picker](https://github.com/efeskucuk/svelte-color-picker)\n- [Coloris](https://github.com/mdbassit/Coloris)\n\n```tsx\n<script>\n  let color='#f00';\n</script>\n<ColorPicker bind:color />\n```\n\nBasic styles are described in the `color-picker.css` file.\n\nNote! Specify the height of the `ColorPicker` component using the `class` or `style` attributes."
     }
   ]
 }

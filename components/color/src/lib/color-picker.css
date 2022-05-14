@@ -1,0 +1,174 @@
+.c-color-picker__body {
+  --cp-hue-background: linear-gradient(
+    to right,
+    red 0,
+    #ff0 16.66%,
+    #0f0 33.33%,
+    #0ff 50%,
+    #00f 66.66%,
+    #f0f 83.33%,
+    red 100%
+  );
+  --cp-color-alpha-background: linear-gradient(90deg, rgba(0, 0, 0, 0), var(--cp-color-opacity))
+    100% 100%;
+  --cp-alpha1-background: repeating-linear-gradient(
+      45deg,
+      #aaa 25%,
+      transparent 25%,
+      transparent 75%,
+      #aaa 75%,
+      #aaa
+    )
+    0 0 / 8px 8px;
+  --cp-alpha2-background: repeating-linear-gradient(
+      45deg,
+      #aaa 25%,
+      #fff 25%,
+      #fff 75%,
+      #aaa 75%,
+      #aaa
+    )
+    0 0 / 8px 8px;
+  --cp-alpha-bg-position: 0 0, 4px 4px;
+  --cp-marker-border: 1px solid white;
+  --cp-marker-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+
+  box-sizing: border-box;
+  display: grid;
+  height: 100%;
+  gap: 0.75em;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto auto;
+}
+
+.c-color-picker__tone {
+  margin: 0;
+  outline: none;
+  background-color: var(--cp-tone);
+  cursor: crosshair;
+  grid-column: span 2;
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), #000),
+    linear-gradient(90deg, #fff, var(--cp-tone));
+}
+
+.c-color-picker__tone--marker {
+  position: absolute;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+.c-color-picker__tone--marker::after {
+  position: relative;
+  content: '';
+  display: block;
+  width: 1em;
+  height: 1em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--cp-color-opacity);
+  border-radius: 50%;
+  border: var(--cp-marker-border);
+  box-shadow: var(--cp-marker-shadow);
+}
+
+.c-color-picker__sample {
+  grid-row: span 2;
+  height: 100%;
+  width: 3em;
+  position: relative;
+}
+
+.c-color-picker__sample::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  padding-top: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 100%;
+  background: linear-gradient(0deg, var(--cp-color), var(--cp-color)), var(--cp-alpha1-background),
+    var(--cp-alpha2-background);
+  background-position: var(--cp-alpha-bg-position);
+}
+
+.c-color-picker__hue input[type='range'],
+.c-color-picker__alpha input[type='range'] {
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.c-color-picker__hue input[type='range']::-webkit-slider-runnable-track,
+.c-color-picker__alpha input[type='range']::-webkit-slider-runnable-track {
+  height: 0.75em;
+  border-radius: 1em;
+}
+
+.c-color-picker__hue input[type='range']::-moz-range-track,
+.c-color-picker__alpha input[type='range']::-moz-range-track {
+  height: 0.75em;
+  border-radius: 1em;
+}
+
+.c-color-picker__hue input[type='range']::-webkit-slider-runnable-track {
+  background: var(--cp-hue-background);
+}
+
+.c-color-picker__hue input[type='range']::-moz-range-track {
+  background: var(--cp-hue-background);
+}
+
+.c-color-picker__alpha input[type='range']::-webkit-slider-runnable-track {
+  background: var(--cp-color-alpha-background), var(--cp-alpha1-background),
+    var(--cp-alpha2-background);
+  background-position: var(--cp-alpha-bg-position);
+}
+
+.c-color-picker__alpha input[type='range']::-moz-range-track {
+  background: var(--cp-color-alpha-background), var(--cp-alpha1-background),
+    var(--cp-alpha2-background);
+  background-position: var(--cp-alpha-bg-position);
+}
+
+.c-color-picker__hue input[type='range']::-webkit-slider-thumb,
+.c-color-picker__alpha input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -0.375em;
+  height: 1.5em;
+  width: 1.25rem;
+  border-radius: 100%;
+  border: var(--cp-marker-border);
+  box-shadow: var(--cp-marker-shadow);
+}
+.c-color-picker__hue input[type='range']::-webkit-slider-thumb {
+  background-color: var(--cp-tone);
+}
+.c-color-picker__alpha input[type='range']::-webkit-slider-thumb {
+  background-color: var(--cp-color-opacity);
+}
+
+.c-color-picker__hue input[type='range']::-moz-range-thumb,
+.c-color-picker__alpha input[type='range']::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -0.375em;
+  height: 1.5em;
+  width: 1.25rem;
+  border-radius: 100%;
+  border: var(--cp-marker-border);
+  box-shadow: var(--cp-marker-shadow);
+}
+.c-color-picker__hue input[type='range']::-moz-range-thumb {
+  background-color: var(--cp-tone);
+}
+.c-color-picker__alpha input[type='range']::-moz-range-thumb {
+  background-color: var(--cp-color-opacity);
+}

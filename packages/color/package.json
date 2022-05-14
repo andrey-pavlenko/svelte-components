@@ -1,0 +1,30 @@
+{
+  "name": "@apsc/color",
+  "version": "0.0.1",
+  "type": "module",
+  "types": "index.d.ts",
+  "main": "index.js",
+  "author": "Andrey Pavlenko",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrey-pavlenko/svelte-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrey-pavlenko/svelte-components/issues"
+  },
+  "keywords": [
+    "svelte",
+    "components",
+    "color-picker",
+    "color-input"
+  ],
+  "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
+  "exports": {
+    "./package.json": "./package.json",
+    "./color-picker.css": "./color-picker.css",
+    "./converter": "./converter.js",
+    ".": "./index.js"
+  },
+  "svelte": "./index.js"
+}
