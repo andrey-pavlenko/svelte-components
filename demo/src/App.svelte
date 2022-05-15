@@ -4,6 +4,7 @@
   import MainPage from './MainPage.svelte';
   import { TabsPage } from './tabs';
   import { GlobNotifyPage } from './glob-notify';
+  import { ColorPage } from './color';
 
   router.mode.hash();
 </script>
@@ -15,4 +16,5 @@
   <Route path="/"><MainPage /></Route>
   <Route path="/tabs"><TabsPage /></Route>
   <Route path="/glob-notify"><GlobNotifyPage /></Route>
+  <Route path="/color"><ColorPage /></Route>
 </main>

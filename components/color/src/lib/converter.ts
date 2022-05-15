@@ -1,5 +1,25 @@
+/**
+ * @typedef {object} HslColor
+ * @property {number} h - integer: 0 ... 360
+ * @property {number} s - integer: 0 ... 100
+ * @property {number} l - integer: 0 ... 100
+ * @property {number} [a] - float: 0 ... 1, optional
+ *
+ * @typedef {object} HsvColor
+ * @property {number} h - float: 0 ... 360
+ * @property {number} s - float: 0 ... 100
+ * @property {number} v - float: 0 ... 100
+ * @property {number} [a] - float: 0 ... 1, optional
+ *
+ * @typedef {object} RgbColor
+ * @property {number} r - integer: 0 ... 255
+ * @property {number} g - integer: 0 ... 255
+ * @property {number} b - integer: 0 ... 255
+ * @property {number} [a] - float: 0 ... 1, optional
+ */
+
 export interface HslColor {
-  h: number; // ingerer: 0 ... 360
+  h: number; // integer: 0 ... 360
   s: number; // integer: 0 ... 100
   l: number; // integer: 0 ... 100
   a?: number; // froat: 0 ... 1, with fraction
@@ -9,7 +29,7 @@ export interface HsvColor {
   h: number; // float: 0 ... 360, with fraction
   s: number; // float: 0 ... 100, with fraction
   v: number; // float: 0 ... 100, with fraction
-  a?: number; // froat: 0 ... 1, with fraction
+  a?: number; // float: 0 ... 1, with fraction
 }
 
 export interface RgbColor {
@@ -32,7 +52,6 @@ function splitHex(hex: HexColor): string[] | undefined {
   }
 }
 
-// https://www.npmjs.com/package/css-color-names
 export function isHexValid(hex: HexColor): boolean {
   try {
     return splitHex(hex) != null;

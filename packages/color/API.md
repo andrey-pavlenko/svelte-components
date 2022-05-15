@@ -13,8 +13,8 @@
 &lt;/script&gt;
 &lt;ColorPicker bind:color /&gt;
 </code></pre>
-<p>Basic styles are described in the <code>color-picker.css</code> file.</p>
-<p>Note! Specify the height of the <code>ColorPicker</code> component using the <code>class</code> or <code>style</code> attributes.</p>
+<p>Basic styles are described in the <a href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/color-picker.css"><code>color-picker.css</code></a> file.</p>
+<p><strong>Note!</strong> Specify the height of the <code>ColorPicker</code> component using the <code>class</code> or <code>style</code> attributes.</p>
 </div>
 <h2 class="component-tbl-header">Props</h2><table><tr><th>Prop nane</th><th>Type</th><th>Default value</th><th>Description</th></tr><tr><td class="prop__name">class</td>
 <td class="prop__type"><code>string</code></td>

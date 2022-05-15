@@ -1,0 +1,25 @@
+.bg-chess {
+  --bg-chess-size: 0.625em;
+  --bg-chess-color1: #fff;
+  --bg-chess-color2: #aaa;
+  --bg-chess1-background: repeating-linear-gradient(
+      45deg,
+      var(--bg-chess-color2) 25%,
+      transparent 25%,
+      transparent 75%,
+      var(--bg-chess-color2) 75%,
+      var(--bg-chess-color2)
+    )
+    0 0 / var(--bg-chess-size) var(--bg-chess-size);
+  --bg-chess2-background: repeating-linear-gradient(
+      45deg,
+      var(--bg-chess-color2) 25%,
+      var(--bg-chess-color1) 25%,
+      var(--bg-chess-color1) 75%,
+      var(--bg-chess-color2) 75%,
+      var(--bg-chess-color2)
+    )
+    calc(var(--bg-chess-size) / 2) calc(var(--bg-chess-size) / 2) / var(--bg-chess-size)
+    var(--bg-chess-size);
+  background: var(--bg-chess1-background), var(--bg-chess2-background);
+}

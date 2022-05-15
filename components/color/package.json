@@ -32,6 +32,9 @@
     "color-input"
   ],
   "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
+  "dependencies": {
+    "lodash.debounce": "^4.0.8"
+  },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
@@ -40,7 +43,6 @@
     "@typescript-eslint/eslint-plugin": "^5.10.1",
     "@typescript-eslint/parser": "^5.10.1",
     "jest": "^28.1.0",
-    "lodash.debounce": "^4.0.8",
     "svelte": "^3.44.0",
     "svelte-check": "^2.2.6",
     "svelte-preprocess": "^4.10.1",

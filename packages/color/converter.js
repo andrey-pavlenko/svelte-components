@@ -1,3 +1,22 @@
+/**
+ * @typedef {object} HslColor
+ * @property {number} h - integer: 0 ... 360
+ * @property {number} s - integer: 0 ... 100
+ * @property {number} l - integer: 0 ... 100
+ * @property {number} [a] - float: 0 ... 1, optional
+ *
+ * @typedef {object} HsvColor
+ * @property {number} h - float: 0 ... 360
+ * @property {number} s - float: 0 ... 100
+ * @property {number} v - float: 0 ... 100
+ * @property {number} [a] - float: 0 ... 1, optional
+ *
+ * @typedef {object} RgbColor
+ * @property {number} r - integer: 0 ... 255
+ * @property {number} g - integer: 0 ... 255
+ * @property {number} b - integer: 0 ... 255
+ * @property {number} [a] - float: 0 ... 1, optional
+ */
 function splitHex(hex) {
     const digits = /^#([0-9a-f]{3,8})$/gi.exec(hex)?.[1];
     if (digits != null) {
@@ -9,7 +28,6 @@ function splitHex(hex) {
         }
     }
 }
-// https://www.npmjs.com/package/css-color-names
 export function isHexValid(hex) {
     try {
         return splitHex(hex) != null;

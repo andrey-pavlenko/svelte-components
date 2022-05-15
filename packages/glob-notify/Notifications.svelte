@@ -141,7 +141,7 @@ The selectors used are in simple styles in `style.css`
 }
 ```
 
-There is also a `bootstrap-like.css` style set.
+There is also a [`bootstrap-like.css`](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/bootstrap-like.css) style set.
  -->
 
 <div class={'c-notifications' + (classes ? ' ' + classes : '')} style={style || undefined}>

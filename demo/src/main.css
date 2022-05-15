@@ -12,6 +12,7 @@
 }
 
 @layer components {
+  .prose a,
   a {
     @apply text-blue-600;
   }

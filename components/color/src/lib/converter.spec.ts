@@ -1,4 +1,13 @@
-import { hexToRgb, rgbToHex, hexToHsl, hslToHex, rgbToHsv, hsvToRgb } from './converter';
+import {
+  hexToRgb,
+  rgbToHex,
+  hexToHsl,
+  hslToHex,
+  rgbToHsv,
+  hsvToRgb,
+  hexToHsv,
+  hsvToHex
+} from './converter';
 
 describe('Color conversion', () => {
   it('checkRandomRgb', () => {
@@ -17,6 +26,7 @@ describe('Color conversion', () => {
     );
     for (const hex of randomHexs) {
       expect(rgbToHex(hexToRgb(hex))).toBe(hex);
+      expect(hsvToHex(hexToHsv(hex))).toBe(hex);
     }
   });
 
