@@ -1,5 +1,25 @@
+/**
+ * @typedef {object} HslColor
+ * @property {number} h - integer: 0 ... 360
+ * @property {number} s - integer: 0 ... 100
+ * @property {number} l - integer: 0 ... 100
+ * @property {number} [a] - float: 0 ... 1, optional
+ *
+ * @typedef {object} HsvColor
+ * @property {number} h - float: 0 ... 360
+ * @property {number} s - float: 0 ... 100
+ * @property {number} v - float: 0 ... 100
+ * @property {number} [a] - float: 0 ... 1, optional
+ *
+ * @typedef {object} RgbColor
+ * @property {number} r - integer: 0 ... 255
+ * @property {number} g - integer: 0 ... 255
+ * @property {number} b - integer: 0 ... 255
+ * @property {number} [a] - float: 0 ... 1, optional
+ */
+
 export interface HslColor {
-  h: number; // ingerer: 0 ... 360
+  h: number; // integer: 0 ... 360
   s: number; // integer: 0 ... 100
   l: number; // integer: 0 ... 100
   a?: number; // froat: 0 ... 1, with fraction
@@ -9,7 +29,7 @@ export interface HsvColor {
   h: number; // float: 0 ... 360, with fraction
   s: number; // float: 0 ... 100, with fraction
   v: number; // float: 0 ... 100, with fraction
-  a?: number; // froat: 0 ... 1, with fraction
+  a?: number; // float: 0 ... 1, with fraction
 }
 
 export interface RgbColor {
@@ -32,7 +52,6 @@ function splitHex(hex: HexColor): string[] | undefined {
   }
 }
 
-// https://www.npmjs.com/package/css-color-names
 export function isHexValid(hex: HexColor): boolean {
   try {
     return splitHex(hex) != null;
@@ -226,4 +245,27 @@ export function hsvToRgb(hsv: HsvColor): RgbColor {
   const b = Math.round(blue * 255);
 
   return hsv.a != null ? { r, g, b, a: hsv.a } : { r, g, b };
+}
+
+/**
+ * Based on function [colorLuminance](@link https://bulma.io/documentation/overview/functions/)
+ */
+export function luminance(color: HexColor | RgbColor): number {
+  if (typeof color === 'string') {
+    color = hexToRgb(color);
+  }
+  const factors = [0.2126, 0.7152, 0.0722];
+  const y = [color.r, color.g, color.b].reduce((a, v, i) => {
+    v /= 255;
+    if (v < 0.03928) {
+      v /= 12.92;
+    } else {
+      v = (v + 0.055) / 1.055;
+      v *= v;
+    }
+    return a + v * factors[i];
+  }, 0);
+
+  const a = 1 - (color.a ?? 1);
+  return y + (1 - y) * a;
 }

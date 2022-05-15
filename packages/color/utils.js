@@ -1,3 +1,22 @@
+/**
+ * @typedef {object} HslColor
+ * @property {number} h - integer: 0 ... 360
+ * @property {number} s - integer: 0 ... 100
+ * @property {number} l - integer: 0 ... 100
+ * @property {number} [a] - float: 0 ... 1, optional
+ *
+ * @typedef {object} HsvColor
+ * @property {number} h - float: 0 ... 360
+ * @property {number} s - float: 0 ... 100
+ * @property {number} v - float: 0 ... 100
+ * @property {number} [a] - float: 0 ... 1, optional
+ *
+ * @typedef {object} RgbColor
+ * @property {number} r - integer: 0 ... 255
+ * @property {number} g - integer: 0 ... 255
+ * @property {number} b - integer: 0 ... 255
+ * @property {number} [a] - float: 0 ... 1, optional
+ */
 function splitHex(hex) {
     const digits = /^#([0-9a-f]{3,8})$/gi.exec(hex)?.[1];
     if (digits != null) {
@@ -9,7 +28,6 @@ function splitHex(hex) {
         }
     }
 }
-// https://www.npmjs.com/package/css-color-names
 export function isHexValid(hex) {
     try {
         return splitHex(hex) != null;
@@ -181,4 +199,26 @@ export function hsvToRgb(hsv) {
     const g = Math.round(green * 255);
     const b = Math.round(blue * 255);
     return hsv.a != null ? { r, g, b, a: hsv.a } : { r, g, b };
+}
+/**
+ * Based on function [colorLuminance](@link https://bulma.io/documentation/overview/functions/)
+ */
+export function luminance(color) {
+    if (typeof color === 'string') {
+        color = hexToRgb(color);
+    }
+    const factors = [0.2126, 0.7152, 0.0722];
+    const y = [color.r, color.g, color.b].reduce((a, v, i) => {
+        v /= 255;
+        if (v < 0.03928) {
+            v /= 12.92;
+        }
+        else {
+            v = (v + 0.055) / 1.055;
+            v *= v;
+        }
+        return a + v * factors[i];
+    }, 0);
+    const a = 1 - (color.a ?? 1);
+    return y + (1 - y) * a;
 }

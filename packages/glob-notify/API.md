@@ -51,7 +51,7 @@
   content: &#39;\00D7&#39;;
 }
 </code></pre>
-<p>There is also a <code>bootstrap-like.css</code> style set.</p>
+<p>There is also a <a href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/bootstrap-like.css"><code>bootstrap-like.css</code></a> style set.</p>
 </div>
 <h2 class="component-tbl-header">Typedefs</h2><table><tr><th>Name</th><th>Type</th></tr><tr><td class="typedef__name">NotificationData</td>
 <td class="typedef__type"><pre><code>{

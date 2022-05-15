@@ -106,7 +106,7 @@ export declare type NotificationsSlots = typeof __propDef.slots;
  * }
  * ```
  *
- * There is also a `bootstrap-like.css` style set.
+ * There is also a [`bootstrap-like.css`](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/bootstrap-like.css) style set.
  */
 export default class Notifications extends SvelteComponentTyped<NotificationsProps, NotificationsEvents, NotificationsSlots> {
 }

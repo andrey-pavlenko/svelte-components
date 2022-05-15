@@ -20,10 +20,12 @@
     "color-input"
   ],
   "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
+  "dependencies": {
+    "lodash.debounce": "^4.0.8"
+  },
   "exports": {
     "./package.json": "./package.json",
     "./color-picker.css": "./color-picker.css",
-    "./converter": "./converter.js",
     ".": "./index.js"
   },
   "svelte": "./index.js"

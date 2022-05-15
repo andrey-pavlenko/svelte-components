@@ -13,5 +13,9 @@
       entire application
       <a href="https://www.npmjs.com/package/@apsc/glob-notify" target="_blank">NPM</a>
     </li>
+    <li>
+      <a href="/color">Color</a> &ndash; A set of components for picking and editing colors
+      <a href="https://www.npmjs.com/package/@apsc/color" target="_blank">NPM</a>
+    </li>
   </ul>
 </section>

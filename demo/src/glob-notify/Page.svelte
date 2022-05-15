@@ -9,10 +9,7 @@
   <title>{document.title.replace(/(•).*$/, '$1 GlobNotify')}</title>
 </svelte:head>
 <section class="prose max-w-none my-4">
-  <a
-    class="not-prose float-right text-white no-underline px-2 rounded-md bg-blue-400 hover:bg-blue-600"
-    href="/">Home</a
-  >
+  <a class="float-right" href="/">Home</a>
   <h1 class="text-2xl max-w-lg">Component for notifications globally for the entire application</h1>
   <ul class="leading-6 mb-8">
     <li>no dependencies</li>

@@ -9,7 +9,10 @@ declare const __propDef: {
            */ style?: string | undefined;
         /**
            * Color value. **Reactive**.
-           * Note! Components only use **hexadecimal** colors e.g. `#000`, `#f1f2f3`. Do not use a non-hexadecimal color value such as `red` or `rgb(128,128,128)`.
+           *
+           * Note! Components only use **hexadecimal** colors e.g. `#000`, `#f1f2f3`.
+           *
+           * Do not use a non-hexadecimal color value such as `red` or `rgb(128,128,128)`. `rgb()` or `hsl()` colors can be pre-converted to hexadecimal using the `rbgToHex` or `hslToHex` functions see [utils.js](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/utils.js).
            */ color?: string | undefined;
         /**
            * Color value update debounce interval
@@ -42,9 +45,9 @@ export declare type ColorPickerSlots = typeof __propDef.slots;
  * <ColorPicker bind:color />
  * ```
  *
- * Basic styles are described in the `color-picker.css` file.
+ * Basic styles are described in the [`color-picker.css`](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/color-picker.css) file.
  *
- * Note! Specify the height of the `ColorPicker` component using the `class` or `style` attributes.
+ * **Note!** Specify the height of the `ColorPicker` component using the `class` or `style` attributes.
  */
 export default class ColorPicker extends SvelteComponentTyped<ColorPickerProps, ColorPickerEvents, ColorPickerSlots> {
 }
