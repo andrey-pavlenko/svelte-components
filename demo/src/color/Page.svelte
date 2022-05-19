@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-  <title>{document.title.replace(/(•).*$/, '$1 Tabs')}</title>
+  <title>{document.title.replace(/(•).*$/, '$1 Color')}</title>
 </svelte:head>
 <section class="prose max-w-none my-4">
   <a class="float-right" href="/">Home</a>
