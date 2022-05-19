@@ -26,7 +26,6 @@
   "exports": {
     "./package.json": "./package.json",
     "./color-picker.css": "./color-picker.css",
-    "./converter": "./converter.js",
     ".": "./index.js"
   },
   "svelte": "./index.js"

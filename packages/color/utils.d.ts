@@ -48,3 +48,7 @@ export declare function hexToHsv(hex: HexColor): HsvColor;
 export declare function rgbToHsv(rgb: RgbColor): HsvColor;
 export declare function hsvToHex(hsv: HsvColor): HexColor;
 export declare function hsvToRgb(hsv: HsvColor): RgbColor;
+/**
+ * Based on function [colorLuminance](@link https://bulma.io/documentation/overview/functions/)
+ */
+export declare function luminance(color: HexColor | RgbColor): number;

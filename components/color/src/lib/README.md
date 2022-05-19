@@ -1,7 +1,7 @@
 # A set of components for picking and editing colors [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/color)
 
 - no inline styles
-- the module exports functions for color conversion from/to hex/rgb/hsl/hsv color space. See [`converter.d.ts`](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/converter.d.ts) for definitions of types and functions.
+- the module exports functions for color conversion from/to hex/rgb/hsl/hsv color space. See [`utils.d.ts`](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/utils.d.ts) for definitions of types and functions.
 
 Includes components:
 

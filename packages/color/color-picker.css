@@ -49,7 +49,7 @@
 
 .c-color-picker__tone {
   margin: 0;
-  outline: none;
+  /* outline: none; */
   background-color: var(--cp-tone);
   cursor: crosshair;
   grid-column: span 2;

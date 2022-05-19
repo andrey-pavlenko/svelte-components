@@ -51,7 +51,7 @@ export function jsonToMarkdown(json, { debug = false } = {}) {
       type = `<td class="prop__type">${type ? `<code>${sanitizeLtGt(type)}</code>` : ''}</td>`;
       value = `<td class="prop__value">${value ? `<code>${sanitizeLtGt(value)}</code>` : ''}</td>`;
       description = `<td class="prop__description">${
-        description ? marked(description.replaceAll(/\n{2,}/g, '\n')) : ''
+        description ? marked(description.replaceAll(/\n{2,}/g, '<br />')) : ''
       }</td>`;
       return `<tr>${[name, type, value, description].join('\n')}</tr>`;
     }
@@ -70,7 +70,7 @@ export function jsonToMarkdown(json, { debug = false } = {}) {
       name = `<td class="typedef__name">${name ?? ''}</td>`;
       type = type
         ? `<td class="typedef__type">${marked(
-            '```\n' + type.replaceAll(/\n{2,}/g, '\n') + '\n```'
+            '```\n' + type.replaceAll(/\n{2,}/g, '<br />') + '\n```'
           )}</td>`
         : '<td></td>';
       return `<tr>${[name, type].join('\n')}</tr>`;
@@ -90,7 +90,7 @@ export function jsonToMarkdown(json, { debug = false } = {}) {
       name = `<td class="exports__name">${name ?? ''}</td>`;
       type = type
         ? `<td class="exports__type">${marked(
-            '```\n' + type.replaceAll(/\n{2,}/g, '\n') + '\n```'
+            '```\n' + type.replaceAll(/\n{2,}/g, '<br />') + '\n```'
           )}</td>`
         : '<td></td>';
       description = `<td class="exports__description">${description ?? ''}</td>`;
@@ -117,7 +117,7 @@ export function jsonToMarkdown(json, { debug = false } = {}) {
       fallback = fallback
         ? `<tr><th colspan="3">Fallback</th></tr>
 <tr><td class="slot__fallback" colspan="3">${marked(
-            '```\n' + fallback.replaceAll(/\n{2,}/g, '\n') + '\n```'
+            '```\n' + fallback.replaceAll(/\n{2,}/g, '<br />') + '\n```'
           )}</td></tr>`
         : '';
       return `<tr>${[name, def, slot_props].join('\n')}</tr>${fallback}`;

@@ -6,8 +6,9 @@ import {
   rgbToHsv,
   hsvToRgb,
   hexToHsv,
-  hsvToHex
-} from './converter';
+  hsvToHex,
+  luminance
+} from './utils';
 
 describe('Color conversion', () => {
   it('checkRandomRgb', () => {
@@ -129,5 +130,15 @@ describe('Color conversion', () => {
         v: 49.80392156862745
       })
     ).toStrictEqual({ r: 127, g: 30, b: 51 });
+  });
+
+  it('luminance', () => {
+    expect(luminance('#00d1b2')).toBeCloseTo(0.52831);
+    expect(luminance('#3273dc')).toBeCloseTo(0.23119);
+    expect(luminance('#23d160')).toBeCloseTo(0.51067);
+    expect(luminance('#ffdd57')).toBeCloseTo(0.76863);
+    expect(luminance('#ff3860')).toBeCloseTo(0.27313);
+    expect(luminance('#ffb3b3')).toBeCloseTo(0.61796);
+    expect(luminance('#ffbc6b')).toBeCloseTo(0.63053);
   });
 });

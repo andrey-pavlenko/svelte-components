@@ -30,7 +30,7 @@
         {
           "name": "color",
           "kind": "let",
-          "description": "Color value. **Reactive**.\nNote! Components only use **hexadecimal** colors e.g. `#000`, `#f1f2f3`. Do not use a non-hexadecimal color value such as `red` or `rgb(128,128,128)`.",
+          "description": "Color value. **Reactive**.\n\nNote! Components only use **hexadecimal** colors e.g. `#000`, `#f1f2f3`.\n\nDo not use a non-hexadecimal color value such as `red` or `rgb(128,128,128)`. `rgb()` or `hsl()` colors can be pre-converted to hexadecimal using the `rbgToHex` or `hslToHex` functions see [utils.js](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/utils.js).",
           "type": "string",
           "value": "'#000'",
           "isFunction": false,

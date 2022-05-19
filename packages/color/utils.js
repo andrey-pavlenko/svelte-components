@@ -200,3 +200,25 @@ export function hsvToRgb(hsv) {
     const b = Math.round(blue * 255);
     return hsv.a != null ? { r, g, b, a: hsv.a } : { r, g, b };
 }
+/**
+ * Based on function [colorLuminance](@link https://bulma.io/documentation/overview/functions/)
+ */
+export function luminance(color) {
+    if (typeof color === 'string') {
+        color = hexToRgb(color);
+    }
+    const factors = [0.2126, 0.7152, 0.0722];
+    const y = [color.r, color.g, color.b].reduce((a, v, i) => {
+        v /= 255;
+        if (v < 0.03928) {
+            v /= 12.92;
+        }
+        else {
+            v = (v + 0.055) / 1.055;
+            v *= v;
+        }
+        return a + v * factors[i];
+    }, 0);
+    const a = 1 - (color.a ?? 1);
+    return y + (1 - y) * a;
+}

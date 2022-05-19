@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-  <title>{document.title.replace(/(•).*$/, '$1 Tabs')}</title>
+  <title>{document.title.replace(/(•).*$/, '$1 Color')}</title>
 </svelte:head>
 <section class="prose max-w-none my-4">
   <a class="float-right" href="/">Home</a>
@@ -19,8 +19,8 @@
     <li>
       the module exports functions for color conversion from/to hex/rgb/hsl/hsv color space. See
       <a
-        href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/converter.d.ts"
-        target="_blank">converter.d.ts</a
+        href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/utils.d.ts"
+        target="_blank">utils.d.ts</a
       > for definitions of types and functions
     </li>
     <li><a href="https://www.npmjs.com/package/@apsc/color">NPM</a></li>
