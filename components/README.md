@@ -1,14 +1,14 @@
 ## New conponent
 
 ```sh
-pnpm init svelte@next <component_name>
+pnpm create svelte@next <component_name>
 ```
 
 `package.json`
 
 ```json
 {
-	"name": "@apsc/<component_name>"
+  "name": "@apsc/<component_name>"
 }
 ```
 
@@ -16,10 +16,10 @@ pnpm init svelte@next <component_name>
 
 ```js
 const config = {
-	kit: {
-		package: {
-			dir: '../../packages/tabs'
-		}
-	}
+  kit: {
+    package: {
+      dir: '../../packages/tabs'
+    }
+  }
 };
 ```

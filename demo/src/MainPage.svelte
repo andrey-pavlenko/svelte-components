@@ -14,6 +14,11 @@
       <a href="https://www.npmjs.com/package/@apsc/glob-notify" target="_blank">NPM</a>
     </li>
     <li>
+      <a href="/popper-action">Popper action</a> &ndash; Action to use
+      <a href="https://github.com/floating-ui/floating-ui/tree/v2.x" target="_blank">Popper.js</a>
+      <a href="https://www.npmjs.com/package/@apsc/popper-action" target="_blank">NPM</a>
+    </li>
+    <li>
       <a href="/color">Color</a> &ndash; A set of components for picking and editing colors
       <a href="https://www.npmjs.com/package/@apsc/color" target="_blank">NPM</a>
     </li>

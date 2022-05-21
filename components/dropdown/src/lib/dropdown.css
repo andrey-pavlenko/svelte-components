@@ -1,0 +1,10 @@
+.c-dropdown {
+  position: relative;
+}
+
+.c-dropdown__panel {
+  position: absolute;
+  background-color: white;
+  padding: 1em;
+  border: 1px solid gray;
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@apsc/popper-action",
+  "type": "module",
+  "version": "0.0.1",
+  "types": "index.d.ts",
+  "main": "index.js",
+  "author": "Andrey Pavlenko",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrey-pavlenko/svelte-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrey-pavlenko/svelte-components/issues"
+  },
+  "keywords": [
+    "svelte",
+    "components",
+    "tabs"
+  ],
+  "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
+  "dependencies": {
+    "@popperjs/core": "^2.11.5"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./index.js"
+  }
+}

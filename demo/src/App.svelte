@@ -5,6 +5,7 @@
   import { TabsPage } from './tabs';
   import { GlobNotifyPage } from './glob-notify';
   import { ColorPage } from './color';
+  import { PopperActionPage } from './popper-action';
 
   router.mode.hash();
 </script>
@@ -17,4 +18,5 @@
   <Route path="/tabs"><TabsPage /></Route>
   <Route path="/glob-notify"><GlobNotifyPage /></Route>
   <Route path="/color"><ColorPage /></Route>
+  <Route path="/popper-action"><PopperActionPage /></Route>
 </main>
