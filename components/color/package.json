@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
-    "package": "export NODE_OPTIONS=--no-experimental-fetch pnpm run check && svelte-kit package && cd ../../packages/color && npe devDependencies --delete &&  node ../../documetator/index.js .",
+    "package": "NODE_OPTIONS=--no-experimental-fetch pnpm run check && svelte-kit package && cd ../../packages/color && npe devDependencies --delete &&  node ../../documetator/index.js .",
     "preview": "svelte-kit preview",
     "prepare": "svelte-kit sync",
     "check": "svelte-check --tsconfig ./tsconfig.json",
@@ -40,8 +40,6 @@
     "@sveltejs/kit": "next",
     "@types/jest": "^27.5.0",
     "@types/lodash.debounce": "^4.0.7",
-    "@typescript-eslint/eslint-plugin": "^5.10.1",
-    "@typescript-eslint/parser": "^5.10.1",
     "jest": "^28.1.0",
     "svelte": "^3.44.0",
     "svelte-check": "^2.2.6",

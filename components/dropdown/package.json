@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
-    "package": "export NODE_OPTIONS=--no-experimental-fetch pnpm run check && svelte-kit package && cd ../../packages/dropdown && npe devDependencies --delete &&  node ../../documetator/index.js .",
+    "package": "NODE_OPTIONS=--no-experimental-fetch pnpm run check && svelte-kit package && cd ../../packages/dropdown && npe devDependencies --delete &&  node ../../documetator/index.js .",
     "preview": "svelte-kit preview",
     "prepare": "svelte-kit sync",
     "check": "svelte-check --tsconfig ./tsconfig.json",

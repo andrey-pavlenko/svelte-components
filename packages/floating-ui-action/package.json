@@ -1,0 +1,27 @@
+{
+  "name": "@apsc/floating-ui-action",
+  "version": "0.0.1",
+  "type": "module",
+  "author": "Andrey Pavlenko",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrey-pavlenko/svelte-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrey-pavlenko/svelte-components/issues"
+  },
+  "keywords": [
+    "svelte",
+    "action",
+    "floating-ui"
+  ],
+  "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
+  "dependencies": {
+    "@floating-ui/dom": "^0.5.1"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./index.js"
+  }
+}

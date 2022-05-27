@@ -10,8 +10,8 @@ const config = {
   kit: {
     adapter: adapter(),
     package: {
-      dir: '../../packages/popper-action',
-      exports: (path) => /index\.(js|ts)/i.test(path)
+      dir: '../../packages/floating-ui-action',
+      exports: (path) => /index\.(js|ts)/i.test(path) || /style\.css/i.test(path)
     }
   }
 };

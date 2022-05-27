@@ -1,5 +1,5 @@
 <script lang="ts">
-  import API from '../../../packages/popper-action/README.md?raw';
+  import API from '../../../packages/floating-ui-action/README.md?raw';
   import SvelteMarkdown from 'svelte-markdown';
 </script>
 
