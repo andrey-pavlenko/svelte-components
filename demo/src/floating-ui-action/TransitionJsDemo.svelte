@@ -77,11 +77,11 @@
 
   let transitionFn: (...args: unknown[]) => TransitionConfig;
   const transitionFns: Record<string, (...args: unknown[]) => TransitionConfig> = {
-    none: () => ({ delay: 0, duration: 0 }),
     slide,
     scale,
     fade,
-    blur
+    blur,
+    none: () => ({ delay: 0, duration: 0 })
   };
 </script>
 

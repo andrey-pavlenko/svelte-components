@@ -12,6 +12,7 @@
   "devDependencies": {
     "@apsc/color": "workspace:../packages/color",
     "@apsc/floating-ui-action": "workspace:../packages/floating-ui-action",
+    "@apsc/focus-action": "workspace:../packages/focus-action",
     "@apsc/glob-notify": "workspace:../packages/glob-notify",
     "@apsc/tabs": "workspace:../packages/tabs",
     "@floating-ui/dom": "^0.5.1",

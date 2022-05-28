@@ -1,3 +1,9 @@
+<script lang="ts">
+  const styles = {
+    code: `bg-gray-200 px-1 rounded-sm`
+  };
+</script>
+
 <svelte:head>
   <title>{document.title.replace(/(•).*$/, '$1 Home')}</title>
 </svelte:head>
@@ -15,8 +21,16 @@
     </li>
     <li>
       <a href="/floating-ui-action">Floating UI</a>
-      action for <code>use</code> directive
-      <a href="https://www.npmjs.com/package/@apsc/popper-action" target="_blank">NPM</a>
+      action for directive <code class={styles.code}>use</code>
+      <a href="https://www.npmjs.com/package/@apsc/floating-ui-action" target="_blank">NPM</a>
+    </li>
+    <li>
+      <a href="/focus-action">Action</a> to control
+      <code class={styles.code}>focusin</code>
+      and
+      <code class={styles.code}>focusout</code>
+      for directive <code class={styles.code}>use</code>
+      <a href="https://www.npmjs.com/package/@apsc/focus-action" target="_blank">NPM</a>
     </li>
     <li>
       <a href="/color">Color</a> &ndash; A set of components for picking and editing colors

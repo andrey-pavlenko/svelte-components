@@ -10,7 +10,8 @@ const config = {
   kit: {
     adapter: adapter(),
     package: {
-      dir: '../../packages/dropdown'
+      dir: '../../packages/focus-action',
+      exports: (path) => /index\.(js|ts)/i.test(path) || /style\.css/i.test(path)
     }
   }
 };

@@ -18,7 +18,7 @@
         >@floating-ui/dom</a
       >
     </li>
-    <li><a href="https://www.npmjs.com/package/@apsc/popper-action">NPM</a></li>
+    <li><a href="https://www.npmjs.com/package/@apsc/floating-ui-action">NPM</a></li>
   </ul>
 
   <Tabs>

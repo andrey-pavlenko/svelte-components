@@ -38,7 +38,7 @@ export type FloatingOptions = Partial<
  * <button on:click={() => (show = !show)} use:useReference>Click me</button>
  *
  * @example
- * <div use:useFloat2={{
+ * <div use:useFloat={{
  *  placement: 'bottom',
  *  middleware: [offset(8), flip(), arrow({ element: arrow })],
  *  callback: positionFloat

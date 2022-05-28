@@ -1,9 +1,7 @@
 {
-  "name": "@apsc/popper-action",
-  "type": "module",
+  "name": "@apsc/focus-action",
   "version": "0.0.1",
-  "types": "index.d.ts",
-  "main": "index.js",
+  "type": "module",
   "author": "Andrey Pavlenko",
   "license": "MIT",
   "repository": {
@@ -15,13 +13,10 @@
   },
   "keywords": [
     "svelte",
-    "components",
-    "tabs"
+    "action",
+    "floating-ui"
   ],
   "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
-  "dependencies": {
-    "@popperjs/core": "^2.11.5"
-  },
   "exports": {
     "./package.json": "./package.json",
     ".": "./index.js"

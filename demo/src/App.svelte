@@ -5,7 +5,8 @@
   import { TabsPage } from './tabs';
   import { GlobNotifyPage } from './glob-notify';
   import { ColorPage } from './color';
-  import { PopperActionPage } from './floating-ui-action';
+  import { FloationUiActionPage } from './floating-ui-action';
+  import { FocusActionPage } from './focus-action';
 
   router.mode.hash();
 </script>
@@ -18,5 +19,6 @@
   <Route path="/tabs"><TabsPage /></Route>
   <Route path="/glob-notify"><GlobNotifyPage /></Route>
   <Route path="/color"><ColorPage /></Route>
-  <Route path="/floating-ui-action"><PopperActionPage /></Route>
+  <Route path="/floating-ui-action"><FloationUiActionPage /></Route>
+  <Route path="/focus-action"><FocusActionPage /></Route>
 </main>
