@@ -8,7 +8,7 @@
   export let debounce = 0;
   export let openClass = 'open';
 
-  let open = false;
+  let open = true;
 </script>
 
 <!-- click outside https://svelte.dev/repl/0ace7a508bd843b798ae599940a91783?version=3.16.7 -->

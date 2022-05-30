@@ -1,0 +1,63 @@
+.c-color-edit {
+  --ce-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18.5 16'%3E%3Cpath d='M18.5 16H0L9.25 0Z' fill='currentColor'/%3E%3C/svg%3E");
+  --ce-arrow-size: 0.75em;
+
+  display: flex;
+  align-items: center;
+  column-gap: 0.5em;
+}
+
+.c-color-edit__values {
+  flex: 1 0;
+  display: grid;
+  grid-template-columns: repeat(var(--ce-columns), 1fr);
+  column-gap: 0.5em;
+  align-items: center;
+}
+
+.c-color-edit__values input {
+  appearance: textfield;
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+}
+
+.c-color-edit__values input::-webkit-outer-spin-button,
+.c-color-edit__values input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.c-color-edit__label {
+  text-align: center;
+}
+
+.c-color-edit__buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75em;
+}
+
+.c-color-edit__button--up,
+.c-color-edit__button--down {
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.c-color-edit__button--up::before,
+.c-color-edit__button--down::before {
+  content: var(--ce-arrow);
+  width: var(--ce-arrow-size);
+  height: var(--ce-arrow-size);
+  display: block;
+}
+
+.c-color-edit__button--down::before {
+  transform: rotate(180deg);
+}
