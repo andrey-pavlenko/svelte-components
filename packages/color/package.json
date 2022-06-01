@@ -17,7 +17,7 @@
     "svelte",
     "components",
     "color-picker",
-    "color-input"
+    "color-edit"
   ],
   "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
   "dependencies": {
@@ -25,6 +25,7 @@
   },
   "exports": {
     "./package.json": "./package.json",
+    "./color-edit.css": "./color-edit.css",
     "./color-picker.css": "./color-picker.css",
     ".": "./index.js"
   },

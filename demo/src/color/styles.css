@@ -1,4 +1,4 @@
-.bg-chess {
+/* .bg-chess {
   --bg-chess-size: 0.625em;
   --bg-chess-color1: #fff;
   --bg-chess-color2: #aaa;
@@ -22,4 +22,19 @@
     calc(var(--bg-chess-size) / 2) calc(var(--bg-chess-size) / 2) / var(--bg-chess-size)
     var(--bg-chess-size);
   background: var(--bg-chess1-background), var(--bg-chess2-background);
+} */
+
+.bg-chess {
+  --bg-chess-size: 0.625em;
+  --bg-chess-color1: #fff;
+  --bg-chess-color2: #aaa;
+  --bg-chess-background: repeating-conic-gradient(
+      var(--bg-chess-color1) 0%,
+      var(--bg-chess-color1) 25%,
+      var(--bg-chess-color2) 0%,
+      var(--bg-chess-color2) 50%
+    )
+    repeat 0 0 / var(--bg-chess-size) var(--bg-chess-size);
+
+  background: var(--bg-chess-background);
 }

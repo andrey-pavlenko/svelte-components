@@ -48,7 +48,7 @@ $: ((hvs) => {
 @component
 @order 0
 
-A component for picking a color with transparency. The color value is hexadecimal.
+Component for picking a color with transparency. The color value is hexadecimal.
 
 Dependence: `lodash.debounce`
 

@@ -2,9 +2,9 @@
   import { Tab, TabList, TabPanel, Tabs } from '@apsc/tabs';
   import 'svelte-highlight/styles/atom-one-dark.css';
   import Api from './Api.svelte';
-  import CororPickerExample from './ColorPickerExample.svelte';
-  import NestedExample from './NestedExample.svelte';
-  import QuotesExample from './QuotesExample.svelte';
+  import ColorPickerExample from './ColorPickerExample.svelte';
+  import ColorEditExample from './ColorEditExample.svelte';
+  import ColorInputExample from './ColorInputExample.svelte';
   import './styles.css';
 </script>
 
@@ -29,13 +29,13 @@
   <Tabs>
     <TabList>
       <Tab>API</Tab>
-      <Tab>CororPicker example</Tab>
-      <Tab>Nested Example</Tab>
-      <Tab>Quotes Example</Tab>
+      <Tab>ColorPicker example</Tab>
+      <Tab>ColorEdit example</Tab>
+      <Tab>Color input Example</Tab>
     </TabList>
     <TabPanel><Api /></TabPanel>
-    <TabPanel><CororPickerExample /></TabPanel>
-    <TabPanel><NestedExample /></TabPanel>
-    <TabPanel><QuotesExample /></TabPanel>
+    <TabPanel><ColorPickerExample /></TabPanel>
+    <TabPanel><ColorEditExample /></TabPanel>
+    <TabPanel><ColorInputExample /></TabPanel>
   </Tabs>
 </section>

@@ -1,49 +1,43 @@
-<script lang="ts">
-  import ColorEditHex from './ColorEditHex.svelte';
-  import ColorEditRgba from './ColorEditRgba.svelte';
-  import ColorEditHsla from './ColorEditHsla.svelte';
-  import { tick } from 'svelte';
-
-  let classes = '';
-  /**
-   * Custom CSS class to add to the `c-color-edit` base class for custom styling purposes
-   */
-  export { classes as class };
-
-  /**
-   * Custom styles will be passed to the style attribute
-   */
-  export let style = '';
-
-  /**
-   * Color value. **Reactive**.
-   *
-   * Note! Components only use **hexadecimal** colors e.g. `#000`, `#f1f2f3`.
-   *
-   * Do not use a non-hexadecimal color value such as `red` or `rgb(128,128,128)`. `rgb()` or `hsl()` colors can be pre-converted to hexadecimal using the `rbgToHex` or `hslToHex` functions see [utils.js](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/utils.js).
-   */
-  export let color = '#000';
-
-  const editors = [
+<script>import ColorEditHex from './ColorEditHex.svelte';
+import ColorEditRgba from './ColorEditRgba.svelte';
+import ColorEditHsla from './ColorEditHsla.svelte';
+import { tick } from 'svelte';
+let classes = '';
+/**
+ * Custom CSS class to add to the `c-color-edit` base class for custom styling purposes
+ */
+export { classes as class };
+/**
+ * Custom styles will be passed to the style attribute
+ */
+export let style = '';
+/**
+ * Color value. **Reactive**.
+ *
+ * Note! Components only use **hexadecimal** colors e.g. `#000`, `#f1f2f3`.
+ *
+ * Do not use a non-hexadecimal color value such as `red` or `rgb(128,128,128)`. `rgb()` or `hsl()` colors can be pre-converted to hexadecimal using the `rbgToHex` or `hslToHex` functions see [utils.js](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/utils.js).
+ */
+export let color = '#000';
+const editors = [
     { component: ColorEditHex, labels: ['Hex'] },
     { component: ColorEditRgba, labels: ['R', 'G', 'B', 'A'] },
     { component: ColorEditHsla, labels: ['H', 'S', 'L', 'A'] }
-  ];
-
-  let editor = editors[0];
-  let editorComponent: ColorEditHex | ColorEditRgba | ColorEditHsla | undefined;
-
-  async function nextEditor(step: number) {
+];
+let editor = editors[0];
+let editorComponent;
+async function nextEditor(step) {
     let index = editors.indexOf(editor) + step;
     if (index < 0) {
-      index = editors.length - 1;
-    } else if (index >= editors.length) {
-      index = 0;
+        index = editors.length - 1;
+    }
+    else if (index >= editors.length) {
+        index = 0;
     }
     editor = editors[index];
     await tick();
     editorComponent?.focus();
-  }
+}
 </script>
 
 <!-- 

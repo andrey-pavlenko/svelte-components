@@ -6,7 +6,6 @@
 Includes components:
 
 - `ColorPicker` -- a component for picking a color with transparency
-- `ColorInput` -- like `input type="color"` but with transparency
 - `ColorEdit` -- allow edit color value via input fields
 
 Inspired by:
@@ -31,6 +30,8 @@ pnpm add -D @apsc/color
 
 ## Usage
 
+### ColorPicker
+
 ```tsx
 <script>
   let color='#f00';
@@ -39,3 +40,14 @@ pnpm add -D @apsc/color
 ```
 
 Basic styles are described in the [`color-picker.css`](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/color-picker.css) file.
+
+### ColorEdit
+
+```tsx
+<script>
+  let color='#f00';
+</script>
+<ColorEdit bind:color />
+```
+
+Basic styles are described in the [`color-edit.css`](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/color-edit.css) file.

@@ -14,28 +14,20 @@
   --cp-chess-size: 0.625em;
   --cp-chess-color1: #fff;
   --cp-chess-color2: #aaa;
-  --cp-chess1-background: repeating-linear-gradient(
-      45deg,
-      var(--cp-chess-color2) 25%,
-      transparent 25%,
-      transparent 75%,
-      var(--cp-chess-color2) 75%,
-      var(--cp-chess-color2)
-    )
-    0 0 / var(--cp-chess-size) var(--cp-chess-size);
-  --cp-chess2-background: repeating-linear-gradient(
-      45deg,
-      var(--cp-chess-color2) 25%,
+
+  --cp-chess-background: repeating-conic-gradient(
+      var(--cp-chess-color1) 0%,
       var(--cp-chess-color1) 25%,
-      var(--cp-chess-color1) 75%,
-      var(--cp-chess-color2) 75%,
-      var(--cp-chess-color2)
+      var(--cp-chess-color2) 0%,
+      var(--cp-chess-color2) 50%
     )
-    calc(var(--cp-chess-size) / 2) calc(var(--cp-chess-size) / 2) / var(--cp-chess-size)
-    var(--cp-chess-size);
+    repeat 0 0 / var(--cp-chess-size) var(--cp-chess-size);
+
   --cp-marker-size: 1.25em;
+  --cp-track-size: 0.75em;
   --cp-marker-border: 2px solid white;
   --cp-marker-shadow: 0 0 3px rgba(0, 0, 0, 0.75);
+  --cp-sample-size: 3em;
 }
 
 .c-color-picker__body {
@@ -49,7 +41,6 @@
 
 .c-color-picker__tone {
   margin: 0;
-  /* outline: none; */
   background-color: var(--cp-tone);
   cursor: crosshair;
   grid-column: span 2;
@@ -82,8 +73,9 @@
 
 .c-color-picker__sample {
   grid-row: span 2;
-  height: 100%;
-  width: 3em;
+  height: var(--cp-sample-size);
+  width: var(--cp-sample-size);
+  align-self: center;
   position: relative;
 }
 
@@ -96,8 +88,14 @@
   top: 50%;
   transform: translateY(-50%);
   border-radius: 100%;
-  background: linear-gradient(0deg, var(--cp-color), var(--cp-color)), var(--cp-chess1-background),
-    var(--cp-chess2-background);
+  background: linear-gradient(0deg, var(--cp-color), var(--cp-color)), var(--cp-chess-background);
+}
+
+.c-color-picker__hue,
+.c-color-picker__alpha {
+  height: calc(var(--cp-marker-size) * 1.25);
+  display: inline-flex;
+  align-items: center;
 }
 
 .c-color-picker__hue input[type='range'],
@@ -112,13 +110,13 @@
 
 .c-color-picker__hue input[type='range']::-webkit-slider-runnable-track,
 .c-color-picker__alpha input[type='range']::-webkit-slider-runnable-track {
-  height: calc(var(--cp-marker-size) / 2);
+  height: var(--cp-track-size);
   border-radius: var(--cp-marker-size);
 }
 
 .c-color-picker__hue input[type='range']::-moz-range-track,
 .c-color-picker__alpha input[type='range']::-moz-range-track {
-  height: calc(var(--cp-marker-size) / 2);
+  height: var(--cp-track-size);
   border-radius: var(--cp-marker-size);
 }
 
@@ -131,13 +129,11 @@
 }
 
 .c-color-picker__alpha input[type='range']::-webkit-slider-runnable-track {
-  background: var(--cp-color-alpha-background), var(--cp-chess1-background),
-    var(--cp-chess2-background);
+  background: var(--cp-color-alpha-background), var(--cp-chess-background);
 }
 
 .c-color-picker__alpha input[type='range']::-moz-range-track {
-  background: var(--cp-color-alpha-background), var(--cp-chess1-background),
-    var(--cp-chess2-background);
+  background: var(--cp-color-alpha-background), var(--cp-chess-background);
 }
 
 .c-color-picker__hue input[type='range']::-webkit-slider-thumb,

@@ -1,57 +1,48 @@
-<script lang="ts">
-  import { hexToHsl, hslToHex } from './utils';
-
-  let classes = '';
-  /**
-   * Custom CSS class to add to the `c-coloredit__input--number` base class for custom styling purposes
-   */
-  export { classes as class };
-
-  /**
-   * Color value. **Reactive**.
-   *
-   * Note! Components only use **hexadecimal** colors e.g. `#000`, `#f1f2f3`.
-   */
-  export let color = '#000';
-
-  let h: number;
-  let s: number;
-  let l: number;
-  let a: number;
-
-  function inputColor(color: string) {
+<script>import { hexToHsl, hslToHex } from './utils';
+let classes = '';
+/**
+ * Custom CSS class to add to the `c-coloredit__input--number` base class for custom styling purposes
+ */
+export { classes as class };
+/**
+ * Color value. **Reactive**.
+ *
+ * Note! Components only use **hexadecimal** colors e.g. `#000`, `#f1f2f3`.
+ */
+export let color = '#000';
+let h;
+let s;
+let l;
+let a;
+function inputColor(color) {
     try {
-      const hsl = hexToHsl(color);
-      h = hsl.h;
-      s = hsl.s;
-      l = hsl.l;
-      a = hsl.a ?? 1;
-    } catch (_) {
-      h = NaN;
-      s = NaN;
-      l = NaN;
-      a = NaN;
+        const hsl = hexToHsl(color);
+        h = hsl.h;
+        s = hsl.s;
+        l = hsl.l;
+        a = hsl.a ?? 1;
     }
-  }
-
-  $: inputColor(color);
-
-  function outputColor(h: number, s: number, l: number, a: number) {
+    catch (_) {
+        h = NaN;
+        s = NaN;
+        l = NaN;
+        a = NaN;
+    }
+}
+$: inputColor(color);
+function outputColor(h, s, l, a) {
     if ([h, s, l, a ?? 1].every((num) => Number.isFinite(num))) {
-      color = hslToHex({ h, s, l, a });
+        color = hslToHex({ h, s, l, a });
     }
-  }
-
-  $: outputColor(h, s, l, a);
-
-  let input: HTMLInputElement | undefined = undefined;
-
-  /**
-   * Focuses the first input element
-   */
-  export function focus(): void {
+}
+$: outputColor(h, s, l, a);
+let input = undefined;
+/**
+ * Focuses the first input element
+ */
+export function focus() {
     input?.focus();
-  }
+}
 </script>
 
 <!-- 
