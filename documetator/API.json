@@ -1,14 +1,14 @@
 {
-  "total": 5,
+  "total": 4,
   "components": [
     {
-      "moduleName": "ColorEdit",
-      "filePath": "ColorEdit.svelte",
+      "moduleName": "Tab",
+      "filePath": "Tab.svelte",
       "props": [
         {
           "name": "class",
           "kind": "let",
-          "description": "Custom CSS class to add to the `c-color-edit` base class for custom styling purposes",
+          "description": "Custom CSS class to add to the `c-tabs__tab` base class for custom styling purposes",
           "type": "string",
           "value": "''",
           "isFunction": false,
@@ -18,11 +18,10 @@
           "reactive": false
         },
         {
-          "name": "style",
+          "name": "selectedClass",
           "kind": "let",
-          "description": "Custom styles will be passed to the style attribute",
+          "description": "The CSS class that will be added when `Tab` becomes selected. *Default value from `Tabs.selectedTabClass`*",
           "type": "string",
-          "value": "''",
           "isFunction": false,
           "isFunctionDeclaration": false,
           "isRequired": false,
@@ -30,32 +29,37 @@
           "reactive": false
         },
         {
-          "name": "color",
+          "name": "disabled",
           "kind": "let",
-          "description": "Color value. **Reactive**.\n\nNote! Components only use **hexadecimal** colors e.g. `#000`, `#f1f2f3`.\n\nDo not use a non-hexadecimal color value such as `red` or `rgb(128,128,128)`. `rgb()` or `hsl()` colors can be pre-converted to hexadecimal using the `rbgToHex` or `hslToHex` functions see [utils.js](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/utils.js).",
-          "type": "string",
-          "value": "'#000'",
+          "description": "Disable `Tab` for pointer, but it's possible to select tab by function `Tabs.selectTab(index)`. *Default `undefined`*",
+          "type": "boolean | undefined",
           "isFunction": false,
           "isFunctionDeclaration": false,
           "isRequired": false,
           "constant": false,
-          "reactive": true
+          "reactive": false
         }
       ],
       "moduleExports": [],
-      "slots": [],
+      "slots": [
+        {
+          "name": "__default__",
+          "default": true,
+          "slot_props": "{ index: number; id: symbol; isActive: boolean }"
+        }
+      ],
       "events": [],
       "typedefs": [],
-      "componentComment": "\n@order 10\n\nComponent for editing numeric values or a hexadecimal color string.\n\nContains buttons for switching editing modes: hex, rgba, hsla.\n\n\n```tsx\n<script>\n  let color='#f00';\n</script>\n<ColorEdit bind:color />\n```\n\nBasic styles are described in the  <a href=\"https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/color-edit.css\" target=\"_blank\">`color-edit.css`</a> file."
+      "componentComment": "\nThis is a child component for `TabList`\n@order 20\n\n```tsx\n<Tab>A</Tab>\n```"
     },
     {
-      "moduleName": "ColorEditHex",
-      "filePath": "ColorEditHex.svelte",
+      "moduleName": "TabList",
+      "filePath": "List.svelte",
       "props": [
         {
           "name": "class",
           "kind": "let",
-          "description": "Custom CSS class to add to the `c-coloredit__input--text` base class for custom styling purposes",
+          "description": "Custom CSS class to add to the `c-tabs__tablist` base class for custom styling purposes",
           "type": "string",
           "value": "''",
           "isFunction": false,
@@ -63,46 +67,22 @@
           "isRequired": false,
           "constant": false,
           "reactive": false
-        },
-        {
-          "name": "color",
-          "kind": "let",
-          "description": "Color value. **Reactive**.\n\nNote! Components only use **hexadecimal** colors e.g. `#000`, `#f1f2f3`.",
-          "type": "string",
-          "value": "'#000'",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "isRequired": false,
-          "constant": false,
-          "reactive": true
-        },
-        {
-          "name": "focus",
-          "kind": "function",
-          "description": "Focuses the input element",
-          "type": "() => any",
-          "value": "() => {     input?.focus(); }",
-          "isFunction": true,
-          "isFunctionDeclaration": true,
-          "isRequired": false,
-          "constant": false,
-          "reactive": false
         }
       ],
       "moduleExports": [],
-      "slots": [],
+      "slots": [{ "name": "__default__", "default": true, "slot_props": "{}" }],
       "events": [],
       "typedefs": [],
-      "componentComment": "\n@order 90\n\nComponent for editing a hexadecimal color string. Used in the `ColorEdit` component.\n\n```tsx\n<script>\n  let color='#f00';\n</script>\n<ColorEditHex bind:color />\n```"
+      "componentComment": "\n@order 10\nThis is a child component for `Tabs` and a container for many `Tab` components\n\n```tsx\n<TabList>\n  <Tab>A</Tab>\n  <Tab>B</Tab>\n</TabList>\n```"
     },
     {
-      "moduleName": "ColorEditHsla",
-      "filePath": "ColorEditHsla.svelte",
+      "moduleName": "TabPanel",
+      "filePath": "Panel.svelte",
       "props": [
         {
           "name": "class",
           "kind": "let",
-          "description": "Custom CSS class to add to the `c-coloredit__input--number` base class for custom styling purposes",
+          "description": "Custom CSS class to add to the `c-tabs__tabpanel` base class for custom styling purposes",
           "type": "string",
           "value": "''",
           "isFunction": false,
@@ -112,44 +92,37 @@
           "reactive": false
         },
         {
-          "name": "color",
+          "name": "hiddenClass",
           "kind": "let",
-          "description": "Color value. **Reactive**.\n\nNote! Components only use **hexadecimal** colors e.g. `#000`, `#f1f2f3`.",
+          "description": "The CSS class that will be added when `TabPanel` becomes **unselected**. *Default value from `Tabs.hiddenPanelClass`*",
           "type": "string",
-          "value": "'#000'",
           "isFunction": false,
           "isFunctionDeclaration": false,
-          "isRequired": false,
-          "constant": false,
-          "reactive": true
-        },
-        {
-          "name": "focus",
-          "kind": "function",
-          "description": "Focuses the first input element",
-          "type": "() => any",
-          "value": "() => {     input?.focus(); }",
-          "isFunction": true,
-          "isFunctionDeclaration": true,
           "isRequired": false,
           "constant": false,
           "reactive": false
         }
       ],
       "moduleExports": [],
-      "slots": [],
+      "slots": [
+        {
+          "name": "__default__",
+          "default": true,
+          "slot_props": "{ index: number; tabId: symbol; id: symbol; isActive: boolean }"
+        }
+      ],
       "events": [],
       "typedefs": [],
-      "componentComment": "\n@order 99\n\nComponent for editing hsla color value. Used in the `ColorEdit` component.\n\n```tsx\n<script>\n  let color='#f00';\n</script>\n<ColorEditHsla bind:color />\n```"
+      "componentComment": "\n@order 30\nThis is a child component for `Tabs` and a container for tab body\n\n```tsx\n<Tabs>\n  <TabList><Tab>A</Tab><Tab>B</Tab></TabList>\n  <TabPanel>A</TabPanel>\n  <TabPanel>B</TabPanel>\n</Tabs>\n```"
     },
     {
-      "moduleName": "ColorEditRgba",
-      "filePath": "ColorEditRgba.svelte",
+      "moduleName": "Tabs",
+      "filePath": "Tabs.svelte",
       "props": [
         {
           "name": "class",
           "kind": "let",
-          "description": "Custom CSS class to add to the `c-coloredit__input--number` base class for custom styling purposes",
+          "description": "Custom CSS class to add to the `c-tabs` base class for custom styling purposes",
           "type": "string",
           "value": "''",
           "isFunction": false,
@@ -159,94 +132,69 @@
           "reactive": false
         },
         {
-          "name": "color",
+          "name": "selectedTabClass",
           "kind": "let",
-          "description": "Color value. **Reactive**.\n\nNote! Components only use **hexadecimal** colors e.g. `#000`, `#f1f2f3`.",
+          "description": "The CSS class that will be added to the child `Tab` component when it becomes selected",
           "type": "string",
-          "value": "'#000'",
+          "value": "'active'",
           "isFunction": false,
           "isFunctionDeclaration": false,
           "isRequired": false,
           "constant": false,
-          "reactive": true
+          "reactive": false
         },
         {
-          "name": "focus",
-          "kind": "function",
-          "description": "Focuses the first input element",
-          "type": "() => any",
-          "value": "() => {     input?.focus(); }",
-          "isFunction": true,
-          "isFunctionDeclaration": true,
+          "name": "hiddenPanelClass",
+          "kind": "let",
+          "description": "The CSS class for the **unselected** TabPanel. Applies when `mode = hide`. More in the `mode` prop",
+          "type": "string",
+          "value": "''",
+          "isFunction": false,
+          "isFunctionDeclaration": false,
           "isRequired": false,
           "constant": false,
+          "reactive": false
+        },
+        {
+          "name": "mode",
+          "kind": "let",
+          "description": "`TabPanel` hiding and showing mode.\n\n`remove`: The panel will be removed from the DOM.\n`hide`: the panel will be hidden by the style from the `hiddenPanelClass` CSS class, or if `hiddenPanelClass` is not specified with the style `display: none`",
+          "type": "\"remove\" | \"hide\"",
+          "value": "'hide'",
+          "isFunction": false,
+          "isFunctionDeclaration": false,
+          "isRequired": false,
+          "constant": false,
+          "reactive": false
+        },
+        {
+          "name": "selectedIndex",
+          "kind": "const",
+          "description": "Index of selected `Tab` component\n```js\nlet selectedIndex;\ntabsRef.selectedIndex.subscrive(\n  (index) => selectedIndex = index\n);\n```\n```js\nlet selectedIndex = tabsRef.selectedIndex;\n$: if ($selectedIndex === 0) {\n  console.log('First tab selected');\n}\n```",
+          "type": "Readable<number>",
+          "isFunction": false,
+          "isFunctionDeclaration": false,
+          "isRequired": false,
+          "constant": true,
+          "reactive": false
+        },
+        {
+          "name": "selectTab",
+          "kind": "const",
+          "description": "Select `Tab` component by index. Allows arguments for `Array.prototype.at(number)`\n```js\n// Select first Tab\ntabsRef.selectTab(0);\n// Select last Tab\ntabsRef.selectTab(-1);\n```",
+          "type": "(number) => void",
+          "isFunction": false,
+          "isFunctionDeclaration": false,
+          "isRequired": false,
+          "constant": true,
           "reactive": false
         }
       ],
       "moduleExports": [],
-      "slots": [],
+      "slots": [{ "name": "__default__", "default": true, "slot_props": "{}" }],
       "events": [],
       "typedefs": [],
-      "componentComment": "\n@order 98\n\nComponent for editing rgba color value. Used in the `ColorEdit` component.\n\n```tsx\n<script>\n  let color='#f00';\n</script>\n<ColorEditHsla bind:color />\n```"
-    },
-    {
-      "moduleName": "ColorPicker",
-      "filePath": "ColorPicker.svelte",
-      "props": [
-        {
-          "name": "class",
-          "kind": "let",
-          "description": "Custom CSS class to add to the `c-color-picker` base class for custom styling purposes",
-          "type": "string",
-          "value": "''",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "isRequired": false,
-          "constant": false,
-          "reactive": false
-        },
-        {
-          "name": "style",
-          "kind": "let",
-          "description": "Custom styles will be passed to the `style` attribute",
-          "type": "string",
-          "value": "''",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "isRequired": false,
-          "constant": false,
-          "reactive": false
-        },
-        {
-          "name": "color",
-          "kind": "let",
-          "description": "Color value. **Reactive**.\n\nNote! Components only use **hexadecimal** colors e.g. `#000`, `#f1f2f3`.\n\nDo not use a non-hexadecimal color value such as `red` or `rgb(128,128,128)`. `rgb()` or `hsl()` colors can be pre-converted to hexadecimal using the `rbgToHex` or `hslToHex` functions see [utils.js](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/utils.js).",
-          "type": "string",
-          "value": "'#000'",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "isRequired": false,
-          "constant": false,
-          "reactive": true
-        },
-        {
-          "name": "debounce",
-          "kind": "let",
-          "description": "Color value update debounce interval",
-          "type": "number",
-          "value": "0",
-          "isFunction": false,
-          "isFunctionDeclaration": false,
-          "isRequired": false,
-          "constant": false,
-          "reactive": false
-        }
-      ],
-      "moduleExports": [],
-      "slots": [],
-      "events": [],
-      "typedefs": [],
-      "componentComment": "\n@order 0\n\nComponent for picking a color with transparency. The color value is hexadecimal.\n\nDependence: `lodash.debounce`\n\nInspired by:\n- [svelte-awesome-color-picker](https://svelte-awesome-color-picker.vercel.app/)\n- [svelte-color-picker](https://github.com/efeskucuk/svelte-color-picker)\n- [Coloris](https://github.com/mdbassit/Coloris)\n\n```tsx\n<script>\n  let color='#f00';\n</script>\n<ColorPicker bind:color />\n```\n\nBasic styles are described in the <a href=\"https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/color-picker.css\" target=\"_blank\">`color-picker.css`</a> file.\n\n**Note!** Specify the height of the `ColorPicker` component using the `class` or `style` attributes."
+      "componentComment": "\n@order 0\nThis is the root component. It's a container for one `TabList` and many `TabPanel`\n```tsx\n<Tabs>\n  <TabList>\n    <Tab>A</Tab>\n    <Tab>B</Tab>\n  </TabList>\n  <TabPanel>A</TabPanel>\n  <TabPanel>B</TabPanel>\n</Tabs>\n```\n\nChild components of `Tabs` have access to the context by `contextName`\n```ts\nexport type TabId = symbol;\nexport type PanelId = symbol;\nexport type TabsMode = 'remove' | 'hide';\nexport interface TabsContext {\n\tmode: TabsMode;\n\tregisterTab: () => TabId;\n\tregisterPanel: () => PanelId;\n\tselectTab: (tab: TabId | number) => void;\n\tselectedTab: Writable<symbol | null>;\n\tselectedPanel: Writable<symbol | null>;\n\tselectedIndex: Readable<number>;\n\tselectedTabClass: string;\n\thiddenPanelClass: string;\n}\nexport const contextName = Symbol('TABS');\n```\n\nBasic styles are described in the <a href=\"https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/tabs/style.css\" target=\"_blank\">`style.css`</a> file."
     }
   ]
 }
