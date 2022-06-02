@@ -46,6 +46,10 @@
       }
     }
   })($selectedPanel === id);
+
+  /**
+   *  @slot {{ index: number; tabId: symbol; id: symbol; isActive: boolean }}
+   */
 </script>
 
 <!--
@@ -67,6 +71,11 @@ This is a child component for `Tabs` and a container for tab body
     class={['c-tabs__tabpanel', classes, _hiddenClass].filter((s) => !!s).join(' ')}
     style={_style}
   >
-    <slot index={$selectedIndex} tabId={$selectedTab} panelId={id} />
+    <slot
+      index={$selectedIndex}
+      tabId={$selectedTab}
+      panelId={id}
+      isActive={$selectedPanel === id}
+    />
   </div>
 {/if}

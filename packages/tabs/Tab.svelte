@@ -19,6 +19,9 @@ export let selectedClass = selectedTabClass;
  */
 export let disabled = undefined;
 const id = registerTab();
+/**
+ *  @slot {{ index: number; id: symbol; isActive: boolean }}
+ */
 </script>
 
 <!--
@@ -37,5 +40,5 @@ This is a child component for `TabList`
   {disabled}
   on:click={() => selectTab(id)}
 >
-  <slot index={$selectedIndex} {id} />
+  <slot index={$selectedIndex} {id} isActive={$selectedTab === id} />
 </button>

@@ -38,7 +38,7 @@ export declare type ColorEditSlots = typeof __propDef.slots;
  * <ColorEdit bind:color />
  * ```
  *
- * Basic styles are described in the [`color-edit.css`](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/color-edit.css) file.
+ * Basic styles are described in the  <a href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/color-edit.css" target="_blank">`color-edit.css`</a> file.
  */
 export default class ColorEdit extends SvelteComponentTyped<ColorEditProps, ColorEditEvents, ColorEditSlots> {
 }

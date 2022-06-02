@@ -75,7 +75,10 @@
 
 <section class="prose max-w-none my-4">
   <div class="mb-4 text-center">
-    Thanks to the authors of <a target="_blank" href="https://github.com/skolakoda">Škola koda</a>
+    Example of vertical tab layout. Thanks to the authors of <a
+      target="_blank"
+      href="https://github.com/skolakoda">Škola koda</a
+    >
     for the useful and convenient
     <a target="_blank" href="https://github.com/skolakoda/programming-quotes-api">API</a>
   </div>

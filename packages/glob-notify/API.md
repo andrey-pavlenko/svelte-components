@@ -24,34 +24,7 @@
 &lt;h1&gt;Welcome to MyApp&lt;/h1&gt;
 &lt;button on:click={handleNotify}&gt;Notify&lt;/button&gt;
 </code></pre>
-<p>The selectors used are in simple styles in <code>style.css</code></p>
-<pre><code class="language-css">.c-notifications {
-  position: fixed;
-  padding: 0.5rem 1rem;
-  width: 50vw;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
-.c-notifications__item {
-  background-color: silver;
-  margin: 0.5rem 0;
-  padding: 1rem;
-  display: flex;
-}
-.c-notifications__item__message {
-  flex-grow: 1;
-}
-.c-notifications__item__close {
-  font-size: 2rem;
-  line-height: 1.25rem;
-  cursor: default;
-}
-.c-notifications__item__close::before {
-  content: &#39;\00D7&#39;;
-}
-</code></pre>
-<p>There is also a <a href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/bootstrap-like.css"><code>bootstrap-like.css</code></a> style set.</p>
+<p>The package exports two style sheets: <a href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/style.css" target="_blank"><code>style.css</code></a> and <a href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/bootstrap-like.css" target="_blank"><code>bootstrap-like.css</code></a>.</p>
 </div>
 <h2 class="component-tbl-header">Typedefs</h2><table><tr><th>Name</th><th>Type</th></tr><tr><td class="typedef__name">NotificationData</td>
 <td class="typedef__type"><pre><code>{

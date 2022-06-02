@@ -127,36 +127,7 @@ You can subscribe to changes in the store, and append and remove notifications a
 <button on:click={handleNotify}>Notify</button>
 ```
 
-The selectors used are in simple styles in `style.css`
-```css
-.c-notifications {
-  position: fixed;
-  padding: 0.5rem 1rem;
-  width: 50vw;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
-.c-notifications__item {
-  background-color: silver;
-  margin: 0.5rem 0;
-  padding: 1rem;
-  display: flex;
-}
-.c-notifications__item__message {
-  flex-grow: 1;
-}
-.c-notifications__item__close {
-  font-size: 2rem;
-  line-height: 1.25rem;
-  cursor: default;
-}
-.c-notifications__item__close::before {
-  content: '\00D7';
-}
-```
-
-There is also a [`bootstrap-like.css`](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/bootstrap-like.css) style set.
+The package exports two style sheets: <a href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/style.css" target="_blank">`style.css`</a> and <a href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/bootstrap-like.css" target="_blank">`bootstrap-like.css`</a>.
  -->
 
 <div class={'c-notifications' + (classes ? ' ' + classes : '')} style={style || undefined}>

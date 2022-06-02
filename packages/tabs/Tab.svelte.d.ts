@@ -22,6 +22,7 @@ declare const __propDef: {
         default: {
             index: number;
             id: symbol;
+            isActive: boolean;
         };
     };
 };

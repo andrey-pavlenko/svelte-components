@@ -43,7 +43,9 @@
     {/if}
   </Tabs>
 
-  <div class="flex items-center gap-4">
+  <div class="py-2 border-t text-center text-gray-500">Use these controls to operate tabs.</div>
+
+  <div class="flex items-center place-content-center gap-4">
     <label><input type="checkbox" bind:checked={show4} /> Fourth</label>
     <label><input type="checkbox" bind:checked={show5} /> Fifth</label>
     <label><input type="checkbox" bind:checked={disable3} /> Disable Third</label>

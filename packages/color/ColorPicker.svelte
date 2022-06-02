@@ -64,7 +64,7 @@ Inspired by:
 <ColorPicker bind:color />
 ```
 
-Basic styles are described in the [`color-picker.css`](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/color-picker.css) file.
+Basic styles are described in the <a href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/color-picker.css" target="_blank">`color-picker.css`</a> file.
 
 **Note!** Specify the height of the `ColorPicker` component using the `class` or `style` attributes.
 -->

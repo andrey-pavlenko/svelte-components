@@ -110,27 +110,7 @@ export interface TabsContext {
 export const contextName = Symbol('TABS');
 ```
 
-Simple style. Source `style.css`
-```css
-.c-tabs__tablist {
-  display: flex;
-  border-bottom: 2px solid silver;
-  margin-bottom: 1em;
-}
-.c-tabs__tab {
-  box-sizing: border-box;
-  border: none;
-  background-color: transparent;
-  font-size: 1.25em;
-  padding: 0.25em 0.5em;
-  position: relative;
-  top: 3px;
-}
-.c-tabs__tab.active {
-  background-color: silver;
-  border-bottom: 4px solid gray;
-}
-```
+Basic styles are described in the <a href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/tabs/style.css" target="_blank">`style.css`</a> file.
 -->
 
 <div class={'c-tabs' + (classes ? ' ' + classes : '')}>

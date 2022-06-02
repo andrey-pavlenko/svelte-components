@@ -13,6 +13,7 @@
           "value": "''",
           "isFunction": false,
           "isFunctionDeclaration": false,
+          "isRequired": false,
           "constant": false,
           "reactive": false
         },
@@ -24,6 +25,7 @@
           "value": "''",
           "isFunction": false,
           "isFunctionDeclaration": false,
+          "isRequired": false,
           "constant": false,
           "reactive": false
         },
@@ -35,6 +37,7 @@
           "value": "'#000'",
           "isFunction": false,
           "isFunctionDeclaration": false,
+          "isRequired": false,
           "constant": false,
           "reactive": true
         }
@@ -43,7 +46,7 @@
       "slots": [],
       "events": [],
       "typedefs": [],
-      "componentComment": "\n@order 10\n\nComponent for editing numeric values or a hexadecimal color string.\n\nContains buttons for switching editing modes: hex, rgba, hsla.\n\n\n```tsx\n<script>\n  let color='#f00';\n</script>\n<ColorEdit bind:color />\n```\n\nBasic styles are described in the [`color-edit.css`](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/color-edit.css) file."
+      "componentComment": "\n@order 10\n\nComponent for editing numeric values or a hexadecimal color string.\n\nContains buttons for switching editing modes: hex, rgba, hsla.\n\n\n```tsx\n<script>\n  let color='#f00';\n</script>\n<ColorEdit bind:color />\n```\n\nBasic styles are described in the  <a href=\"https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/color-edit.css\" target=\"_blank\">`color-edit.css`</a> file."
     },
     {
       "moduleName": "ColorEditHex",
@@ -57,6 +60,7 @@
           "value": "''",
           "isFunction": false,
           "isFunctionDeclaration": false,
+          "isRequired": false,
           "constant": false,
           "reactive": false
         },
@@ -68,6 +72,7 @@
           "value": "'#000'",
           "isFunction": false,
           "isFunctionDeclaration": false,
+          "isRequired": false,
           "constant": false,
           "reactive": true
         },
@@ -79,6 +84,7 @@
           "value": "() => {     input?.focus(); }",
           "isFunction": true,
           "isFunctionDeclaration": true,
+          "isRequired": false,
           "constant": false,
           "reactive": false
         }
@@ -101,6 +107,7 @@
           "value": "''",
           "isFunction": false,
           "isFunctionDeclaration": false,
+          "isRequired": false,
           "constant": false,
           "reactive": false
         },
@@ -112,6 +119,7 @@
           "value": "'#000'",
           "isFunction": false,
           "isFunctionDeclaration": false,
+          "isRequired": false,
           "constant": false,
           "reactive": true
         },
@@ -123,6 +131,7 @@
           "value": "() => {     input?.focus(); }",
           "isFunction": true,
           "isFunctionDeclaration": true,
+          "isRequired": false,
           "constant": false,
           "reactive": false
         }
@@ -145,6 +154,7 @@
           "value": "''",
           "isFunction": false,
           "isFunctionDeclaration": false,
+          "isRequired": false,
           "constant": false,
           "reactive": false
         },
@@ -156,6 +166,7 @@
           "value": "'#000'",
           "isFunction": false,
           "isFunctionDeclaration": false,
+          "isRequired": false,
           "constant": false,
           "reactive": true
         },
@@ -167,6 +178,7 @@
           "value": "() => {     input?.focus(); }",
           "isFunction": true,
           "isFunctionDeclaration": true,
+          "isRequired": false,
           "constant": false,
           "reactive": false
         }
@@ -189,6 +201,7 @@
           "value": "''",
           "isFunction": false,
           "isFunctionDeclaration": false,
+          "isRequired": false,
           "constant": false,
           "reactive": false
         },
@@ -200,6 +213,7 @@
           "value": "''",
           "isFunction": false,
           "isFunctionDeclaration": false,
+          "isRequired": false,
           "constant": false,
           "reactive": false
         },
@@ -211,6 +225,7 @@
           "value": "'#000'",
           "isFunction": false,
           "isFunctionDeclaration": false,
+          "isRequired": false,
           "constant": false,
           "reactive": true
         },
@@ -222,6 +237,7 @@
           "value": "0",
           "isFunction": false,
           "isFunctionDeclaration": false,
+          "isRequired": false,
           "constant": false,
           "reactive": false
         }
@@ -230,7 +246,7 @@
       "slots": [],
       "events": [],
       "typedefs": [],
-      "componentComment": "\n@order 0\n\nComponent for picking a color with transparency. The color value is hexadecimal.\n\nDependence: `lodash.debounce`\n\nInspired by:\n- [svelte-awesome-color-picker](https://svelte-awesome-color-picker.vercel.app/)\n- [svelte-color-picker](https://github.com/efeskucuk/svelte-color-picker)\n- [Coloris](https://github.com/mdbassit/Coloris)\n\n```tsx\n<script>\n  let color='#f00';\n</script>\n<ColorPicker bind:color />\n```\n\nBasic styles are described in the [`color-picker.css`](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/color-picker.css) file.\n\n**Note!** Specify the height of the `ColorPicker` component using the `class` or `style` attributes."
+      "componentComment": "\n@order 0\n\nComponent for picking a color with transparency. The color value is hexadecimal.\n\nDependence: `lodash.debounce`\n\nInspired by:\n- [svelte-awesome-color-picker](https://svelte-awesome-color-picker.vercel.app/)\n- [svelte-color-picker](https://github.com/efeskucuk/svelte-color-picker)\n- [Coloris](https://github.com/mdbassit/Coloris)\n\n```tsx\n<script>\n  let color='#f00';\n</script>\n<ColorPicker bind:color />\n```\n\nBasic styles are described in the <a href=\"https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/color-picker.css\" target=\"_blank\">`color-picker.css`</a> file.\n\n**Note!** Specify the height of the `ColorPicker` component using the `class` or `style` attributes."
     }
   ]
 }

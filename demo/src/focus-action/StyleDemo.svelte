@@ -9,6 +9,9 @@
 </script>
 
 <section class="prose max-w-none my-4">
+  <div class="mb-8 pb-2 border-b text-center text-gray-500">
+    This example highlights a focused fieldset.
+  </div>
   <div class="form">
     <div class="basis-1/2">
       <fieldset

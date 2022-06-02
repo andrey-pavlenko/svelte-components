@@ -10,9 +10,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
   "dependencies": {
-    "marked": "^4.0.15",
-    "sveld": "^0.15.0"
+    "marked": "^4.0.16",
+    "sveld": "^0.17.0"
   }
 }

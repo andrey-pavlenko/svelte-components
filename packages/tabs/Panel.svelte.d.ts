@@ -18,6 +18,7 @@ declare const __propDef: {
             index: number;
             tabId: symbol | null;
             panelId: symbol;
+            isActive: boolean;
         };
     };
 };

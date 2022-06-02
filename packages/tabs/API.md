@@ -27,26 +27,7 @@ export interface TabsContext {
 }
 export const contextName = Symbol(&#39;TABS&#39;);
 </code></pre>
-<p>Simple style. Source <code>style.css</code></p>
-<pre><code class="language-css">.c-tabs__tablist {
-  display: flex;
-  border-bottom: 2px solid silver;
-  margin-bottom: 1em;
-}
-.c-tabs__tab {
-  box-sizing: border-box;
-  border: none;
-  background-color: transparent;
-  font-size: 1.25em;
-  padding: 0.25em 0.5em;
-  position: relative;
-  top: 3px;
-}
-.c-tabs__tab.active {
-  background-color: silver;
-  border-bottom: 4px solid gray;
-}
-</code></pre>
+<p>Basic styles are described in the <a href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/tabs/style.css" target="_blank"><code>style.css</code></a> file.</p>
 </div>
 <h2 class="component-tbl-header">Props</h2><table><tr><th>Prop nane</th><th>Type</th><th>Default value</th><th>Description</th></tr><tr><td class="prop__name">class</td>
 <td class="prop__type"><code>string</code></td>
@@ -66,8 +47,7 @@ export const contextName = Symbol(&#39;TABS&#39;);
 <tr><td class="prop__name">mode</td>
 <td class="prop__type"><code>"remove" | "hide"</code></td>
 <td class="prop__value"><code>'hide'</code></td>
-<td class="prop__description"><p><code>TabPanel</code> hiding and showing mode.
-<code>remove</code>: The panel will be removed from the DOM.
+<td class="prop__description"><p><code>TabPanel</code> hiding and showing mode.<br /><code>remove</code>: The panel will be removed from the DOM.
 <code>hide</code>: the panel will be hidden by the style from the <code>hiddenPanelClass</code> CSS class, or if <code>hiddenPanelClass</code> is not specified with the style <code>display: none</code></p>
 </td></tr>
 <tr><td class="prop__name">selectedIndex</td>
@@ -140,7 +120,7 @@ tabsRef.selectTab(-1);
 </td></tr></table>
 <h2 class="component-tbl-header">Slots</h2><table><tr><th>Slot name</th><th>Default</th><th>Props</th></tr><tr><td class="slot__name">__default__</td>
 <td class="slot__default"><code>true</code></td>
-<td class="slot__props"><code>{ index: any, id: any }</code></td></tr></table>
+<td class="slot__props"><code>{ index: number; id: symbol; isActive: boolean }</code></td></tr></table>
 <hr>
 <div class="component__source">Source <code>Panel.svelte</code></div>
 <h1 class="component__name">TabPanel</h1>
@@ -164,4 +144,4 @@ tabsRef.selectTab(-1);
 </td></tr></table>
 <h2 class="component-tbl-header">Slots</h2><table><tr><th>Slot name</th><th>Default</th><th>Props</th></tr><tr><td class="slot__name">__default__</td>
 <td class="slot__default"><code>true</code></td>
-<td class="slot__props"><code>{ index: any, tabId: any, panelId: any }</code></td></tr></table>
+<td class="slot__props"><code>{ index: number; tabId: symbol; id: symbol; isActive: boolean }</code></td></tr></table>
