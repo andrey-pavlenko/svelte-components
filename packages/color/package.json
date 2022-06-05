@@ -1,6 +1,7 @@
 {
   "name": "@apsc/color",
-  "version": "0.0.1",
+  "description": "A set of Svelte components for picking and editing colors",
+  "version": "0.0.2",
   "type": "module",
   "types": "index.d.ts",
   "main": "index.js",
@@ -15,11 +16,11 @@
   },
   "keywords": [
     "svelte",
-    "components",
+    "component",
     "color-picker",
     "color-edit"
   ],
-  "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
+  "homepage": "https://github.com/andrey-pavlenko/svelte-components/tree/main/packages/color#readme",
   "dependencies": {
     "lodash.debounce": "^4.0.8"
   },

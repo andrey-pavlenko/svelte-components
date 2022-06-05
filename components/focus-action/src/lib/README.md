@@ -1,7 +1,10 @@
-# Action to control `focusin` and `focusout` for directive `use` [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/focus-action)
+# Action to control `focusin` and `focusout` for Svelte directive `use`
 
 - no dependencies
-- correctly detects loss of focus with `Tab`
+- based on `focusin` and `focusout` events.
+- correctly detects loss of focus with `tab` key
+
+### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/focus-action)
 
 ## Install
 

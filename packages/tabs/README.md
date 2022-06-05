@@ -1,8 +1,10 @@
-# A set of components for organizing a tabbed interface [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/tabs)
+# A set of Svelte components for organizing a tabbed interface
 
 - no dependencies
 - no inline styles
 - with context to control tab switching
+
+### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/tabs) &bull; [API](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/tabs/API.md)
 
 ## Install
 
@@ -39,7 +41,7 @@ pnpm add -D @apsc/tabs
 import '@apsc/tabs/style.css';
 ```
 
-### Custom
+### Or use your custom style
 
 `tabs-style.css`
 

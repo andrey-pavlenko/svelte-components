@@ -6,12 +6,9 @@
   "scripts": {
     "dev:demo": "pnpm run -C demo dev",
     "build:demo": "pnpm run -C demo build",
-    "package:tabs": "cd components/tabs && pnpm run package",
-    "publish:tabs": "cd packages/tabs && pnpm publish --no-git-checks --access public",
-    "package:glob-notify": "cd components/glob-notify && pnpm run package",
-    "publish:glob-notify": "cd packages/glob-notify && pnpm publish --no-git-checks --access public",
-    "package": "pnpm run package:tabs && pnpm run package:glob-notify",
-    "publish": "pnpm run publish:tabs && pnpm run publish:glob-notify"
+    "package-all": "bash scripts/package-all.sh",
+    "publish-all": "bash scripts/publish-all.sh",
+    "version-all": "bash scripts/version-all.sh"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,7 @@
 {
   "name": "@apsc/floating-ui-action",
-  "version": "0.0.1",
+  "description": "Floating UI action for `use` Svelte directive",
+  "version": "0.0.2",
   "type": "module",
   "author": "Andrey Pavlenko",
   "license": "MIT",
@@ -16,7 +17,7 @@
     "action",
     "floating-ui"
   ],
-  "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
+  "homepage": "https://github.com/andrey-pavlenko/svelte-components/tree/main/packages/floating-ui-action#readme",
   "dependencies": {
     "@floating-ui/dom": "^0.5.1"
   },

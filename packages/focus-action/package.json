@@ -1,6 +1,7 @@
 {
   "name": "@apsc/focus-action",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "Action to control focusin and focusout for Svelte directive use:",
   "type": "module",
   "author": "Andrey Pavlenko",
   "license": "MIT",
@@ -14,9 +15,9 @@
   "keywords": [
     "svelte",
     "action",
-    "floating-ui"
+    "focus"
   ],
-  "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
+  "homepage": "https://github.com/andrey-pavlenko/svelte-components/tree/main/packages/focus-action#readme",
   "exports": {
     "./package.json": "./package.json",
     ".": "./index.js"

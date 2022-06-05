@@ -13,6 +13,7 @@
   <a class="float-right" href="/">Home</a>
   <h1 class="text-2xl">Action to use Floating UI</h1>
   <ul class="leading-6 mb-8">
+    <li>allows you to use both Svelte transitions and CSS transitions</li>
     <li>
       dependence <a href="https://github.com/floating-ui/floating-ui" target="_blank"
         >@floating-ui/dom</a

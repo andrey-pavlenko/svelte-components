@@ -1,4 +1,9 @@
-# Action to use [Floating UI](https://floating-ui.com/) [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/floating-ui-action)
+# [Floating UI](https://floating-ui.com/) action for `use` Svelte directive
+
+- allows you to use both Svelte transitions and CSS transitions
+- dependence [@floating-ui/dom](https://github.com/floating-ui/floating-ui)
+
+### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/floating-ui-action)
 
 ## Install
 

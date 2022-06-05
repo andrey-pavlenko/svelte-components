@@ -1,4 +1,4 @@
-# A set of components for picking and editing colors [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/color)
+# A set of Svelte components for picking and editing colors
 
 - no inline styles
 - the module exports functions for color conversion from/to hex/rgb/hsl/hsv color space. See [`utils.d.ts`](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/utils.d.ts) for definitions of types and functions.
@@ -13,6 +13,8 @@ Inspired by:
 - [svelte-awesome-color-picker](https://svelte-awesome-color-picker.vercel.app/)
 - [svelte-color-picker](https://github.com/efeskucuk/svelte-color-picker)
 - [Coloris](https://github.com/mdbassit/Coloris)
+
+### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/color) &bull; [API](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/API.md)
 
 ## Install
 

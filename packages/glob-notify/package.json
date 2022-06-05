@@ -1,6 +1,7 @@
 {
   "name": "@apsc/glob-notify",
-  "version": "0.0.3",
+  "description": "Svelte component for notifications globally for the entire application",
+  "version": "0.0.5",
   "type": "module",
   "types": "index.d.ts",
   "main": "index.js",
@@ -15,10 +16,10 @@
   },
   "keywords": [
     "svelte",
-    "components",
+    "component",
     "notification"
   ],
-  "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
+  "homepage": "https://github.com/andrey-pavlenko/svelte-components/tree/main/packages/glob-notify#readme",
   "exports": {
     "./package.json": "./package.json",
     "./bootstrap-like.css": "./bootstrap-like.css",

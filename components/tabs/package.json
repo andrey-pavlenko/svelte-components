@@ -1,6 +1,7 @@
 {
   "name": "@apsc/tabs",
-  "version": "0.0.7",
+  "version": "0.0.9",
+  "description": "A set of Svelte components for organizing a tabbed interface",
   "type": "module",
   "types": "index.d.ts",
   "main": "index.js",
@@ -13,7 +14,9 @@
     "test": "playwright test",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "eslint --ignore-path .gitignore ."
+    "lint": "eslint --ignore-path .gitignore .",
+    "changelog": "conventional-changelog -p angular -i src/lib/CHANGELOG.md -s --commit-path=.",
+    "publish": "cd ../../packages/tabs && pnpm publish --no-git-checks --access public"
   },
   "author": "Andrey Pavlenko",
   "license": "MIT",
@@ -26,10 +29,10 @@
   },
   "keywords": [
     "svelte",
-    "components",
+    "component",
     "tabs"
   ],
-  "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
+  "homepage": "https://github.com/andrey-pavlenko/svelte-components/tree/main/packages/tabs#readme",
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",

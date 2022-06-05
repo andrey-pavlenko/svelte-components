@@ -1,6 +1,7 @@
 {
   "name": "@apsc/focus-action",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "Action to control focusin and focusout for Svelte directive use:",
   "type": "module",
   "scripts": {
     "dev": "svelte-kit dev",
@@ -9,7 +10,9 @@
     "preview": "svelte-kit preview",
     "prepare": "svelte-kit sync",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
+    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "changelog": "conventional-changelog -p angular -i src/lib/CHANGELOG.md -s --commit-path=.",
+    "publish": "cd ../../packages/focus-action && pnpm publish --no-git-checks --access public"
   },
   "author": "Andrey Pavlenko",
   "license": "MIT",
@@ -23,9 +26,9 @@
   "keywords": [
     "svelte",
     "action",
-    "floating-ui"
+    "focus"
   ],
-  "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
+  "homepage": "https://github.com/andrey-pavlenko/svelte-components/tree/main/packages/focus-action#readme",
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",

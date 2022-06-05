@@ -1,11 +1,13 @@
-# Component for notifications globally for the entire application [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/glob-notify)
+# Svelte component for notifications globally for the entire application
 
 - no dependencies
 - no inline styles
 - one instance for the entire application
-- with custom notification transition
+- custom notification transition
 - custom notification element components
-- with configurable timeout for each notification
+- configurable timeout for each notification
+
+### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/glob-notify) &bull; [API](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/API.md)
 
 ## Install
 
@@ -59,34 +61,14 @@ You can subscribe to changes in the store, and append and remove notifications a
 
 ## Styling
 
-The selectors used are in simple styles in `style.css`
+### [Base](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/style.css)
 
-```css
-.c-notifications {
-  position: fixed;
-  padding: 0.5rem 1rem;
-  width: 50vw;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
-.c-notifications__item {
-  background-color: silver;
-  margin: 0.5rem 0;
-  padding: 1rem;
-  display: flex;
-}
-.c-notifications__item__message {
-  flex-grow: 1;
-}
-.c-notifications__item__close {
-  font-size: 2rem;
-  line-height: 1.25rem;
-  cursor: default;
-}
-.c-notifications__item__close::before {
-  content: '\00D7';
-}
+```js
+import '@apsc/glob-notify/style.css';
 ```
 
-There is also a [`bootstrap-like.css`](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/bootstrap-like.css) style set.
+### [Bootstrap-like](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/bootstrap-like.css)
+
+```js
+import '@apsc/glob-notify/bootstrap-like.css';
+```
