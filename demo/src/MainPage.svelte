@@ -36,5 +36,10 @@
       <a href="/color">Color</a> &ndash; A set of components for picking and editing colors
       <a href="https://www.npmjs.com/package/@apsc/color" target="_blank">NPM</a>
     </li>
+    <li>
+      Action to call a function by <a href="/keyboard-shortcut-action">keyboard shortcut</a> for
+      Svelte directive <code class={styles.code}>use</code>
+      <a href="https://www.npmjs.com/package/@apsc/keyboard-shortcut-action" target="_blank">NPM</a>
+    </li>
   </ul>
 </section>

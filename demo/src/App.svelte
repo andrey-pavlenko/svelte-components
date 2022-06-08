@@ -7,6 +7,7 @@
   import { ColorPage } from './color';
   import { FloationUiActionPage } from './floating-ui-action';
   import { FocusActionPage } from './focus-action';
+  import { KeyboardShortcutActionPage } from './keyboard-shortcut-action';
 
   router.mode.hash();
 </script>
@@ -21,4 +22,5 @@
   <Route path="/color"><ColorPage /></Route>
   <Route path="/floating-ui-action"><FloationUiActionPage /></Route>
   <Route path="/focus-action"><FocusActionPage /></Route>
+  <Route path="/keyboard-shortcut-action"><KeyboardShortcutActionPage /></Route>
 </main>

@@ -1,0 +1,29 @@
+{
+  "name": "@apsc/keyboard-shortcut-action",
+  "description": "Action to call a function by keyboard shortcut for Svelte directive use:",
+  "type": "module",
+  "version": "0.0.1",
+  "author": "Andrey Pavlenko",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrey-pavlenko/svelte-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrey-pavlenko/svelte-components/issues"
+  },
+  "keywords": [
+    "svelte",
+    "action",
+    "KeyboardEvent",
+    "keycode"
+  ],
+  "homepage": "https://github.com/andrey-pavlenko/svelte-components/tree/main/packages/keyboard-shortcut-action#readme",
+  "dependencies": {
+    "keyboard-event-to-string": "^2.1.0"
+  },
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./index.js"
+  }
+}
