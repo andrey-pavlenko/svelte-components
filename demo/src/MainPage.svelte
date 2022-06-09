@@ -41,5 +41,10 @@
       Svelte directive <code class={styles.code}>use</code>
       <a href="https://www.npmjs.com/package/@apsc/keyboard-shortcut-action" target="_blank">NPM</a>
     </li>
+    <li>
+      Action <a href="/scroll-child-action">to scroll the child</a> to parent viewport for Svelte
+      directive <code class={styles.code}>use</code>
+      <a href="https://www.npmjs.com/package/@apsc/scroll-child-action" target="_blank">NPM</a>
+    </li>
   </ul>
 </section>

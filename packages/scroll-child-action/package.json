@@ -1,6 +1,6 @@
 {
-  "name": "@apcs/scroll-child-action",
-  "description": "Action to scroll the child to parent viewport Svelte directive use:",
+  "name": "@apsc/scroll-child-action",
+  "description": "Action to scroll the child to parent viewport for Svelte directive use:",
   "type": "module",
   "version": "0.0.1",
   "author": "Andrey Pavlenko",

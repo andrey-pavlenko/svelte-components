@@ -203,6 +203,7 @@ importers:
       '@apsc/focus-action': workspace:^0.0.2
       '@apsc/glob-notify': workspace:^0.0.5
       '@apsc/keyboard-shortcut-action': workspace:^0.0.1
+      '@apsc/scroll-child-action': workspace:^0.0.1
       '@apsc/tabs': workspace:^0.0.9
       '@floating-ui/dom': ^0.5.2
       '@sveltejs/vite-plugin-svelte': ^1.0.0-next.48
@@ -230,6 +231,7 @@ importers:
       '@apsc/focus-action': link:../packages/focus-action
       '@apsc/glob-notify': link:../packages/glob-notify
       '@apsc/keyboard-shortcut-action': link:../packages/keyboard-shortcut-action
+      '@apsc/scroll-child-action': link:../packages/scroll-child-action
       '@apsc/tabs': link:../packages/tabs
       '@floating-ui/dom': 0.5.2
       '@sveltejs/vite-plugin-svelte': 1.0.0-next.48_svelte@3.48.0+vite@2.9.10
@@ -283,6 +285,9 @@ importers:
       keyboard-event-to-string: ^2.1.0
     dependencies:
       keyboard-event-to-string: 2.1.0
+
+  packages/scroll-child-action:
+    specifiers: {}
 
   packages/tabs:
     specifiers: {}
