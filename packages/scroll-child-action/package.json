@@ -1,0 +1,25 @@
+{
+  "name": "@apcs/scroll-child-action",
+  "description": "Action to scroll the child to parent viewport Svelte directive use:",
+  "type": "module",
+  "version": "0.0.1",
+  "author": "Andrey Pavlenko",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrey-pavlenko/svelte-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrey-pavlenko/svelte-components/issues"
+  },
+  "keywords": [
+    "svelte",
+    "action",
+    "scroll"
+  ],
+  "homepage": "https://github.com/andrey-pavlenko/svelte-components/tree/main/packages/scroll-child-action#readme",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./index.js"
+  }
+}
