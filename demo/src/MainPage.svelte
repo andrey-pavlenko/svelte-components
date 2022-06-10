@@ -88,7 +88,7 @@
       <div class="pkg-tile__link"><a href="/scroll-child-action">@apsc/scroll-child-action</a></div>
       <a
         class="pkg-tile__npm"
-        href="https://www.npmjs.com/package/@apsc/keyboard-shortcut-action"
+        href="https://www.npmjs.com/package/@apsc/scroll-child-action"
         target="_blank"
       >
         <img src={npmLogo} alt="NPM logo" />
