@@ -4,6 +4,7 @@
   import Api from './Api.svelte';
   import TransitionJsDemo from './TransitionJsDemo.svelte';
   import TransitionCssDemo from './TransitionCssDemo.svelte';
+  import npmLogo from '../npm-logo.svg';
 </script>
 
 <svelte:head>
@@ -12,6 +13,13 @@
 <section class="prose max-w-none my-4">
   <a class="float-right" href="/">Home</a>
   <h1 class="text-2xl">Action to use Floating UI</h1>
+  <a
+    class="float-right"
+    href="https://www.npmjs.com/package/@apsc/floating-ui-action"
+    target="_blank"
+  >
+    <img class="max-w-[4em]" src={npmLogo} alt="NPM logo" />
+  </a>
   <ul class="leading-6 mb-8">
     <li>allows you to use both Svelte transitions and CSS transitions</li>
     <li>
@@ -19,7 +27,6 @@
         >@floating-ui/dom</a
       >
     </li>
-    <li><a href="https://www.npmjs.com/package/@apsc/floating-ui-action">NPM</a></li>
   </ul>
 
   <Tabs>

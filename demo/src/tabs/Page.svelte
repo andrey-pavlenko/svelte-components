@@ -6,6 +6,7 @@
   import NestedExample from './NestedExample.svelte';
   import QuotesExample from './QuotesExample.svelte';
   import './styles.css';
+  import npmLogo from '../npm-logo.svg';
 </script>
 
 <svelte:head>
@@ -14,11 +15,13 @@
 <section class="prose max-w-none my-4">
   <a class="float-right" href="/">Home</a>
   <h1 class="text-2xl">A set of components for organizing a tabbed interface</h1>
+  <a class="float-right" href="https://www.npmjs.com/package/@apsc/tabs" target="_blank">
+    <img class="max-w-[4em]" src={npmLogo} alt="NPM logo" />
+  </a>
   <ul class="leading-6 mb-8">
     <li>no dependencies</li>
     <li>no inline styles</li>
     <li>with context to control tab switching</li>
-    <li><a href="https://www.npmjs.com/package/@apsc/tabs">NPM</a></li>
   </ul>
 
   <Tabs>

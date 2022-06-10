@@ -4,6 +4,7 @@
   import Api from './Api.svelte';
   import VerticalDemo from './VerticalDemo.svelte';
   import HorizontalDemo from './HorizontalDemo.svelte';
+  import npmLogo from '../npm-logo.svg';
 </script>
 
 <svelte:head>
@@ -14,6 +15,14 @@
   <h1 class="text-2xl">
     Action to call a function by keyboard shortcut for Svelte directive <code>use</code>
   </h1>
+  <a
+    class="float-right"
+    href="https://www.npmjs.com/package/@apsc/scroll-child-action"
+    target="_blank"
+  >
+    <img class="max-w-[4em]" src={npmLogo} alt="NPM logo" />
+  </a>
+
   <ul class="leading-6 mb-8">
     <li>no dependencies</li>
     <li>useful for components like dropdown</li>

@@ -5,6 +5,7 @@
   import RequiredDemo from './RequiredDemo.svelte';
   import DropdownDemo from './DropdownDemo.svelte';
   import StyleDemo from './StyleDemo.svelte';
+  import npmLogo from '../npm-logo.svg';
 </script>
 
 <svelte:head>
@@ -16,6 +17,9 @@
     Action to control <code>focusin</code> and <code>focusout</code><br />for directive
     <code>use</code>
   </h1>
+  <a class="float-right" href="https://www.npmjs.com/package/@apsc/focus-action" target="_blank">
+    <img class="max-w-[4em]" src={npmLogo} alt="NPM logo" />
+  </a>
   <ul class="leading-6 mb-8">
     <li>no dependencies</li>
     <li>correctly detects loss of focus with <code>Tab</code></li>

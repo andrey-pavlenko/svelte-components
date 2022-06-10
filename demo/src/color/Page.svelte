@@ -5,6 +5,7 @@
   import ColorPickerExample from './ColorPickerExample.svelte';
   import ColorEditExample from './ColorEditExample.svelte';
   import ColorInputExample from './ColorInputExample.svelte';
+  import npmLogo from '../npm-logo.svg';
   import './styles.css';
 </script>
 
@@ -14,6 +15,9 @@
 <section class="prose max-w-none my-4">
   <a class="float-right" href="/">Home</a>
   <h1 class="text-2xl">A set of components for picking and editing colors</h1>
+  <a class="float-right" href="https://www.npmjs.com/package/@apsc/color" target="_blank">
+    <img class="max-w-[4em]" src={npmLogo} alt="NPM logo" />
+  </a>
   <ul class="leading-6 mb-8">
     <li>no inline styles</li>
     <li>
@@ -23,7 +27,6 @@
         target="_blank">utils.d.ts</a
       > for definitions of types and functions
     </li>
-    <li><a href="https://www.npmjs.com/package/@apsc/color">NPM</a></li>
   </ul>
 
   <Tabs>

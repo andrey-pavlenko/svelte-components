@@ -3,6 +3,7 @@
   import 'svelte-highlight/styles/atom-one-dark.css';
   import API from './API.svelte';
   import BaseExample from './BaseExample.svelte';
+  import npmLogo from '../npm-logo.svg';
 </script>
 
 <svelte:head>
@@ -11,6 +12,9 @@
 <section class="prose max-w-none my-4">
   <a class="float-right" href="/">Home</a>
   <h1 class="text-2xl max-w-lg">Component for notifications globally for the entire application</h1>
+  <a class="float-right" href="https://www.npmjs.com/package/@apsc/glob-notify" target="_blank">
+    <img class="max-w-[4em]" src={npmLogo} alt="NPM logo" />
+  </a>
   <ul class="leading-6 mb-8">
     <li>no dependencies</li>
     <li>no inline styles</li>
@@ -18,7 +22,6 @@
     <li>with custom notification transition</li>
     <li>custom notification element components</li>
     <li>with configurable timeout for each notification</li>
-    <li><a href="https://www.npmjs.com/package/@apsc/glob-notify">NPM</a></li>
   </ul>
 
   <Tabs>
