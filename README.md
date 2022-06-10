@@ -1,5 +1,5 @@
 # svelte-components
 
-## [Demo and docs](https://andrey-pavlenko.github.io/svelte-components)
+Useful Svelte components and actions collected from various ideas and projects
 
-A set of Svelte components
+#### [Full list of components and actions](https://andrey-pavlenko.github.io/svelte-components)
