@@ -2,7 +2,7 @@
   "name": "@apsc/scroll-child-action",
   "description": "Action to scroll the child to parent viewport for Svelte directive use:",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",

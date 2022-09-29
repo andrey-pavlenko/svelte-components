@@ -5,7 +5,7 @@
 export function scrollChildIntoParentVertical(el: HTMLElement): boolean {
   const parent = el.parentElement;
 
-  if (parent && parent.offsetHeight > parent.clientHeight) {
+  if (parent && parent.scrollHeight > parent.offsetHeight) {
     const style = getComputedStyle(parent);
     const parentPaddingTop = parseInt(style.paddingTop) || 0;
     const parentPaddingBottom = parseInt(style.paddingBottom) || 0;
@@ -37,7 +37,7 @@ export function scrollChildIntoParentVertical(el: HTMLElement): boolean {
 export function scrollChildIntoParentHorizontal(el: HTMLElement): boolean {
   const parent = el.parentElement;
 
-  if (parent && parent.offsetWidth > parent.clientWidth) {
+  if (parent && parent.scrollWidth > parent.offsetWidth) {
     const style = getComputedStyle(parent);
     const parentPaddingLeft = parseInt(style.paddingLeft) || 0;
     const parentPaddingRight = parseInt(style.paddingRight) || 0;
