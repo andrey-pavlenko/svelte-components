@@ -1,6 +1,6 @@
 <script lang="ts">
-  import '../lib/color-picker.css';
-  import { ColorPicker, hexToHsl, luminance } from '../lib';
+  import '../../lib/color-picker.css';
+  import { ColorPicker, hexToHsl, luminance } from '../../lib';
 
   let color = '#f70';
 

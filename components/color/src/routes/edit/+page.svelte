@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { ColorEdit, luminance } from '../lib';
-  import '../lib/color-edit.css';
+  import { ColorEdit, luminance } from '../../lib';
+  import '../../lib/color-edit.css';
 
   const colors = [
     '#023047',

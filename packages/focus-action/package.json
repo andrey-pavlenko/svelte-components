@@ -1,8 +1,11 @@
 {
   "name": "@apsc/focus-action",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Action to control focusin and focusout for Svelte directive use:",
   "type": "module",
+  "types": "index.d.ts",
+  "main": "index.js",
+  "svelte": "./index.js",
   "author": "Andrey Pavlenko",
   "license": "MIT",
   "repository": {
@@ -18,6 +21,9 @@
     "focus"
   ],
   "homepage": "https://github.com/andrey-pavlenko/svelte-components/tree/main/packages/focus-action#readme",
+  "peerDependencies": {
+    "svelte": "^3.50.1"
+  },
   "exports": {
     "./package.json": "./package.json",
     ".": "./index.js"

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import '../lib/style.css';
+  import '../../lib/style.css';
   import type { Readable } from 'svelte/store';
-  import { Tabs, TabPanel, TabList, Tab } from '../lib';
+  import { Tabs, TabPanel, TabList, Tab } from '../../lib';
 
   const visible = {
     d: false,

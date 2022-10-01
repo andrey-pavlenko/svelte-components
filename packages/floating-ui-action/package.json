@@ -1,8 +1,11 @@
 {
   "name": "@apsc/floating-ui-action",
   "description": "Floating UI action for `use` Svelte directive",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
+  "types": "index.d.ts",
+  "main": "index.js",
+  "svelte": "./index.js",
   "author": "Andrey Pavlenko",
   "license": "MIT",
   "repository": {
@@ -19,7 +22,10 @@
   ],
   "homepage": "https://github.com/andrey-pavlenko/svelte-components/tree/main/packages/floating-ui-action#readme",
   "dependencies": {
-    "@floating-ui/dom": "^0.5.1"
+    "@floating-ui/dom": "^1.0.2"
+  },
+  "peerDependencies": {
+    "svelte": "^3.50.1"
   },
   "exports": {
     "./package.json": "./package.json",

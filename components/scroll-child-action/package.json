@@ -1,18 +1,20 @@
 {
   "name": "@apsc/scroll-child-action",
   "description": "Action to scroll the child to parent viewport for Svelte directive use:",
+  "version": "0.0.3",
   "type": "module",
-  "version": "0.0.2",
+  "types": "index.d.ts",
+  "main": "index.js",
+  "svelte": "./index.js",
   "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "package": "pnpm run check && svelte-kit package && cd ../../packages/scroll-child-action && npe devDependencies --delete",
-    "preview": "svelte-kit preview",
-    "prepare": "svelte-kit sync",
-    "check": "NODE_OPTIONS=--no-experimental-fetch svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "dev": "vite dev --port 3000",
+    "build": "svelte-kit sync && svelte-package",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "finish:package": "cd ../../packages/color && npe devDependencies --delete",
+    "package": "pnpm run check && svelte-package && pnpm run finish:package",
     "changelog": "conventional-changelog -p angular -i src/lib/CHANGELOG.md -s --commit-path=.",
-    "publish": "cd ../../packages/scroll-child-action && pnpm publish --no-git-checks --access public"
+    "publish": "cd ../../packages/color && pnpm publish --no-git-checks --access public"
   },
   "author": "Andrey Pavlenko",
   "license": "MIT",
@@ -29,13 +31,21 @@
     "scroll"
   ],
   "homepage": "https://github.com/andrey-pavlenko/svelte-components/tree/main/packages/scroll-child-action#readme",
+  "peerDependencies": {
+    "svelte": "^3.50.1"
+  },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "1.0.0-next.50",
-    "@sveltejs/kit": "1.0.0-next.350",
-    "svelte": "^3.44.0",
-    "svelte-check": "^2.7.1",
-    "svelte-preprocess": "^4.10.6",
-    "tslib": "^2.3.1",
-    "typescript": "^4.7.2"
+    "@sveltejs/adapter-auto": "^1.0.0-next.80",
+    "@sveltejs/kit": "^1.0.0-next.507",
+    "@sveltejs/package": "^1.0.0-next.5",
+    "svelte": "^3.50.1",
+    "svelte-check": "^2.9.1",
+    "svelte-preprocess": "^4.10.7",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.4",
+    "vite": "^3.1.4"
+  },
+  "exports": {
+    ".": "./index.js"
   }
 }

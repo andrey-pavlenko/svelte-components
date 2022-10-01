@@ -8,11 +8,11 @@ const config = {
   preprocess: preprocess(),
 
   kit: {
-    adapter: adapter(),
-    package: {
-      dir: '../../packages/focus-action',
-      exports: (path) => /index\.(js|ts)/i.test(path) || /style\.css/i.test(path)
-    }
+    adapter: adapter()
+  },
+  package: {
+    dir: '../../packages/focus-action',
+    exports: (path) => /index\.(js|ts)/i.test(path) || /style\.css/i.test(path)
   }
 };
 

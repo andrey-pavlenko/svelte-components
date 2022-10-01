@@ -82,7 +82,7 @@
 
 <${'style lang="postcss"'}>
   .dropdown {
-    @apply absolute border shadow-md rounded-md py-2 px-0 bg-white;
+    @apply absolute border shadow-md rounded-md py-2 px-0 my-0 bg-white;
   }
   .dropdown li {
     @apply list-none p-0 m-0;
@@ -102,7 +102,7 @@
 
 <style lang="postcss">
   .dropdown {
-    @apply absolute border shadow-md rounded-md py-2 px-0 bg-white;
+    @apply absolute border shadow-md rounded-md py-2 px-0 my-0 bg-white;
   }
 
   .dropdown li {

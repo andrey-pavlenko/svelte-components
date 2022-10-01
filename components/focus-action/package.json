@@ -1,16 +1,18 @@
 {
   "name": "@apsc/focus-action",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Action to control focusin and focusout for Svelte directive use:",
   "type": "module",
+  "types": "index.d.ts",
+  "main": "index.js",
+  "svelte": "./index.js",
   "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "package": "NODE_OPTIONS=--no-experimental-fetch pnpm run check && svelte-kit package && cd ../../packages/focus-action && npe devDependencies --delete",
-    "preview": "svelte-kit preview",
-    "prepare": "svelte-kit sync",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "dev": "vite dev --port 3000",
+    "build": "svelte-kit sync && svelte-package",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "finish:package": "cd ../../packages/focus-action && npe devDependencies --delete",
+    "package": "pnpm run check && svelte-package && pnpm run finish:package",
     "changelog": "conventional-changelog -p angular -i src/lib/CHANGELOG.md -s --commit-path=.",
     "publish": "cd ../../packages/focus-action && pnpm publish --no-git-checks --access public"
   },
@@ -29,13 +31,21 @@
     "focus"
   ],
   "homepage": "https://github.com/andrey-pavlenko/svelte-components/tree/main/packages/focus-action#readme",
+  "peerDependencies": {
+    "svelte": "^3.50.1"
+  },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "1.0.0-next.50",
-    "@sveltejs/kit": "1.0.0-next.350",
-    "svelte": "^3.44.0",
-    "svelte-check": "^2.2.6",
-    "svelte-preprocess": "^4.10.1",
-    "tslib": "^2.3.1",
-    "typescript": "~4.6.2"
+    "@sveltejs/adapter-auto": "^1.0.0-next.80",
+    "@sveltejs/kit": "^1.0.0-next.507",
+    "@sveltejs/package": "^1.0.0-next.5",
+    "svelte": "^3.50.1",
+    "svelte-check": "^2.9.1",
+    "svelte-preprocess": "^4.10.7",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.4",
+    "vite": "^3.1.4"
+  },
+  "exports": {
+    ".": "./index.js"
   }
 }

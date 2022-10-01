@@ -8,12 +8,12 @@ const config = {
   preprocess: preprocess(),
 
   kit: {
-    adapter: adapter(),
-    package: {
-      dir: '../../packages/color',
-      exports: (path) => /(index|converter)\.(js|ts)$/i.test(path) || /\.css$/i.test(path),
-      files: (file) => !/\.spec\.[jt]s$/gi.test(file)
-    }
+    adapter: adapter()
+  },
+  package: {
+    dir: '../../packages/color',
+    exports: (path) => /(index|converter)\.(js|ts)$/i.test(path) || /\.css$/i.test(path),
+    files: (file) => !/\.spec\.[jt]s$/gi.test(file)
   }
 };
 

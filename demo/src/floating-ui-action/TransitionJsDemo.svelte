@@ -2,7 +2,8 @@
   import { HighlightSvelte } from 'svelte-highlight';
   import 'svelte-highlight/styles/atom-one-dark.css';
 
-  import { slide, scale, fade, blur, TransitionConfig } from 'svelte/transition';
+  import { slide, scale, fade, blur } from 'svelte/transition';
+  import type { TransitionConfig } from 'svelte/transition';
   import {
     arrow,
     flip,
