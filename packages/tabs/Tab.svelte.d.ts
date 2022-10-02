@@ -1,42 +1,27 @@
-import { SvelteComponentTyped } from "svelte";
+import { SvelteComponentTyped } from 'svelte';
+import { type ActivateItem } from './tabs-context';
 declare const __propDef: {
-    props: {
-        /**
-           * Custom CSS class to add to the `c-tabs__tab` base class for custom styling purposes
-           */ class?: string | undefined;
-        /**
-           * The CSS class that will be added when `Tab` becomes selected. *Default value from `Tabs.selectedTabClass`*
-           *
-           * @type {string}
-           */ selectedClass?: string | undefined;
-        /**
-           * Disable `Tab` for pointer, but it's possible to select tab by function `Tabs.selectTab(index)`. *Default `undefined`*
-           *
-           * @type {boolean | undefined}
-           */ disabled?: boolean | undefined;
+  props: Record<string, never>;
+  events: {
+    [evt: string]: CustomEvent<any>;
+  };
+  slots: {
+    default: {
+      active: boolean;
+      activate: ActivateItem;
     };
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {
-        default: {
-            index: number;
-            id: symbol;
-            isActive: boolean;
-        };
-    };
+  };
 };
-export declare type TabProps = typeof __propDef.props;
-export declare type TabEvents = typeof __propDef.events;
-export declare type TabSlots = typeof __propDef.slots;
+export type TabProps = typeof __propDef.props;
+export type TabEvents = typeof __propDef.events;
+export type TabSlots = typeof __propDef.slots;
 /**
- * This is a child component for `TabList`
- * @order 20
+ * @order 10
  *
- * ```tsx
- * <Tab>A</Tab>
- * ```
+ * The component sends `active` and `activate` props to the slot.
+ *
+ * - `active: boolean` — whether the current tab is active
+ * - `activate: () => void` — call this function to make the current tab active
  */
-export default class Tab extends SvelteComponentTyped<TabProps, TabEvents, TabSlots> {
-}
+export default class Tab extends SvelteComponentTyped<TabProps, TabEvents, TabSlots> {}
 export {};

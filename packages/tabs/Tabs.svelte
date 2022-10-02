@@ -1,109 +1,76 @@
-<script>import { setContext } from 'svelte';
-import { writable } from 'svelte/store';
-import { contextName, createContext } from './tabs';
-let classes = '';
+<script>import { setContext, onDestroy } from 'svelte';
+import { TabsContext } from './tabs-context';
+const context = new TabsContext();
+setContext(TabsContext.contextName, context);
+const _active = context.active;
+const _length = context.length;
 /**
- * Custom CSS class to add to the `c-tabs` base class for custom styling purposes
+ * **Reactive, read/write**. The current index of the `Tab`/`Panel` pair members.
+ * The index will not go beyond the range of the tabs, so you can safely assign a new value.
+ * @type {number}
  */
-export { classes as class };
+export let selected = NaN;
+$: selected = $_active.index;
+$: if (typeof selected === 'number' && !context.select(selected)) {
+    selected = $_active.index;
+}
 /**
- * The CSS class that will be added to the child `Tab` component when it becomes selected
+ * **Reactive, read**. The current number of `Tab`/`Panel` pair members
  */
-export let selectedTabClass = 'active';
-/**
- * The CSS class for the **unselected** TabPanel. Applies when `mode = hide`. More in the `mode` prop
- */
-export let hiddenPanelClass = '';
-/**
- * `TabPanel` hiding and showing mode.
- *
- * `remove`: The panel will be removed from the DOM.
- * `hide`: the panel will be hidden by the style from the `hiddenPanelClass` CSS class, or if `hiddenPanelClass` is not specified with the style `display: none`
- *
- * @type {"remove" | "hide"}
- */
-export let mode = 'hide';
-const tabs = [];
-const panels = [];
-const selectedTab = writable(null);
-const selectedPanel = writable(null);
-const context = createContext({
-    mode,
-    tabs,
-    panels,
-    selectedTab,
-    selectedPanel,
-    selectedTabClass,
-    hiddenPanelClass
-});
-/**
- * Index of selected `Tab` component
- * ```js
- * let selectedIndex;
- * tabsRef.selectedIndex.subscrive(
- *   (index) => selectedIndex = index
- * );
- * ```
- * ```js
- * let selectedIndex = tabsRef.selectedIndex;
- * $: if ($selectedIndex === 0) {
- *   console.log('First tab selected');
- * }
- * ```
- * @type {Readable<number>}
- */
-export const selectedIndex = context.selectedIndex;
-/**
- * Select `Tab` component by index. Allows arguments for `Array.prototype.at(number)`
- * ```js
- * // Select first Tab
- * tabsRef.selectTab(0);
- * // Select last Tab
- * tabsRef.selectTab(-1);
- * ```
- * @type {(number) => void}
- */
-export const selectTab = context.selectTab;
-setContext(contextName, context);
+export let length = 0;
+$: length = $_length;
 </script>
 
 <!--
 @component
 @order 0
-This is the root component. It's a container for one `TabList` and many `TabPanel`
+This is the root component. It's a container of the `Tab` and `Panel` components. The basic structure of components is:
 ```tsx
 <Tabs>
-  <TabList>
+  <div> <!‐‐ optional wrapper ‐‐>
     <Tab>A</Tab>
     <Tab>B</Tab>
-  </TabList>
-  <TabPanel>A</TabPanel>
-  <TabPanel>B</TabPanel>
+  </div>
+  <div> <!‐‐ optional wrapper ‐‐>
+    <TabPanel>A</TabPanel>
+    <TabPanel>B</TabPanel>
+  </div>
 </Tabs>
 ```
 
-Child components of `Tabs` have access to the context by `contextName`
-```ts
-export type TabId = symbol;
-export type PanelId = symbol;
-export type TabsMode = 'remove' | 'hide';
-export interface TabsContext {
-	mode: TabsMode;
-	registerTab: () => TabId;
-	registerPanel: () => PanelId;
-	selectTab: (tab: TabId | number) => void;
-	selectedTab: Writable<symbol | null>;
-	selectedPanel: Writable<symbol | null>;
-	selectedIndex: Readable<number>;
-	selectedTabClass: string;
-	hiddenPanelClass: string;
-}
-export const contextName = Symbol('TABS');
+But what you really need to do is fill the slots with useful items such as these:
+```tsx
+<Tabs>
+  <Tab let:active let:activate><button class:active on:click={activate}>A</button></Tab>
+  <Tab let:active let:activate><button class:active on:click={activate}>B</button></Tab>
+  <TabPanel let:active>
+    <div style:display={active ? 'block' : 'none'}>Content of A</div>
+  </TabPanel>
+  <TabPanel let:active>
+    <div style:display={active ? 'block' : 'none'}>Content of B</div>
+  </TabPanel>
+</Tabs>
 ```
 
-Basic styles are described in the <a href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/tabs/style.css" target="_blank">`style.css`</a> file.
+**Important!**
+
+The `Tab` and `Panel` components are added to the end of the list during rendering. To keep the correct component order, reassign the entire tab list or use the [`{#keys}`](https://svelte.dev/docs#template-syntax-key) or [`{#each key}`](https://svelte.dev/docs#template-syntax-each).
+
+
+Under the hood, the component uses a [TabContext](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/tabs/tabs-context.js) of this type:
+
+```js
+class TabsContext {
+  readonly active: Readable<ContextActive>;
+  readonly length: Readable<number>;
+  static readonly contextName: symbol;
+  push(entity: 'tab' | 'panel'): symbol;
+  pop(entity: { tab: symbol; } | { panel: symbol; }): boolean;
+  select(entity: number | { tab: symbol; } | { panel: symbol; }): boolean;
+}
+```
+
+You can access the context with the code `getContext(TabsContext.contextName)`. You can also extend the class if there is a lack of functionality.
 -->
 
-<div class={'c-tabs' + (classes ? ' ' + classes : '')}>
-  <slot />
-</div>
+<slot />

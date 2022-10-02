@@ -57,7 +57,7 @@ export function jsonToMarkdown(json, { debug = false } = {}) {
     }
 
     const header = `<h2 class="component-tbl-header">Props</h2>`;
-    const tableStart = `<table><tr><th>Prop nane</th><th>Type</th><th>Default value</th><th>Description</th></tr>`;
+    const tableStart = `<table><tr><th>Prop name</th><th>Type</th><th>Default value</th><th>Description</th></tr>`;
     const tableEnd = `</table>`;
 
     const rows = props.map(renderProp).join('\n');

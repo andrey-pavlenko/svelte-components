@@ -1,18 +1,24 @@
 {
   "name": "@apsc/tabs",
-  "version": "0.0.10",
-  "description": "A set of Svelte components for organizing a tabbed interface",
-  "type": "module",
+  "version": "0.1.0",
+  "description": "A set of components and context classes for the organization of the Tabs interface",
   "types": "index.d.ts",
+  "type": "module",
   "svelte": "./index.js",
   "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
   "scripts": {
     "dev": "vite dev --port 3000",
     "build": "svelte-kit sync && svelte-package",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "finish:package": "cd ../../packages/tabs && npe devDependencies --delete &&  node ../../documetator/index.js .",
-    "package": "pnpm run check && svelte-package && pnpm run finish:package",
+    "test": "vitest",
+    "lint": "prettier --plugin-search-dir . --check . && eslint .",
+    "format": "cd  ../../packages/tabs && prettier --plugin-search-dir . --write .",
+    "finish:package": "cd ../../packages/tabs && npe devDependencies --delete && node ../../documetator/index.js .",
+    "package": "pnpm run check && svelte-package && pnpm run finish:package && pnpm run format",
     "changelog": "conventional-changelog -p angular -i src/lib/CHANGELOG.md -s --commit-path=.",
     "publish": "cd ../../packages/tabs && pnpm publish --no-git-checks --access public"
   },
@@ -28,24 +34,25 @@
   "keywords": [
     "svelte",
     "component",
+    "context",
     "tabs"
   ],
   "homepage": "https://github.com/andrey-pavlenko/svelte-components/tree/main/packages/tabs#readme",
-  "peerDependencies": {
-    "svelte": "^3.50.1"
-  },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^1.0.0-next.80",
-    "@sveltejs/kit": "^1.0.0-next.507",
-    "@sveltejs/package": "^1.0.0-next.5",
-    "svelte": "^3.50.1",
-    "svelte-check": "^2.9.1",
-    "svelte-preprocess": "^4.10.7",
-    "tslib": "^2.4.0",
-    "typescript": "^4.8.4",
-    "vite": "^3.1.4"
+    "@apsc/scroll-child-action": "workspace:^0.0.3",
+    "@sveltejs/adapter-auto": "^1.0.0",
+    "@sveltejs/kit": "^1.0.0",
+    "@sveltejs/package": "^1.0.0",
+    "@vitest/coverage-c8": "^0.28.3",
+    "svelte": "^3.54.0",
+    "svelte-check": "^3.0.1",
+    "svelte-preprocess": "^5.0.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0",
+    "vitest": "^0.25.3"
   },
-  "exports": {
-    ".": "./index.js"
+  "peerDependencies": {
+    "svelte": "^3.54.0"
   }
 }

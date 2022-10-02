@@ -12,18 +12,24 @@
   <h1 class="font-bold my-4 pb-2 text-3xl border-b border-gray-400">Packages</h1>
   <div class="flex flex-wrap gap-6 mb-12">
     <div class="pkg-tile">
-      <div class="pkg-tile__link"><a href="/tabs">@apsc/tabs</a></div>
-      <a class="pkg-tile__npm" href="https://www.npmjs.com/package/@apsc/tabs" target="_blank">
+      <div class="pkg-tile__link"><a href="?c=tabs">@apsc/tabs</a></div>
+      <a
+        class="pkg-tile__npm"
+        href="https://www.npmjs.com/package/@apsc/tabs"
+        target="_blank"
+        rel="noreferrer"
+      >
         <img src={npmLogo} alt="NPM logo" />
       </a>
       <div class="pkg-tile__description">A set of components for organizing a tabbed interface</div>
     </div>
     <div class="pkg-tile">
-      <div class="pkg-tile__link"><a href="/glob-notify">@apsc/glob-notify</a></div>
+      <div class="pkg-tile__link"><a href="?c=glob-notify">@apsc/glob-notify</a></div>
       <a
         class="pkg-tile__npm"
         href="https://www.npmjs.com/package/@apsc/glob-notify"
         target="_blank"
+        rel="noreferrer"
       >
         <img src={npmLogo} alt="NPM logo" />
       </a>
@@ -32,8 +38,13 @@
       </div>
     </div>
     <div class="pkg-tile">
-      <div class="pkg-tile__link"><a href="/color">@apsc/color</a></div>
-      <a class="pkg-tile__npm" href="https://www.npmjs.com/package/@apsc/color" target="_blank">
+      <div class="pkg-tile__link"><a href="?c=color">@apsc/color</a></div>
+      <a
+        class="pkg-tile__npm"
+        href="https://www.npmjs.com/package/@apsc/color"
+        target="_blank"
+        rel="noreferrer"
+      >
         <img src={npmLogo} alt="NPM logo" />
       </a>
       <div class="pkg-tile__description">A set of components for picking and editing colors</div>
@@ -41,11 +52,14 @@
   </div>
   <div class="flex flex-wrap gap-6 mb-12">
     <div class="pkg-tile">
-      <div class="pkg-tile__link"><a href="/floating-ui-action">@apsc/floating-ui-action</a></div>
+      <div class="pkg-tile__link">
+        <a href="?c=floating-ui-action">@apsc/floating-ui-action</a>
+      </div>
       <a
         class="pkg-tile__npm"
         href="https://www.npmjs.com/package/@apsc/floating-ui-action"
         target="_blank"
+        rel="noreferrer"
       >
         <img src={npmLogo} alt="NPM logo" />
       </a>
@@ -54,11 +68,12 @@
       </div>
     </div>
     <div class="pkg-tile">
-      <div class="pkg-tile__link"><a href="/focus-action">@apsc/focus-action</a></div>
+      <div class="pkg-tile__link"><a href="?c=focus-action">@apsc/focus-action</a></div>
       <a
         class="pkg-tile__npm"
         href="https://www.npmjs.com/package/@apsc/focus-action"
         target="_blank"
+        rel="noreferrer"
       >
         <img src={npmLogo} alt="NPM logo" />
       </a>
@@ -69,12 +84,13 @@
     </div>
     <div class="pkg-tile">
       <div class="pkg-tile__link">
-        <a href="/keyboard-shortcut-action">@apsc/keyboard-shortcut-action</a>
+        <a href="?c=keyboard-shortcut-action">@apsc/keyboard-shortcut-action</a>
       </div>
       <a
         class="pkg-tile__npm"
         href="https://www.npmjs.com/package/@apsc/keyboard-shortcut-action"
         target="_blank"
+        rel="noreferrer"
       >
         <img src={npmLogo} alt="NPM logo" />
       </a>
@@ -85,11 +101,14 @@
       </div>
     </div>
     <div class="pkg-tile">
-      <div class="pkg-tile__link"><a href="/scroll-child-action">@apsc/scroll-child-action</a></div>
+      <div class="pkg-tile__link">
+        <a href="?c=scroll-child-action">@apsc/scroll-child-action</a>
+      </div>
       <a
         class="pkg-tile__npm"
         href="https://www.npmjs.com/package/@apsc/scroll-child-action"
         target="_blank"
+        rel="noreferrer"
       >
         <img src={npmLogo} alt="NPM logo" />
       </a>

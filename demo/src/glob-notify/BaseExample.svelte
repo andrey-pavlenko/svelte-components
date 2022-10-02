@@ -55,8 +55,9 @@
   <div class="mb-4 text-center">
     This example uses quotes from the <a
       target="_blank"
-      href="https://github.com/skolakoda/programming-quotes-api">API</a
-    > <a target="_blank" href="https://github.com/skolakoda">Škola koda</a>
+      href="https://github.com/skolakoda/programming-quotes-api"
+      rel="noreferrer">API</a
+    > <a target="_blank" rel="noreferrer" href="https://github.com/skolakoda">Škola koda</a>
   </div>
   <form
     class="not-prose w-full"

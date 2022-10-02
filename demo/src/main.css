@@ -3,6 +3,7 @@
 @import 'tailwindcss/utilities.css';
 
 @import './styles/documentation.css';
+@import './_components/tabs/styles.css';
 
 @layer base {
   div,

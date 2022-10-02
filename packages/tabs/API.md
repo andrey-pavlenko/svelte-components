@@ -1,97 +1,53 @@
 <div class="component__source">Source <code>Tabs.svelte</code></div>
 <h1 class="component__name">Tabs</h1>
-<div class="component__comment"><p>This is the root component. It&#39;s a container for one <code>TabList</code> and many <code>TabPanel</code></p>
+<div class="component__comment"><p>This is the root component. It&#39;s a container of the <code>Tab</code> and <code>Panel</code> components. The basic structure of components is:</p>
 <pre><code class="language-tsx">&lt;Tabs&gt;
-  &lt;TabList&gt;
+  &lt;div&gt; &lt;!‐‐ optional wrapper ‐‐&gt;
     &lt;Tab&gt;A&lt;/Tab&gt;
     &lt;Tab&gt;B&lt;/Tab&gt;
-  &lt;/TabList&gt;
-  &lt;TabPanel&gt;A&lt;/TabPanel&gt;
-  &lt;TabPanel&gt;B&lt;/TabPanel&gt;
+  &lt;/div&gt;
+  &lt;div&gt; &lt;!‐‐ optional wrapper ‐‐&gt;
+    &lt;TabPanel&gt;A&lt;/TabPanel&gt;
+    &lt;TabPanel&gt;B&lt;/TabPanel&gt;
+  &lt;/div&gt;
 &lt;/Tabs&gt;
 </code></pre>
-<p>Child components of <code>Tabs</code> have access to the context by <code>contextName</code></p>
-<pre><code class="language-ts">export type TabId = symbol;
-export type PanelId = symbol;
-export type TabsMode = &#39;remove&#39; | &#39;hide&#39;;
-export interface TabsContext {
-    mode: TabsMode;
-    registerTab: () =&gt; TabId;
-    registerPanel: () =&gt; PanelId;
-    selectTab: (tab: TabId | number) =&gt; void;
-    selectedTab: Writable&lt;symbol | null&gt;;
-    selectedPanel: Writable&lt;symbol | null&gt;;
-    selectedIndex: Readable&lt;number&gt;;
-    selectedTabClass: string;
-    hiddenPanelClass: string;
-}
-export const contextName = Symbol(&#39;TABS&#39;);
+<p>But what you really need to do is fill the slots with useful items such as these:</p>
+<pre><code class="language-tsx">&lt;Tabs&gt;
+  &lt;Tab let:active let:activate&gt;&lt;button class:active on:click={activate}&gt;A&lt;/button&gt;&lt;/Tab&gt;
+  &lt;Tab let:active let:activate&gt;&lt;button class:active on:click={activate}&gt;B&lt;/button&gt;&lt;/Tab&gt;
+  &lt;TabPanel let:active&gt;
+    &lt;div style:display={active ? &#39;block&#39; : &#39;none&#39;}&gt;Content of A&lt;/div&gt;
+  &lt;/TabPanel&gt;
+  &lt;TabPanel let:active&gt;
+    &lt;div style:display={active ? &#39;block&#39; : &#39;none&#39;}&gt;Content of B&lt;/div&gt;
+  &lt;/TabPanel&gt;
+&lt;/Tabs&gt;
 </code></pre>
-<p>Basic styles are described in the <a href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/tabs/style.css" target="_blank"><code>style.css</code></a> file.</p>
-</div>
-<h2 class="component-tbl-header">Props</h2><table><tr><th>Prop nane</th><th>Type</th><th>Default value</th><th>Description</th></tr><tr><td class="prop__name">class</td>
-<td class="prop__type"><code>string</code></td>
-<td class="prop__value"><code>''</code></td>
-<td class="prop__description"><p>Custom CSS class to add to the <code>c-tabs</code> base class for custom styling purposes</p>
-</td></tr>
-<tr><td class="prop__name">selectedTabClass</td>
-<td class="prop__type"><code>string</code></td>
-<td class="prop__value"><code>'active'</code></td>
-<td class="prop__description"><p>The CSS class that will be added to the child <code>Tab</code> component when it becomes selected</p>
-</td></tr>
-<tr><td class="prop__name">hiddenPanelClass</td>
-<td class="prop__type"><code>string</code></td>
-<td class="prop__value"><code>''</code></td>
-<td class="prop__description"><p>The CSS class for the <strong>unselected</strong> TabPanel. Applies when <code>mode = hide</code>. More in the <code>mode</code> prop</p>
-</td></tr>
-<tr><td class="prop__name">mode</td>
-<td class="prop__type"><code>"remove" | "hide"</code></td>
-<td class="prop__value"><code>'hide'</code></td>
-<td class="prop__description"><p><code>TabPanel</code> hiding and showing mode.<br /><code>remove</code>: The panel will be removed from the DOM.
-<code>hide</code>: the panel will be hidden by the style from the <code>hiddenPanelClass</code> CSS class, or if <code>hiddenPanelClass</code> is not specified with the style <code>display: none</code></p>
-</td></tr>
-<tr><td class="prop__name">selectedIndex</td>
-<td class="prop__type"><code>Readable&lt;number&gt;</code></td>
-<td class="prop__value"></td>
-<td class="prop__description"><p>Index of selected <code>Tab</code> component</p>
-<pre><code class="language-js">let selectedIndex;
-tabsRef.selectedIndex.subscrive(
-  (index) =&gt; selectedIndex = index
-);
-</code></pre>
-<pre><code class="language-js">let selectedIndex = tabsRef.selectedIndex;
-$: if ($selectedIndex === 0) {
-  console.log(&#39;First tab selected&#39;);
+<p><strong>Important!</strong></p>
+<p>The <code>Tab</code> and <code>Panel</code> components are added to the end of the list during rendering. To keep the correct component order, reassign the entire tab list or use the <a href="https://svelte.dev/docs#template-syntax-key"><code>{#keys}</code></a> or <a href="https://svelte.dev/docs#template-syntax-each"><code>{#each key}</code></a>.</p>
+<p>Under the hood, the component uses a <a href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/tabs/tabs-context.js">TabContext</a> of this type:</p>
+<pre><code class="language-js">class TabsContext {
+  readonly active: Readable&lt;ContextActive&gt;;
+  readonly length: Readable&lt;number&gt;;
+  static readonly contextName: symbol;
+  push(entity: &#39;tab&#39; | &#39;panel&#39;): symbol;
+  pop(entity: { tab: symbol; } | { panel: symbol; }): boolean;
+  select(entity: number | { tab: symbol; } | { panel: symbol; }): boolean;
 }
 </code></pre>
-</td></tr>
-<tr><td class="prop__name">selectTab</td>
-<td class="prop__type"><code>(number) =&gt; void</code></td>
-<td class="prop__value"></td>
-<td class="prop__description"><p>Select <code>Tab</code> component by index. Allows arguments for <code>Array.prototype.at(number)</code></p>
-<pre><code class="language-js">// Select first Tab
-tabsRef.selectTab(0);
-// Select last Tab
-tabsRef.selectTab(-1);
-</code></pre>
-</td></tr></table>
-<h2 class="component-tbl-header">Slots</h2><table><tr><th>Slot name</th><th>Default</th><th>Props</th></tr><tr><td class="slot__name">__default__</td>
-<td class="slot__default"><code>true</code></td>
-<td class="slot__props"><code>{}</code></td></tr></table>
-<hr>
-<div class="component__source">Source <code>List.svelte</code></div>
-<h1 class="component__name">TabList</h1>
-<div class="component__comment"><p>This is a child component for <code>Tabs</code> and a container for many <code>Tab</code> components</p>
-<pre><code class="language-tsx">&lt;TabList&gt;
-  &lt;Tab&gt;A&lt;/Tab&gt;
-  &lt;Tab&gt;B&lt;/Tab&gt;
-&lt;/TabList&gt;
-</code></pre>
+<p>You can access the context with the code <code>getContext(TabsContext.contextName)</code>. You can also extend the class if there is a lack of functionality.</p>
 </div>
-<h2 class="component-tbl-header">Props</h2><table><tr><th>Prop nane</th><th>Type</th><th>Default value</th><th>Description</th></tr><tr><td class="prop__name">class</td>
-<td class="prop__type"><code>string</code></td>
-<td class="prop__value"><code>''</code></td>
-<td class="prop__description"><p>Custom CSS class to add to the <code>c-tabs__tablist</code> base class for custom styling purposes</p>
+<h2 class="component-tbl-header">Props</h2><table><tr><th>Prop name</th><th>Type</th><th>Default value</th><th>Description</th></tr><tr><td class="prop__name">selected</td>
+<td class="prop__type"><code>number</code></td>
+<td class="prop__value"></td>
+<td class="prop__description"><p><strong>Reactive, read/write</strong>. The current index of the <code>Tab</code>/<code>Panel</code> pair members.
+The index will not go beyond the range of the tabs, so you can safely assign a new value.</p>
+</td></tr>
+<tr><td class="prop__name">length</td>
+<td class="prop__type"><code>number</code></td>
+<td class="prop__value"><code>0</code></td>
+<td class="prop__description"><p><strong>Reactive, read</strong>. The current number of <code>Tab</code>/<code>Panel</code> pair members</p>
 </td></tr></table>
 <h2 class="component-tbl-header">Slots</h2><table><tr><th>Slot name</th><th>Default</th><th>Props</th></tr><tr><td class="slot__name">__default__</td>
 <td class="slot__default"><code>true</code></td>
@@ -99,49 +55,30 @@ tabsRef.selectTab(-1);
 <hr>
 <div class="component__source">Source <code>Tab.svelte</code></div>
 <h1 class="component__name">Tab</h1>
-<div class="component__comment"><p>This is a child component for <code>TabList</code></p>
-<pre><code class="language-tsx">&lt;Tab&gt;A&lt;/Tab&gt;
-</code></pre>
+<div class="component__comment"><p>The component sends <code>active</code> and <code>activate</code> props to the slot.</p>
+<ul>
+<li><code>active: boolean</code> — whether the current tab is active</li>
+<li><code>activate: () =&gt; void</code> — call this function to make the current tab active</li>
+</ul>
 </div>
-<h2 class="component-tbl-header">Props</h2><table><tr><th>Prop nane</th><th>Type</th><th>Default value</th><th>Description</th></tr><tr><td class="prop__name">class</td>
-<td class="prop__type"><code>string</code></td>
-<td class="prop__value"><code>''</code></td>
-<td class="prop__description"><p>Custom CSS class to add to the <code>c-tabs__tab</code> base class for custom styling purposes</p>
-</td></tr>
-<tr><td class="prop__name">selectedClass</td>
-<td class="prop__type"><code>string</code></td>
-<td class="prop__value"></td>
-<td class="prop__description"><p>The CSS class that will be added when <code>Tab</code> becomes selected. <em>Default value from <code>Tabs.selectedTabClass</code></em></p>
-</td></tr>
-<tr><td class="prop__name">disabled</td>
-<td class="prop__type"><code>boolean | undefined</code></td>
-<td class="prop__value"></td>
-<td class="prop__description"><p>Disable <code>Tab</code> for pointer, but it&#39;s possible to select tab by function <code>Tabs.selectTab(index)</code>. <em>Default <code>undefined</code></em></p>
-</td></tr></table>
 <h2 class="component-tbl-header">Slots</h2><table><tr><th>Slot name</th><th>Default</th><th>Props</th></tr><tr><td class="slot__name">__default__</td>
 <td class="slot__default"><code>true</code></td>
-<td class="slot__props"><code>{ index: number; id: symbol; isActive: boolean }</code></td></tr></table>
+<td class="slot__props"><code>{ active: {$active.tab === id}, activate: any }</code></td></tr><tr><th colspan="3">Fallback</th></tr>
+<tr><td class="slot__fallback" colspan="3"><pre><code>Tab slot is empty
+</code></pre>
+</td></tr></table>
 <hr>
 <div class="component__source">Source <code>Panel.svelte</code></div>
-<h1 class="component__name">TabPanel</h1>
-<div class="component__comment"><p>This is a child component for <code>Tabs</code> and a container for tab body</p>
-<pre><code class="language-tsx">&lt;Tabs&gt;
-  &lt;TabList&gt;&lt;Tab&gt;A&lt;/Tab&gt;&lt;Tab&gt;B&lt;/Tab&gt;&lt;/TabList&gt;
-  &lt;TabPanel&gt;A&lt;/TabPanel&gt;
-  &lt;TabPanel&gt;B&lt;/TabPanel&gt;
-&lt;/Tabs&gt;
-</code></pre>
+<h1 class="component__name">Panel</h1>
+<div class="component__comment"><p>The component sends <code>active</code> and <code>activate</code> props to the slot.</p>
+<ul>
+<li><code>active: boolean</code> — whether the current panel is active</li>
+<li><code>activate: () =&gt; void</code> — call this function to make the current panel active</li>
+</ul>
 </div>
-<h2 class="component-tbl-header">Props</h2><table><tr><th>Prop nane</th><th>Type</th><th>Default value</th><th>Description</th></tr><tr><td class="prop__name">class</td>
-<td class="prop__type"><code>string</code></td>
-<td class="prop__value"><code>''</code></td>
-<td class="prop__description"><p>Custom CSS class to add to the <code>c-tabs__tabpanel</code> base class for custom styling purposes</p>
-</td></tr>
-<tr><td class="prop__name">hiddenClass</td>
-<td class="prop__type"><code>string</code></td>
-<td class="prop__value"></td>
-<td class="prop__description"><p>The CSS class that will be added when <code>TabPanel</code> becomes <strong>unselected</strong>. <em>Default value from <code>Tabs.hiddenPanelClass</code></em></p>
-</td></tr></table>
 <h2 class="component-tbl-header">Slots</h2><table><tr><th>Slot name</th><th>Default</th><th>Props</th></tr><tr><td class="slot__name">__default__</td>
 <td class="slot__default"><code>true</code></td>
-<td class="slot__props"><code>{ index: number; tabId: symbol; id: symbol; isActive: boolean }</code></td></tr></table>
+<td class="slot__props"><code>{ active: {$active.panel === id}, activate: any }</code></td></tr><tr><th colspan="3">Fallback</th></tr>
+<tr><td class="slot__fallback" colspan="3"><pre><code>Panel slot is empty
+</code></pre>
+</td></tr></table>
