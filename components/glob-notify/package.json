@@ -13,7 +13,7 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "finish:package": "cd ../../packages/glob-notify && npe devDependencies --delete &&  node ../../documetator/index.js .",
     "package": "pnpm run check && svelte-package && pnpm run finish:package",
-    "changelog": "conventional-changelog -p angular -i src/lib/CHANGELOG.md -s --commit-path=.",
+    "changelog": "conventional-changelog -p angular -i ../../packages/glob-notify/CHANGELOG.md -s --commit-path=.",
     "publish": "cd ../../packages/glob-notify && pnpm publish --no-git-checks --access public"
   },
   "author": "Andrey Pavlenko",

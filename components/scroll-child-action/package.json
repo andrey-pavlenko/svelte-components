@@ -11,10 +11,10 @@
     "build": "svelte-kit sync && svelte-package",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "finish:package": "cd ../../packages/color && npe devDependencies --delete",
+    "finish:package": "cd ../../packages/scroll-child-action && npe devDependencies --delete",
     "package": "pnpm run check && svelte-package && pnpm run finish:package",
-    "changelog": "conventional-changelog -p angular -i src/lib/CHANGELOG.md -s --commit-path=.",
-    "publish": "cd ../../packages/color && pnpm publish --no-git-checks --access public"
+    "changelog": "conventional-changelog -p angular -i ../../packages/scroll-child-action/CHANGELOG.md -s --commit-path=.",
+    "publish": "cd ../../packages/scroll-child-action && pnpm publish --no-git-checks --access public"
   },
   "author": "Andrey Pavlenko",
   "license": "MIT",

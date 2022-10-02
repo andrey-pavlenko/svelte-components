@@ -8,7 +8,8 @@
     "build:demo": "pnpm run -C demo build",
     "package-all": "bash scripts/package-all.sh",
     "publish-all": "bash scripts/publish-all.sh",
-    "version-all": "bash scripts/version-all.sh"
+    "version-all": "bash scripts/version-all.sh",
+    "changelog-all": "bash scripts/changelog-all.sh"
   },
   "repository": {
     "type": "git",
