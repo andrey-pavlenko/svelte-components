@@ -1,12 +1,23 @@
 import type { Action } from 'svelte/types/runtime/action';
-import type { ReferenceElement, FloatingElement, ComputePositionConfig, AutoUpdateOptions, ComputePositionReturn } from '@floating-ui/dom';
-export declare type UpdateOptions = Partial<AutoUpdateOptions> | boolean;
-export declare type FloatingOptions = Partial<ComputePositionConfig & {
-    callback: (p: ComputePositionReturn, e: {
+import type {
+  ReferenceElement,
+  FloatingElement,
+  ComputePositionConfig,
+  AutoUpdateOptions,
+  ComputePositionReturn
+} from '@floating-ui/dom';
+export type UpdateOptions = Partial<AutoUpdateOptions> | boolean;
+export type FloatingOptions = Partial<
+  ComputePositionConfig & {
+    callback: (
+      p: ComputePositionReturn,
+      e: {
         reference: ReferenceElement;
         floating: FloatingElement;
-    }) => void;
-}>;
+      }
+    ) => void;
+  }
+>;
 /**
  * Creates actions for use in directive `use`. Returns an array of three functions `useReference`, `useFloating` and `setAutoupdate`.
  *
@@ -41,4 +52,6 @@ export declare type FloatingOptions = Partial<ComputePositionConfig & {
  * @param {UpdateOptions} options
  * @returns {[Action, Action, (options: UpdateOptions) => void]}
  */
-export default function createFloatingUiAction(options: UpdateOptions): [Action, Action, (options: UpdateOptions) => void];
+export default function createFloatingUiAction(
+  options: UpdateOptions
+): [Action, Action, (options: UpdateOptions) => void];

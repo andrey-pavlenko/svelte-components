@@ -4,7 +4,7 @@
 - based on `focusin` and `focusout` events.
 - correctly detects loss of focus with `tab` key
 
-### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/focus-action)
+### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/?c=focus-action)
 
 ## Install
 

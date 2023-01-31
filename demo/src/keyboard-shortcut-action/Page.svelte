@@ -1,17 +1,14 @@
 <script lang="ts">
-  // import { Tab, TabList, TabPanel, Tabs } from '@apsc/tabs';
-  import 'svelte-highlight/styles/atom-one-dark.css';
+  import { setTitle, HomeLink, Tabs, Tab, TabList, TabPanel } from '../_components';
   import Api from './Api.svelte';
-  import NavigationDemo from './NavigationDemo.svelte';
+  import NavigationDemo from './navigation/Main.svelte';
   import npmLogo from '../npm-logo.svg';
-  import MainPageLink from '../MainPageLink.svelte';
+
+  setTitle(document.title.replace(/(•).*$/, '$1 Keyboard shortcut action'));
 </script>
 
-<svelte:head>
-  <title>{document.title.replace(/(•).*$/, '$1 Keyboard shortcut action')}</title>
-</svelte:head>
 <section class="prose max-w-none my-4">
-  <MainPageLink class="float-right" />
+  <HomeLink class="float-right" />
   <h1 class="text-2xl">
     Action to call a function by keyboard shortcut for Svelte directive <code>use</code>
   </h1>
@@ -34,12 +31,16 @@
     </li>
   </ul>
 
-  <!-- <Tabs mode="remove">
+  <Tabs>
     <TabList>
       <Tab>API</Tab>
       <Tab>Navigation demo</Tab>
     </TabList>
     <TabPanel><Api /></TabPanel>
-    <TabPanel><NavigationDemo /></TabPanel>
-  </Tabs> -->
+    <TabPanel let:active
+      >{#if active}
+        <NavigationDemo />
+      {/if}
+    </TabPanel>
+  </Tabs>
 </section>

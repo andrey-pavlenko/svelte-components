@@ -1,7 +1,7 @@
 {
   "name": "@apsc/color",
   "description": "A set of Svelte components for picking and editing colors",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "types": "index.d.ts",
   "main": "index.js",
@@ -26,7 +26,7 @@
     "lodash.debounce": "^4.0.8"
   },
   "peerDependencies": {
-    "svelte": "^3.50.1"
+    "svelte": "^3.30.0"
   },
   "exports": {
     "./package.json": "./package.json",

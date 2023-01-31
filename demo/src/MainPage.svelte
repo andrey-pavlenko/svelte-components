@@ -5,9 +5,6 @@
   };
 </script>
 
-<svelte:head>
-  <title>{document.title.replace(/(•).*$/, '$1 Home')}</title>
-</svelte:head>
 <section>
   <h1 class="font-bold my-4 pb-2 text-3xl border-b border-gray-400">Packages</h1>
   <div class="flex flex-wrap gap-6 mb-12">
@@ -21,7 +18,9 @@
       >
         <img src={npmLogo} alt="NPM logo" />
       </a>
-      <div class="pkg-tile__description">A set of components for organizing a tabbed interface</div>
+      <div class="pkg-tile__description">
+        A component set and context class for organizing the Tabs interface
+      </div>
     </div>
     <div class="pkg-tile">
       <div class="pkg-tile__link"><a href="?c=glob-notify">@apsc/glob-notify</a></div>

@@ -23,9 +23,9 @@ declare const __propDef: {
     };
     slots: {};
 };
-export declare type ColorPickerProps = typeof __propDef.props;
-export declare type ColorPickerEvents = typeof __propDef.events;
-export declare type ColorPickerSlots = typeof __propDef.slots;
+export type ColorPickerProps = typeof __propDef.props;
+export type ColorPickerEvents = typeof __propDef.events;
+export type ColorPickerSlots = typeof __propDef.slots;
 /**
  * @order 0
  *

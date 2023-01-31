@@ -3,7 +3,7 @@
 - allows to reduce keyboard event handling code
 - dependence [`keyboard-event-to-string`](https://www.npmjs.com/package/keyboard-event-to-string)
 
-### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/keyboard-shortcut-action)
+### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/?c=keyboard-shortcut-action)
 
 ## Install
 

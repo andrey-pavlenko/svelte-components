@@ -40,45 +40,54 @@ setOptions({ joinWith: '+' });
  * }} options
  */
 function useKeyboardShortcut(node, options) {
-    let { event, capture = false, passive = false, preventDefault = false, stopImmediatePropagation = false, stopPropagation = false, fns } = options;
-    function handleEvent(event) {
-        const fnKey = toString(event);
-        if (typeof fns[fnKey] === 'function') {
-            if (preventDefault) {
-                event.preventDefault();
-            }
-            if (stopPropagation) {
-                event.stopPropagation();
-            }
-            if (stopImmediatePropagation) {
-                event.stopImmediatePropagation();
-            }
-            fns[fnKey](event);
-        }
+  let {
+    event,
+    capture = false,
+    passive = false,
+    preventDefault = false,
+    stopImmediatePropagation = false,
+    stopPropagation = false,
+    fns
+  } = options;
+  function handleEvent(event) {
+    const fnKey = toString(event);
+    if (typeof fns[fnKey] === 'function') {
+      if (preventDefault) {
+        event.preventDefault();
+      }
+      if (stopPropagation) {
+        event.stopPropagation();
+      }
+      if (stopImmediatePropagation) {
+        event.stopImmediatePropagation();
+      }
+      fns[fnKey](event);
     }
-    node.addEventListener(event, handleEvent, { capture, passive });
-    return {
-        destroy() {
-            node.removeEventListener(event, handleEvent, { capture });
-        },
-        update(options) {
-            const updateListener = event !== options.event || capture !== options.capture || passive !== options.passive;
-            if (updateListener) {
-                node.removeEventListener(event, handleEvent, { capture });
-            }
-            ({
-                event,
-                capture = false,
-                passive = false,
-                preventDefault = false,
-                stopImmediatePropagation = false,
-                stopPropagation = false,
-                fns
-            } = options);
-            if (updateListener) {
-                node.addEventListener(event, handleEvent, { capture, passive });
-            }
-        }
-    };
+  }
+  node.addEventListener(event, handleEvent, { capture, passive });
+  return {
+    destroy() {
+      node.removeEventListener(event, handleEvent, { capture });
+    },
+    update(options) {
+      const updateListener =
+        event !== options.event || capture !== options.capture || passive !== options.passive;
+      if (updateListener) {
+        node.removeEventListener(event, handleEvent, { capture });
+      }
+      ({
+        event,
+        capture = false,
+        passive = false,
+        preventDefault = false,
+        stopImmediatePropagation = false,
+        stopPropagation = false,
+        fns
+      } = options);
+      if (updateListener) {
+        node.addEventListener(event, handleEvent, { capture, passive });
+      }
+    }
+  };
 }
 export default useKeyboardShortcut;

@@ -16,9 +16,9 @@ declare const __propDef: {
     };
     slots: {};
 };
-export declare type ColorEditRgbaProps = typeof __propDef.props;
-export declare type ColorEditRgbaEvents = typeof __propDef.events;
-export declare type ColorEditRgbaSlots = typeof __propDef.slots;
+export type ColorEditRgbaProps = typeof __propDef.props;
+export type ColorEditRgbaEvents = typeof __propDef.events;
+export type ColorEditRgbaSlots = typeof __propDef.slots;
 /**
  * @order 98
  *

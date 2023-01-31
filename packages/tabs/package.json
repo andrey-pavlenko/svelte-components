@@ -1,7 +1,7 @@
 {
   "name": "@apsc/tabs",
   "version": "0.1.0",
-  "description": "A set of components and context classes for the organization of the Tabs interface",
+  "description": "A component set and context class for organizing the Tabs interface",
   "types": "index.d.ts",
   "type": "module",
   "svelte": "./index.js",
@@ -27,6 +27,6 @@
   ],
   "homepage": "https://github.com/andrey-pavlenko/svelte-components/tree/main/packages/tabs#readme",
   "peerDependencies": {
-    "svelte": "^3.54.0"
+    "svelte": "^3.30.0"
   }
 }

@@ -1,17 +1,14 @@
 <script lang="ts">
-  // import { Tab, TabList, TabPanel, Tabs } from '@apsc/tabs';
-  import 'svelte-highlight/styles/atom-one-dark.css';
+  import { Tabs, Tab, TabList, TabPanel, HomeLink, setTitle } from '../_components';
   import API from './API.svelte';
-  import BaseExample from './BaseExample.svelte';
+  import BaseExample from './base-example/Main.svelte';
   import npmLogo from '../npm-logo.svg';
-  import MainPageLink from '../MainPageLink.svelte';
+
+  setTitle(document.title.replace(/(•).*$/, '$1 GlobNotify'));
 </script>
 
-<svelte:head>
-  <title>{document.title.replace(/(•).*$/, '$1 GlobNotify')}</title>
-</svelte:head>
 <section class="prose max-w-none my-4">
-  <MainPageLink class="float-right" />
+  <HomeLink class="float-right" />
   <h1 class="text-2xl max-w-lg">Component for notifications globally for the entire application</h1>
   <a
     class="float-right"
@@ -30,12 +27,12 @@
     <li>with configurable timeout for each notification</li>
   </ul>
 
-  <!-- <Tabs>
+  <Tabs>
     <TabList>
       <Tab>API</Tab>
       <Tab>Base example</Tab>
     </TabList>
     <TabPanel><API /></TabPanel>
     <TabPanel><BaseExample /></TabPanel>
-  </Tabs> -->
+  </Tabs>
 </section>

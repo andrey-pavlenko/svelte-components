@@ -35,7 +35,7 @@ export interface RgbColor {
     b: number;
     a?: number;
 }
-export declare type HexColor = string;
+export type HexColor = string;
 export declare function isHexValid(hex: HexColor): boolean;
 export declare function clamp(value: number, min: number, max: number): number;
 export declare function hexToHsl(hex: HexColor): HslColor;

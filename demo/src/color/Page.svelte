@@ -1,20 +1,17 @@
 <script lang="ts">
-  // import { Tab, TabList, TabPanel, Tabs } from '@apsc/tabs';
-  import 'svelte-highlight/styles/atom-one-dark.css';
+  import { Tabs, TabList, TabPanel, Tab, setTitle, HomeLink } from '../_components';
   import Api from './Api.svelte';
-  import ColorPickerExample from './ColorPickerExample.svelte';
-  import ColorEditExample from './ColorEditExample.svelte';
-  import ColorInputExample from './ColorInputExample.svelte';
+  import ColorPickerExample from './color-picker/Main.svelte';
+  import ColorEditExample from './color-edit/Main.svelte';
+  import ColorInputExample from './color-input/Main.svelte';
   import npmLogo from '../npm-logo.svg';
   import './styles.css';
-  import MainPageLink from '../MainPageLink.svelte';
+
+  setTitle(document.title.replace(/(•).*$/, '$1 Color'));
 </script>
 
-<svelte:head>
-  <title>{document.title.replace(/(•).*$/, '$1 Color')}</title>
-</svelte:head>
 <section class="prose max-w-none my-4">
-  <MainPageLink class="float-right" />
+  <HomeLink class="float-right" />
   <h1 class="text-2xl">A set of components for picking and editing colors</h1>
   <a
     class="float-right"
@@ -36,7 +33,7 @@
     </li>
   </ul>
 
-  <!-- <Tabs>
+  <Tabs>
     <TabList>
       <Tab>API</Tab>
       <Tab>ColorPicker example</Tab>
@@ -47,5 +44,5 @@
     <TabPanel><ColorPickerExample /></TabPanel>
     <TabPanel><ColorEditExample /></TabPanel>
     <TabPanel><ColorInputExample /></TabPanel>
-  </Tabs> -->
+  </Tabs>
 </section>

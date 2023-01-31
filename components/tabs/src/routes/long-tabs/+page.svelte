@@ -1,7 +1,6 @@
 <script lang="ts">
   import { Tabs, Tab, Panel } from '$lib';
   import useScrollChild from '@apsc/scroll-child-action';
-  import '$lib/styles.css';
 
   let tabsCount = 30;
   let tabs: number[] = [];

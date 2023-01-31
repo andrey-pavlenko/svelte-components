@@ -11,9 +11,6 @@
   import { ScrollChildActionPage } from './scroll-child-action';
 </script>
 
-<svelte:head>
-  <title>APSC &bull; Home</title>
-</svelte:head>
 <main>
   {#if $query.toString() === ''}<MainPage />
   {:else if $query.params.c === 'tabs'}<TabsPage />

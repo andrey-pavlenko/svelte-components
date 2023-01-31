@@ -1,20 +1,17 @@
 <script lang="ts">
-  // import { Tab, TabList, TabPanel, Tabs } from '@apsc/tabs';
-  import 'svelte-highlight/styles/atom-one-dark.css';
+  import { setTitle, HomeLink, Tabs, TabList, Tab, TabPanel } from '../_components';
   import Api from './Api.svelte';
-  import VerticalDemo from './VerticalDemo.svelte';
-  import HorizontalDemo from './HorizontalDemo.svelte';
+  import VerticalDemo from './vertical-demo/Main.svelte';
+  import HorizontalDemo from './horizontal-demo/Main.svelte';
   import npmLogo from '../npm-logo.svg';
-  import MainPageLink from '../MainPageLink.svelte';
+
+  setTitle(document.title.replace(/(•).*$/, '$1 Scroll child action'));
 </script>
 
-<svelte:head>
-  <title>{document.title.replace(/(•).*$/, '$1 Scroll child action')}</title>
-</svelte:head>
 <section class="prose max-w-none my-4">
-  <MainPageLink class="float-right" />
+  <HomeLink class="float-right" />
   <h1 class="text-2xl">
-    Action to call a function by keyboard shortcut for Svelte directive <code>use</code>
+    Action to scroll the child to parent viewport Svelte directive <code>use</code>
   </h1>
   <a
     class="float-right"
@@ -31,14 +28,18 @@
     <li>exports independent functions for vertical and horizontal scrolling of elements</li>
   </ul>
 
-  <!-- <Tabs mode="remove">
+  <Tabs>
     <TabList>
       <Tab>API</Tab>
       <Tab>Vertical demo</Tab>
       <Tab>Horizontal demo</Tab>
     </TabList>
     <TabPanel><Api /></TabPanel>
-    <TabPanel><VerticalDemo /></TabPanel>
-    <TabPanel><HorizontalDemo /></TabPanel>
-  </Tabs> -->
+    <TabPanel let:active
+      >{#if active}<VerticalDemo />{/if}</TabPanel
+    >
+    <TabPanel let:active
+      >{#if active}<HorizontalDemo />{/if}</TabPanel
+    >
+  </Tabs>
 </section>

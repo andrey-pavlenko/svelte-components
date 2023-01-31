@@ -16,9 +16,9 @@ declare const __propDef: {
     };
     slots: {};
 };
-export declare type ColorEditHslaProps = typeof __propDef.props;
-export declare type ColorEditHslaEvents = typeof __propDef.events;
-export declare type ColorEditHslaSlots = typeof __propDef.slots;
+export type ColorEditHslaProps = typeof __propDef.props;
+export type ColorEditHslaEvents = typeof __propDef.events;
+export type ColorEditHslaSlots = typeof __propDef.slots;
 /**
  * @order 99
  *

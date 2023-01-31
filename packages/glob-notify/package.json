@@ -1,7 +1,7 @@
 {
   "name": "@apsc/glob-notify",
   "description": "Svelte component for notifications globally for the entire application",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "types": "index.d.ts",
   "main": "index.js",
@@ -22,7 +22,7 @@
   ],
   "homepage": "https://github.com/andrey-pavlenko/svelte-components/tree/main/packages/glob-notify#readme",
   "peerDependencies": {
-    "svelte": "^3.50.1"
+    "svelte": "^3.30.0"
   },
   "exports": {
     "./package.json": "./package.json",

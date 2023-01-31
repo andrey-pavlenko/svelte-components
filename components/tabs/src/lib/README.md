@@ -1,9 +1,9 @@
-# A set of components and context classes for the organization of the Tabs interface.
+# A component set and context class for organizing the Tabs interface
 
 - no dependencies
 - no inline styles
 - set of predefined components `<Tabs />`, `<Tab />` and `<Panel />`.
-- base context class for toggling component states
+- context class for toggling component states
 
 ### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/?c=tabs) &bull; [API](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/tabs/API.md)
 

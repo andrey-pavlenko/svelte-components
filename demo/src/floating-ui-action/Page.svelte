@@ -1,18 +1,15 @@
 <script lang="ts">
-  // import { Tab, TabList, TabPanel, Tabs } from '@apsc/tabs';
-  import 'svelte-highlight/styles/atom-one-dark.css';
+  import { Tabs, TabList, Tab, TabPanel, setTitle, HomeLink } from '../_components';
   import Api from './Api.svelte';
-  import TransitionJsDemo from './TransitionJsDemo.svelte';
-  import TransitionCssDemo from './TransitionCssDemo.svelte';
+  import TransitionJsDemo from './transition-js/Main.svelte';
+  import TransitionCssDemo from './transition-css/Main.svelte';
   import npmLogo from '../npm-logo.svg';
-  import MainPageLink from '../MainPageLink.svelte';
+
+  setTitle(document.title.replace(/(•).*$/, '$1 Floating UI action'));
 </script>
 
-<svelte:head>
-  <title>{document.title.replace(/(•).*$/, '$1 Floating UI action')}</title>
-</svelte:head>
 <section class="prose max-w-none my-4">
-  <MainPageLink class="float-right" />
+  <HomeLink class="float-right" />
   <h1 class="text-2xl">Action to use Floating UI</h1>
   <a
     class="float-right"
@@ -33,7 +30,7 @@
     </li>
   </ul>
 
-  <!-- <Tabs>
+  <Tabs>
     <TabList>
       <Tab>API</Tab>
       <Tab>Transition JS demo</Tab>
@@ -42,5 +39,5 @@
     <TabPanel><Api /></TabPanel>
     <TabPanel><TransitionJsDemo /></TabPanel>
     <TabPanel><TransitionCssDemo /></TabPanel>
-  </Tabs> -->
+  </Tabs>
 </section>

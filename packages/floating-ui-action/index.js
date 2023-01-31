@@ -34,99 +34,99 @@ import { computePosition, autoUpdate } from '@floating-ui/dom';
  * @returns {[Action, Action, (options: UpdateOptions) => void]}
  */
 export default function createFloatingUiAction(options) {
-    const autoupdate = {
-        enable: false,
-        options: undefined,
-        cleanup: null
-    };
-    const elements = {
-        reference: null,
-        floating: null,
-        options: undefined
-    };
-    setAutoupdate(options);
-    function setAutoupdate(options) {
-        if (options === true) {
-            autoupdate.enable = true;
-            startAutoupdate();
-        }
-        else if (options === false) {
-            stopAutoupdate();
-            autoupdate.enable = false;
-        }
-        else {
-            startAutoupdate();
-            autoupdate.enable = true;
-            autoupdate.options = options;
-        }
+  const autoupdate = {
+    enable: false,
+    options: undefined,
+    cleanup: null
+  };
+  const elements = {
+    reference: null,
+    floating: null,
+    options: undefined
+  };
+  setAutoupdate(options);
+  function setAutoupdate(options) {
+    if (options === true) {
+      autoupdate.enable = true;
+      startAutoupdate();
+    } else if (options === false) {
+      stopAutoupdate();
+      autoupdate.enable = false;
+    } else {
+      startAutoupdate();
+      autoupdate.enable = true;
+      autoupdate.options = options;
     }
-    function startAutoupdate() {
+  }
+  function startAutoupdate() {
+    stopAutoupdate();
+    if (elements.reference && elements.floating && autoupdate.enable) {
+      autoupdate.cleanup = autoUpdate(
+        elements.reference,
+        elements.floating,
+        _computeposition,
+        autoupdate.options
+      );
+    }
+  }
+  function stopAutoupdate() {
+    if (autoupdate.cleanup != null) {
+      autoupdate.cleanup();
+      autoupdate.cleanup = null;
+    }
+  }
+  async function _computeposition() {
+    if (elements.reference && elements.floating) {
+      const { reference, floating, options } = elements;
+      const pos = await computePosition(reference, floating, options);
+      Object.assign(floating.style, {
+        position: pos.strategy,
+        left: `${pos.x}px`,
+        top: `${pos.y}px`
+      });
+      if (options?.callback) {
+        options.callback(pos, { reference, floating });
+      }
+    }
+  }
+  function useReference(node) {
+    elements.reference = node;
+    if (autoupdate.enable) {
+      startAutoupdate();
+    } else {
+      _computeposition();
+    }
+    return {
+      destroy() {
         stopAutoupdate();
-        if (elements.reference && elements.floating && autoupdate.enable) {
-            autoupdate.cleanup = autoUpdate(elements.reference, elements.floating, _computeposition, autoupdate.options);
-        }
+        elements.reference = null;
+      }
+    };
+  }
+  function useFloating(node, options) {
+    elements.floating = node;
+    elements.options = options;
+    if (autoupdate.enable) {
+      startAutoupdate();
+    } else {
+      _computeposition();
     }
-    function stopAutoupdate() {
-        if (autoupdate.cleanup != null) {
-            autoupdate.cleanup();
-            autoupdate.cleanup = null;
-        }
-    }
-    async function _computeposition() {
-        if (elements.reference && elements.floating) {
-            const { reference, floating, options } = elements;
-            const pos = await computePosition(reference, floating, options);
-            Object.assign(floating.style, {
-                position: pos.strategy,
-                left: `${pos.x}px`,
-                top: `${pos.y}px`
-            });
-            if (options?.callback) {
-                options.callback(pos, { reference, floating });
-            }
-        }
-    }
-    function useReference(node) {
-        elements.reference = node;
-        if (autoupdate.enable) {
-            startAutoupdate();
-        }
-        else {
-            _computeposition();
-        }
-        return {
-            destroy() {
-                stopAutoupdate();
-                elements.reference = null;
-            }
-        };
-    }
-    function useFloating(node, options) {
-        elements.floating = node;
+    return {
+      update(options) {
+        stopAutoupdate();
         elements.options = options;
         if (autoupdate.enable) {
-            startAutoupdate();
+          startAutoupdate();
+        } else {
+          _computeposition();
         }
-        else {
-            _computeposition();
-        }
-        return {
-            update(options) {
-                stopAutoupdate();
-                elements.options = options;
-                if (autoupdate.enable) {
-                    startAutoupdate();
-                }
-                else {
-                    _computeposition();
-                }
-            },
-            destroy() {
-                stopAutoupdate();
-                elements.floating = null;
-                elements.options = undefined;
-            }
-        };
-    }
-    return [useReference, useFloating, setAutoupdate];
+      },
+      destroy() {
+        stopAutoupdate();
+        elements.floating = null;
+        elements.options = undefined;
+      }
+    };
+  }
+  return [useReference, useFloating, setAutoupdate];
 }
