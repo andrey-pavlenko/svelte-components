@@ -30,8 +30,8 @@
   },
   "exports": {
     "./package.json": "./package.json",
-    ".": "./index.js",
     "./color-edit.css": "./color-edit.css",
-    "./color-picker.css": "./color-picker.css"
+    "./color-picker.css": "./color-picker.css",
+    ".": "./index.js"
   }
 }

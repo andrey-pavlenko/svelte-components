@@ -11,7 +11,7 @@
     "build": "svelte-kit sync && svelte-package",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "format": "cd  ../../packages/color && prettier --plugin-search-dir . --write .",
+    "format": "cd ../../packages/color && prettier --plugin-search-dir . --write .",
     "finish:package": "cd ../../packages/color && npe devDependencies --delete &&  node ../../documetator/index.js .",
     "package": "pnpm run check && svelte-package && pnpm run finish:package",
     "changelog": "../../node_modules/.bin/conventional-changelog -p angular -i ../../packages/color/CHANGELOG.md -s --commit-path=.",
@@ -53,8 +53,5 @@
     "tslib": "^2.5.0",
     "typescript": "^4.9.5",
     "vite": "^4.0.4"
-  },
-  "exports": {
-    ".": "./index.js"
   }
 }

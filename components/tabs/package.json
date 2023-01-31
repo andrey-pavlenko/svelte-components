@@ -19,7 +19,9 @@
     "format": "cd ../../packages/tabs && prettier --plugin-search-dir . --write .",
     "finish:package": "cd ../../packages/tabs && npe devDependencies --delete && node ../../documetator/index.js .",
     "package": "pnpm run check && svelte-package && pnpm run finish:package && pnpm run format",
-    "changelog": "../../node_modules/.bin/conventional-changelog -p angular -i ../../packages/tabs/CHANGELOG.md -s --commit-path=.",
+    "changelog:1": "../../node_modules/.bin/conventional-changelog -p angular -i ../../packages/tabs/CHANGELOG.md -s --commit-path=.",
+    "changelog:2": "../../node_modules/.bin/conventional-changelog -n changelog-config.cjs --commit-path=src/lib",
+    "changelog": "../../node_modules/.bin/conventional-changelog -n changelog-config.cjs -i CHANGELOG.md -u --commit-path=../../",
     "publish": "cd ../../packages/tabs && pnpm publish --no-git-checks --access public"
   },
   "author": "Andrey Pavlenko",
