@@ -1,7 +1,7 @@
 {
   "name": "@apsc/floating-ui-action",
   "description": "Floating UI action for `use` Svelte directive",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "types": "index.d.ts",
   "main": "index.js",

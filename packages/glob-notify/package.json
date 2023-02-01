@@ -1,7 +1,7 @@
 {
   "name": "@apsc/glob-notify",
   "description": "Svelte component for notifications globally for the entire application",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
   "types": "index.d.ts",
   "main": "index.js",

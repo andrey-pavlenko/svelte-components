@@ -1,7 +1,7 @@
 {
   "name": "@apsc/color",
   "description": "A set of Svelte components for picking and editing colors",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "types": "index.d.ts",
   "main": "index.js",

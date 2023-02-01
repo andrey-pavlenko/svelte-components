@@ -1,6 +1,6 @@
 {
   "name": "@apsc/focus-action",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Action to control focusin and focusout for Svelte directive use:",
   "type": "module",
   "types": "index.d.ts",
