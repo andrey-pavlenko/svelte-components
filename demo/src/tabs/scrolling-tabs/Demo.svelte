@@ -2,7 +2,7 @@
   import { Tabs, Tab, Panel } from '@apsc/tabs';
   import scrollAction from '@apsc/scroll-child-action';
 
-  let count = 15;
+  let count = 25;
   let isOverflow = false;
   let selected = NaN;
   let length = 0;

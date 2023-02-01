@@ -4,7 +4,7 @@
   import BaseExample from './base-example/Main.svelte';
   import NestedExample from './nested-example/Main.svelte';
   import QuotesExample from './quote-examples/Main.svelte';
-  // import ScrollingTab from './scrolling-tabs/Main.svelte';
+  import ScrollingTab from './scrolling-tabs/Main.svelte';
   import npmLogo from '../npm-logo.svg';
 
   setTitle(document.title.replace(/(•).*$/, '$1 Tabs'));
@@ -32,15 +32,15 @@
       <Tab>API</Tab>
       <Tab>Base example</Tab>
       <Tab>Nested example</Tab>
-      <!-- <Tab>Scrolling tabs</Tab> -->
+      <Tab>Scrolling tabs</Tab>
       <Tab>Quotes example</Tab>
     </TabList>
     <TabPanel><Api /></TabPanel>
     <TabPanel><BaseExample /></TabPanel>
     <TabPanel><NestedExample /></TabPanel>
-    <!-- <TabPanel let:active
+    <TabPanel let:active
       >{#if active}<ScrollingTab />{/if}
-    </TabPanel> -->
+    </TabPanel>
     <TabPanel><QuotesExample /></TabPanel>
   </Tabs>
 </section>
