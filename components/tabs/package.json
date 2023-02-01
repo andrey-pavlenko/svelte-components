@@ -9,6 +9,7 @@
   "exports": {
     ".": "./index.js"
   },
+  "pathPkg": "../../packages/tabs",
   "scripts": {
     "dev": "vite dev --port 3000",
     "build": "svelte-kit sync && svelte-package",
@@ -16,13 +17,11 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "test": "vitest",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
-    "format": "cd ../../packages/tabs && prettier --plugin-search-dir . --write .",
-    "finish:package": "cd ../../packages/tabs && npe devDependencies --delete && node ../../documetator/index.js .",
-    "package": "pnpm run check && svelte-package && pnpm run finish:package && pnpm run format",
-    "changelog:1": "../../node_modules/.bin/conventional-changelog -p angular -i ../../packages/tabs/CHANGELOG.md -s --commit-path=.",
-    "changelog:2": "../../node_modules/.bin/conventional-changelog -n changelog-config.cjs --commit-path=src/lib",
-    "changelog": "../../node_modules/.bin/conventional-changelog -n changelog-config.cjs -i CHANGELOG.md -u --commit-path=../../",
-    "publish": "cd ../../packages/tabs && pnpm publish --no-git-checks --access public"
+    "format": "cd $npm_package_pathPkg && prettier --plugin-search-dir . --write .",
+    "changelog": "../../node_modules/.bin/conventional-changelog -n ../changelog-config.cjs --commit-path=. > $npm_package_pathPkg/CHANGELOG.md",
+    "finish:package": "cd $npm_package_pathPkg && npe --delete devDependencies pathPkg && node ../../documetator/index.js .",
+    "package": "pnpm run check && svelte-package && pnpm run finish:package && pnpm run format && pnpm changelog",
+    "publish": "cd $npm_package_pathPkg && pnpm publish --no-git-checks --access public"
   },
   "author": "Andrey Pavlenko",
   "license": "MIT",
