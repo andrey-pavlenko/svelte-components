@@ -1,8 +1,8 @@
-## 0.0.6 (2022-10-02)
 
+### 2023-02-01 chore: Refactor changelog [1d6729b]()
 
+### 2022-10-02 chore: Update sveltekit [a309f9a]()
 
-## 0.0.6 (2022-10-02)
 
 
 

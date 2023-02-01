@@ -1,11 +1,15 @@
 {
   "name": "@apsc/tabs",
-  "version": "0.0.10",
-  "description": "A set of Svelte components for organizing a tabbed interface",
-  "type": "module",
+  "version": "0.1.0",
+  "description": "A component set and context class for organizing the Tabs interface",
   "types": "index.d.ts",
+  "type": "module",
   "svelte": "./index.js",
   "main": "index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./index.js"
+  },
   "author": "Andrey Pavlenko",
   "license": "MIT",
   "repository": {
@@ -18,15 +22,11 @@
   "keywords": [
     "svelte",
     "component",
+    "context",
     "tabs"
   ],
   "homepage": "https://github.com/andrey-pavlenko/svelte-components/tree/main/packages/tabs#readme",
   "peerDependencies": {
-    "svelte": "^3.50.1"
-  },
-  "exports": {
-    "./package.json": "./package.json",
-    ".": "./index.js",
-    "./style.css": "./style.css"
+    "svelte": "^3.30.0"
   }
 }

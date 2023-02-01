@@ -7,7 +7,7 @@
 - custom notification element components
 - configurable timeout for each notification
 
-### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/glob-notify) &bull; [API](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/API.md)
+### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/?c=glob-notify) &bull; [API](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/API.md)
 
 ## Install
 

@@ -4,7 +4,7 @@
 - useful for components like dropdown
 - exports independent functions for vertical and horizontal scrolling of elements
 
-### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/scroll-child-action)
+### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/?c=scroll-child-action)
 
 ## Install
 

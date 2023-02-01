@@ -18,24 +18,24 @@
  * @property {number} [a] - float: 0 ... 1, optional
  */
 export interface HslColor {
-    h: number;
-    s: number;
-    l: number;
-    a?: number;
+  h: number;
+  s: number;
+  l: number;
+  a?: number;
 }
 export interface HsvColor {
-    h: number;
-    s: number;
-    v: number;
-    a?: number;
+  h: number;
+  s: number;
+  v: number;
+  a?: number;
 }
 export interface RgbColor {
-    r: number;
-    g: number;
-    b: number;
-    a?: number;
+  r: number;
+  g: number;
+  b: number;
+  a?: number;
 }
-export declare type HexColor = string;
+export type HexColor = string;
 export declare function isHexValid(hex: HexColor): boolean;
 export declare function clamp(value: number, min: number, max: number): number;
 export declare function hexToHsl(hex: HexColor): HslColor;

@@ -1,18 +1,21 @@
 <script lang="ts">
-  import { Tab, TabList, TabPanel, Tabs } from '@apsc/tabs';
-  import 'svelte-highlight/styles/atom-one-dark.css';
+  import { Tabs, Tab, TabList, TabPanel, HomeLink, setTitle } from '../_components';
   import API from './API.svelte';
-  import BaseExample from './BaseExample.svelte';
+  import BaseExample from './base-example/Main.svelte';
   import npmLogo from '../npm-logo.svg';
+
+  setTitle(document.title.replace(/(•).*$/, '$1 GlobNotify'));
 </script>
 
-<svelte:head>
-  <title>{document.title.replace(/(•).*$/, '$1 GlobNotify')}</title>
-</svelte:head>
 <section class="prose max-w-none my-4">
-  <a class="float-right" href="/">Home</a>
+  <HomeLink class="float-right" />
   <h1 class="text-2xl max-w-lg">Component for notifications globally for the entire application</h1>
-  <a class="float-right" href="https://www.npmjs.com/package/@apsc/glob-notify" target="_blank">
+  <a
+    class="float-right"
+    href="https://www.npmjs.com/package/@apsc/glob-notify"
+    target="_blank"
+    rel="noreferrer"
+  >
     <img class="max-w-[4em]" src={npmLogo} alt="NPM logo" />
   </a>
   <ul class="leading-6 mb-8">

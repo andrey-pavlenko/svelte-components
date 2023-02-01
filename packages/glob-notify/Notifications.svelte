@@ -78,7 +78,7 @@ onDestroy(() => (hasInstance = false));
  */
 </script>
 
-<!-- 
+<!--
 @component
 @order 0
 The `Notifications` component has one instance for the entire application. Use the `Notifications` component at the top level of your markup, before any components that send notifications.
@@ -116,6 +116,7 @@ The package exports two style sheets: <a href="https://github.com/andrey-pavlenk
  -->
 
 <div class={'c-notifications' + (classes ? ' ' + classes : '')} style={style || undefined}>
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
   {#each $notifications as notification (notification.id)}
     <slot {notification}
       ><div

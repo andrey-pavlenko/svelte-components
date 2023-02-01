@@ -1,8 +1,4 @@
-import Tabs from './Tabs.svelte';
-import { contextName } from './tabs';
-import TabList from './List.svelte';
-import TabPanel from './Panel.svelte';
-import Tab from './Tab.svelte';
-
-export { Tabs, TabList, TabPanel, Tab, contextName };
-export type { TabsContext, TabId, PanelId, TabsMode } from './tabs';
+export { default as Tabs } from './Tabs.svelte';
+export { default as Tab } from './Tab.svelte';
+export { default as Panel } from './Panel.svelte';
+export { TabsContext, type ContextActive, type ActivateItem } from './tabs-context';

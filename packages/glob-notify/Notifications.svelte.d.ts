@@ -1,4 +1,4 @@
-import { SvelteComponentTyped } from "svelte";
+import { SvelteComponentTyped } from 'svelte';
 import type { NotificationData } from './types';
 /**
  * Store of notifications
@@ -11,39 +11,45 @@ import type { NotificationData } from './types';
  * }}
  */
 export declare const notifications: {
-    subscribe: (this: void, run: import("svelte/store").Subscriber<NotificationData[]>, invalidate?: ((value?: NotificationData[] | undefined) => void) | undefined) => import("svelte/store").Unsubscriber;
-    clear(): void;
-    push<T extends Omit<NotificationData, "id">>(notification: T): symbol;
-    pop(id: symbol): void;
+  subscribe: (
+    this: void,
+    run: import('svelte/store').Subscriber<NotificationData[]>,
+    invalidate?: ((value?: NotificationData[] | undefined) => void) | undefined
+  ) => import('svelte/store').Unsubscriber;
+  clear(): void;
+  push<T extends Omit<NotificationData, 'id'>>(notification: T): symbol;
+  pop(id: symbol): void;
 };
 import type { TransitionConfig } from 'svelte/types/runtime/transition';
 declare const __propDef: {
-    props: {
-        /**
-           * Custom CSS class to add to the `c-notifications` base class for custom styling purposes
-           */ class?: string | undefined;
-        /**
-           * Custom styles will be passed to the `style` attribute
-           */ style?: string | undefined;
-        /**
-           * Transition function for notification, default `slide`
-           */ transitionFn?: ((node: Element, params: Record<string, unknown>) => TransitionConfig) | undefined;
-        /**
-           * Transition function parameters
-           */ transitionParams?: Record<string, unknown> | undefined;
+  props: {
+    /**
+     * Custom CSS class to add to the `c-notifications` base class for custom styling purposes
+     */ class?: string | undefined;
+    /**
+     * Custom styles will be passed to the `style` attribute
+     */ style?: string | undefined;
+    /**
+     * Transition function for notification, default `slide`
+     */ transitionFn?:
+      | ((node: Element, params: Record<string, unknown>) => TransitionConfig)
+      | undefined;
+    /**
+     * Transition function parameters
+     */ transitionParams?: Record<string, unknown> | undefined;
+  };
+  events: {
+    [evt: string]: CustomEvent<any>;
+  };
+  slots: {
+    default: {
+      notification: NotificationData;
     };
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {
-        default: {
-            notification: NotificationData;
-        };
-    };
+  };
 };
-export declare type NotificationsProps = typeof __propDef.props;
-export declare type NotificationsEvents = typeof __propDef.events;
-export declare type NotificationsSlots = typeof __propDef.slots;
+export type NotificationsProps = typeof __propDef.props;
+export type NotificationsEvents = typeof __propDef.events;
+export type NotificationsSlots = typeof __propDef.slots;
 /**
  * @order 0
  * The `Notifications` component has one instance for the entire application. Use the `Notifications` component at the top level of your markup, before any components that send notifications.
@@ -79,6 +85,9 @@ export declare type NotificationsSlots = typeof __propDef.slots;
  *
  * The package exports two style sheets: <a href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/style.css" target="_blank">`style.css`</a> and <a href="https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/glob-notify/bootstrap-like.css" target="_blank">`bootstrap-like.css`</a>.
  */
-export default class Notifications extends SvelteComponentTyped<NotificationsProps, NotificationsEvents, NotificationsSlots> {
-}
+export default class Notifications extends SvelteComponentTyped<
+  NotificationsProps,
+  NotificationsEvents,
+  NotificationsSlots
+> {}
 export {};

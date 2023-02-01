@@ -1,5 +1,5 @@
 import type { ActionReturn } from 'svelte/types/runtime/action';
-export declare type CallbackFn = (event: FocusEvent) => void;
+export type CallbackFn = (event: FocusEvent) => void;
 /**
  * Executes callbacks when the node or its children gain or lose focus.
  * Ensure the `node` or its children can be focused {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus}
@@ -12,4 +12,7 @@ export declare type CallbackFn = (event: FocusEvent) => void;
  * @param {HTMLElement} node -- `use:` attribute element
  * @param {[focusin, focusout]} parameters -- an array of two functions called when `node` or its children gain or lose focus
  */
-export default function focusAction(node: HTMLElement, parameters?: CallbackFn[]): ActionReturn<(CallbackFn | undefined)[] | undefined>;
+export default function focusAction(
+  node: HTMLElement,
+  parameters?: CallbackFn[]
+): ActionReturn<(CallbackFn | undefined)[] | undefined>;

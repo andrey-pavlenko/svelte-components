@@ -1,6 +1,6 @@
 {
   "name": "@apsc/scope",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A set of useful Svelte components",
   "main": "index.js",
   "scripts": {
@@ -26,15 +26,16 @@
   "homepage": "https://github.com/andrey-pavlenko/svelte-components#readme",
   "devDependencies": {
     "@tsconfig/svelte": "^3.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.38.1",
-    "@typescript-eslint/parser": "^5.38.1",
-    "eslint": "^8.24.0",
-    "eslint-config-prettier": "^8.5.0",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "conventional-changelog-cli": "^2.2.2",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "npe": "^1.2.0",
-    "prettier": "^2.7.1",
-    "prettier-plugin-svelte": "^2.7.1",
-    "svelte": "^3.50.1",
-    "typescript": "^4.8.4"
+    "prettier": "^2.8.3",
+    "prettier-plugin-svelte": "^2.9.0",
+    "svelte": "^3.55.1",
+    "typescript": "^4.9.5"
   }
 }

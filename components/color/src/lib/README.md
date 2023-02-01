@@ -14,7 +14,7 @@ Inspired by:
 - [svelte-color-picker](https://github.com/efeskucuk/svelte-color-picker)
 - [Coloris](https://github.com/mdbassit/Coloris)
 
-### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/color) &bull; [API](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/API.md)
+### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/?c=color) &bull; [API](https://github.com/andrey-pavlenko/svelte-components/blob/main/packages/color/API.md)
 
 ## Install
 

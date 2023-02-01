@@ -1,18 +1,12 @@
-## 0.0.3 (2022-10-02)
 
+### 2023-02-01 chore: Refactor changelog [1d6729b]()
 
-### Bug Fixes
+### 2022-10-02 chore: Update sveltekit [a309f9a]()
 
-* [#1](https://github.com/andrey-pavlenko/svelte-components/issues/1) ([1fcc139](https://github.com/andrey-pavlenko/svelte-components/commit/1fcc139b2307c21f4d7861ca2b98a1874144d47c))
+### 2022-09-30 fix: #1 [1fcc139](), closes [#1]()
 
+scrollChildIntoParentVertical and scrollChildIntoParentHorizontal
 
-
-## 0.0.3 (2022-10-02)
-
-
-### Bug Fixes
-
-* [#1](https://github.com/andrey-pavlenko/svelte-components/issues/1) ([1fcc139](https://github.com/andrey-pavlenko/svelte-components/commit/1fcc139b2307c21f4d7861ca2b98a1874144d47c))
 
 
 

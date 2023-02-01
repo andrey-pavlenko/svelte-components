@@ -1,52 +1,21 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import { contextName, type TabsContext } from './tabs';
+  import { getContext, onDestroy } from 'svelte';
+  import { TabsContext, type ActivateItem } from './tabs-context';
 
-  let classes = '';
-  /**
-   * Custom CSS class to add to the `c-tabs__tab` base class for custom styling purposes
-   */
-  export { classes as class };
-
-  const { registerTab, selectTab, selectedTab, selectedIndex, selectedTabClass } =
-    getContext<TabsContext>(contextName);
-
-  /**
-   * The CSS class that will be added when `Tab` becomes selected. *Default value from `Tabs.selectedTabClass`*
-   *
-   * @type {string}
-   */
-  export let selectedClass = selectedTabClass;
-
-  /**
-   * Disable `Tab` for pointer, but it's possible to select tab by function `Tabs.selectTab(index)`. *Default `undefined`*
-   *
-   * @type {boolean | undefined}
-   */
-  export let disabled: boolean | undefined = undefined;
-
-  const id: symbol = registerTab();
-
-  /**
-   *  @slot {{ index: number; id: symbol; isActive: boolean }}
-   */
+  const context = getContext<TabsContext>(TabsContext.contextName);
+  const id = context.push('tab');
+  const active = context.active;
+  onDestroy(() => context.pop({ tab: id }));
+  const activate: ActivateItem = () => context.select({ tab: id });
 </script>
 
 <!--
 @component
-This is a child component for `TabList`
-@order 20
+@order 10
 
-```tsx
-<Tab>A</Tab>
-```
+The component sends `active` and `activate` props to the slot.
+
+- `active: boolean` — whether the current tab is active
+- `activate: () => void` — call this function to make the current tab active
 -->
-<button
-  class={['c-tabs__tab', classes, $selectedTab === id ? selectedClass : '']
-    .filter((s) => !!s)
-    .join(' ')}
-  {disabled}
-  on:click={() => selectTab(id)}
->
-  <slot index={$selectedIndex} {id} isActive={$selectedTab === id} />
-</button>
+<slot active={$active.tab === id} {activate}>Tab slot is empty</slot>

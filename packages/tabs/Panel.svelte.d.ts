@@ -1,42 +1,27 @@
-import { SvelteComponentTyped } from "svelte";
+import { SvelteComponentTyped } from 'svelte';
+import { type ActivateItem } from './tabs-context';
 declare const __propDef: {
-    props: {
-        /**
-           * Custom CSS class to add to the `c-tabs__tabpanel` base class for custom styling purposes
-           */ class?: string | undefined;
-        /**
-           * The CSS class that will be added when `TabPanel` becomes **unselected**. *Default value from `Tabs.hiddenPanelClass`*
-           *
-           * @type {string}
-           */ hiddenClass?: string | undefined;
+  props: Record<string, never>;
+  events: {
+    [evt: string]: CustomEvent<any>;
+  };
+  slots: {
+    default: {
+      active: boolean;
+      activate: ActivateItem;
     };
-    events: {
-        [evt: string]: CustomEvent<any>;
-    };
-    slots: {
-        default: {
-            index: number;
-            tabId: symbol | null;
-            panelId: symbol;
-            isActive: boolean;
-        };
-    };
+  };
 };
-export declare type PanelProps = typeof __propDef.props;
-export declare type PanelEvents = typeof __propDef.events;
-export declare type PanelSlots = typeof __propDef.slots;
+export type PanelProps = typeof __propDef.props;
+export type PanelEvents = typeof __propDef.events;
+export type PanelSlots = typeof __propDef.slots;
 /**
- * @order 30
- * This is a child component for `Tabs` and a container for tab body
+ * @order 20
  *
- * ```tsx
- * <Tabs>
- * <TabList><Tab>A</Tab><Tab>B</Tab></TabList>
- * <TabPanel>A</TabPanel>
- * <TabPanel>B</TabPanel>
- * </Tabs>
- * ```
+ * The component sends `active` and `activate` props to the slot.
+ *
+ * - `active: boolean` — whether the current panel is active
+ * - `activate: () => void` — call this function to make the current panel active
  */
-export default class Panel extends SvelteComponentTyped<PanelProps, PanelEvents, PanelSlots> {
-}
+export default class Panel extends SvelteComponentTyped<PanelProps, PanelEvents, PanelSlots> {}
 export {};

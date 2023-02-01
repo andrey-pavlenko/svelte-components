@@ -11,28 +11,28 @@
  * @param {[focusin, focusout]} parameters -- an array of two functions called when `node` or its children gain or lose focus
  */
 export default function focusAction(node, parameters) {
-    let onFocusin = undefined;
-    let onFocusout = undefined;
-    [onFocusin, onFocusout] = parameters ?? [];
-    function handleFocusin(event) {
-        if (onFocusin && node.contains(event.target)) {
-            onFocusin(event);
-        }
+  let onFocusin = undefined;
+  let onFocusout = undefined;
+  [onFocusin, onFocusout] = parameters ?? [];
+  function handleFocusin(event) {
+    if (onFocusin && node.contains(event.target)) {
+      onFocusin(event);
     }
-    function handleFocusout(event) {
-        if (onFocusout && !node.contains(event.relatedTarget)) {
-            onFocusout(event);
-        }
+  }
+  function handleFocusout(event) {
+    if (onFocusout && !node.contains(event.relatedTarget)) {
+      onFocusout(event);
     }
-    node.addEventListener('focusin', handleFocusin);
-    node.addEventListener('focusout', handleFocusout);
-    return {
-        update(parameters) {
-            [onFocusin, onFocusout] = parameters ?? [];
-        },
-        destroy() {
-            node.removeEventListener('focusout', handleFocusout);
-            node.removeEventListener('focusin', handleFocusin);
-        }
-    };
+  }
+  node.addEventListener('focusin', handleFocusin);
+  node.addEventListener('focusout', handleFocusout);
+  return {
+    update(parameters) {
+      [onFocusin, onFocusout] = parameters ?? [];
+    },
+    destroy() {
+      node.removeEventListener('focusout', handleFocusout);
+      node.removeEventListener('focusin', handleFocusin);
+    }
+  };
 }

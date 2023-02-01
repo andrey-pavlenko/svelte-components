@@ -3,7 +3,7 @@
 - allows you to use both Svelte transitions and CSS transitions
 - dependence [@floating-ui/dom](https://github.com/floating-ui/floating-ui)
 
-### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/#/floating-ui-action)
+### [Docs & Demo](https://andrey-pavlenko.github.io/svelte-components/?c=floating-ui-action)
 
 ## Install
 

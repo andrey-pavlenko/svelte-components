@@ -1,12 +1,12 @@
 import type { ActionReturn } from 'svelte/types/runtime/action';
 export interface UseKeyboardShortcutOptions {
-    event: 'keypress' | 'keydown' | 'keyup';
-    capture?: boolean;
-    passive?: boolean;
-    preventDefault?: boolean;
-    stopPropagation?: boolean;
-    stopImmediatePropagation?: boolean;
-    fns: Record<string, (event: KeyboardEvent) => void>;
+  event: 'keypress' | 'keydown' | 'keyup';
+  capture?: boolean;
+  passive?: boolean;
+  preventDefault?: boolean;
+  stopPropagation?: boolean;
+  stopImmediatePropagation?: boolean;
+  fns: Record<string, (event: KeyboardEvent) => void>;
 }
 /**
  * Action for `use` directive.
@@ -47,5 +47,8 @@ export interface UseKeyboardShortcutOptions {
  * fns: Record<string, (event: KeyboardEvent) => void>;
  * }} options
  */
-declare function useKeyboardShortcut(node: HTMLElement, options: UseKeyboardShortcutOptions): ActionReturn;
+declare function useKeyboardShortcut(
+  node: HTMLElement,
+  options: UseKeyboardShortcutOptions
+): ActionReturn;
 export default useKeyboardShortcut;
