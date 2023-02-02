@@ -1,9 +1,9 @@
 #!/bin/bash
 
-for CMP in $(find $(pwd)/components -maxdepth 1 -type d -not -path '*/\.*');
+for CMP in $(find $(pwd)/packages -maxdepth 1 -type d -not -path '*/\.*');
 do
   cd $CMP
   if [[ -f "package.json" ]]; then
-    pnpm run publish
+    npm run publish
   fi
 done
