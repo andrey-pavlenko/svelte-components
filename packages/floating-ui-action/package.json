@@ -1,7 +1,7 @@
 {
   "name": "@apsc/floating-ui-action",
   "description": "Floating UI action for `use` Svelte directive",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "types": "index.d.ts",
   "main": "index.js",
@@ -25,6 +25,7 @@
     "@floating-ui/dom": "^1.1.1"
   },
   "peerDependencies": {
+    "@floating-ui/dom": "^1.1.1",
     "svelte": "^3.30.0"
   },
   "exports": {
