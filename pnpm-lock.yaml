@@ -210,7 +210,7 @@ importers:
   demo:
     specifiers:
       '@apsc/color': workspace:^0.0.5
-      '@apsc/floating-ui-action': workspace:^0.0.5
+      '@apsc/floating-ui-action': workspace:^0.0.6
       '@apsc/focus-action': workspace:^0.0.5
       '@apsc/glob-notify': workspace:^0.0.8
       '@apsc/keyboard-shortcut-action': workspace:^0.0.4

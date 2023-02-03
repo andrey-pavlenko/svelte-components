@@ -5,8 +5,9 @@
 
 <section class="prose max-w-none my-4">
   <div class="w-fit mx-auto mb-4">
-    This example uses <a href="/?c=floating-ui-action"><code>@apsc/floating-ui-action</code></a> and
-    <a href="/?c=focus-action"><code>@apsc/flocus-action</code></a>
+    This example uses <a href="./?c=floating-ui-action"><code>@apsc/floating-ui-action</code></a>
+    and
+    <a href="./?c=focus-action"><code>@apsc/flocus-action</code></a>
   </div>
   <Demo />
   <DemoCode

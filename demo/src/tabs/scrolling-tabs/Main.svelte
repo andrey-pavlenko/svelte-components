@@ -5,9 +5,7 @@
 
 <section class="prose max-w-none my-4">
   <div class="w-fit mx-auto mb-4">
-    This example uses <a href="/?c=scroll-child-action" target="_blank"
-      ><code>@apsc/scroll-child-action</code></a
-    >
+    This example uses <a href="./?c=scroll-child-action"><code>@apsc/scroll-child-action</code></a>
   </div>
   <Demo />
   <DemoCode

@@ -5,7 +5,7 @@
 
 <section class="prose max-w-none my-4">
   <div class="w-fit mx-auto mb-4">
-    This example uses <a href="/?c=keyboard-shortcut-action"
+    This example uses <a href="./?c=keyboard-shortcut-action"
       ><code>@apsc/keyboard-shortcut-action</code></a
     >
   </div>
