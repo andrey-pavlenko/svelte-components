@@ -9,11 +9,19 @@
 
   let isOverflow = false;
   function detectOverflow(node: HTMLElement, _: number) {
-    const hasOverflow = () => node.scrollWidth > node.offsetWidth;
-    isOverflow = hasOverflow();
+    function updateOverflow() {
+      isOverflow = node.scrollWidth > node.offsetWidth;
+    }
+
+    updateOverflow();
+    window.addEventListener('resize', updateOverflow);
+
     return {
       update() {
-        isOverflow = hasOverflow();
+        updateOverflow();
+      },
+      destroy() {
+        window.removeEventListener('resize', updateOverflow);
       }
     };
   }

@@ -1,1 +1,1 @@
-export { default as FloationUiActionPage } from './Page.svelte';
+export { default as FloatingUiActionPage } from './Page.svelte';

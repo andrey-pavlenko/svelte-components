@@ -3,22 +3,20 @@
   import Api from './Api.svelte';
   import TransitionJsDemo from './transition-js/Main.svelte';
   import TransitionCssDemo from './transition-css/Main.svelte';
-  import npmLogo from '../npm-logo.svg';
+  import PackageLinks from '../_components/PackageLinks.svelte';
+  import { getPackage } from '../MainPage.svelte';
+
+  const pkg = getPackage('@apsc/floating-ui-action');
 
   setTitle(document.title.replace(/(•).*$/, '$1 Floating UI action'));
 </script>
 
 <section class="prose max-w-none my-4">
-  <HomeLink class="float-right" />
+  <PackageLinks
+    class="float-right after:clear-right"
+    links={{ npm: pkg.npm, github: pkg.github }}
+  />
   <h1 class="text-2xl">Action to use Floating UI</h1>
-  <a
-    class="float-right"
-    href="https://www.npmjs.com/package/@apsc/floating-ui-action"
-    target="_blank"
-    rel="noreferrer"
-  >
-    <img class="max-w-[4em]" src={npmLogo} alt="NPM logo" />
-  </a>
   <ul class="leading-6 mb-8">
     <li>allows you to use both Svelte transitions and CSS transitions</li>
     <li>

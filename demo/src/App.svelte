@@ -5,7 +5,7 @@
   import TabsPage from './tabs/Page.svelte';
   import { GlobNotifyPage } from './glob-notify';
   import { ColorPage } from './color';
-  import { FloationUiActionPage } from './floating-ui-action';
+  import { FloatingUiActionPage } from './floating-ui-action';
   import { FocusActionPage } from './focus-action';
   import { KeyboardShortcutActionPage } from './keyboard-shortcut-action';
   import { ScrollChildActionPage } from './scroll-child-action';
@@ -16,7 +16,7 @@
   {:else if $query.params.c === 'tabs'}<TabsPage />
   {:else if $query.params.c === 'glob-notify'}<GlobNotifyPage />
   {:else if $query.params.c === 'color'}<ColorPage />
-  {:else if $query.params.c === 'floating-ui-action'}<FloationUiActionPage />
+  {:else if $query.params.c === 'floating-ui-action'}<FloatingUiActionPage />
   {:else if $query.params.c === 'focus-action'}<FocusActionPage />
   {:else if $query.params.c === 'keyboard-shortcut-action'}<KeyboardShortcutActionPage />
   {:else if $query.params.c === 'scroll-child-action'}<ScrollChildActionPage />

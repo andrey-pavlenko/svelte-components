@@ -1,26 +1,24 @@
 <script lang="ts">
-  import { Tabs, TabList, TabPanel, Tab, setTitle, HomeLink } from '../_components';
+  import { Tabs, TabList, TabPanel, Tab, setTitle } from '../_components';
   import Api from './Api.svelte';
   import ColorPickerExample from './color-picker/Main.svelte';
   import ColorEditExample from './color-edit/Main.svelte';
   import ColorInputExample from './color-input/Main.svelte';
-  import npmLogo from '../npm-logo.svg';
   import './styles.css';
+  import PackageLinks from '../_components/PackageLinks.svelte';
+  import { getPackage } from '../MainPage.svelte';
+
+  const pkg = getPackage('@apsc/color');
 
   setTitle(document.title.replace(/(•).*$/, '$1 Color'));
 </script>
 
 <section class="prose max-w-none my-4">
-  <HomeLink class="float-right" />
+  <PackageLinks
+    class="float-right after:clear-right"
+    links={{ npm: pkg.npm, github: pkg.github }}
+  />
   <h1 class="text-2xl">A set of components for picking and editing colors</h1>
-  <a
-    class="float-right"
-    href="https://www.npmjs.com/package/@apsc/color"
-    target="_blank"
-    rel="noreferrer"
-  >
-    <img class="max-w-[4em]" src={npmLogo} alt="NPM logo" />
-  </a>
   <ul class="leading-6 mb-8">
     <li>no inline styles</li>
     <li>

@@ -1,25 +1,22 @@
 <script lang="ts">
-  import { setTitle, HomeLink, Tabs, Tab, TabList, TabPanel } from '../_components';
+  import { setTitle, Tabs, Tab, TabList, TabPanel } from '../_components';
   import Api from './Api.svelte';
   import NavigationDemo from './navigation/Main.svelte';
-  import npmLogo from '../npm-logo.svg';
+  import PackageLinks from '../_components/PackageLinks.svelte';
+  import { getPackage } from '../MainPage.svelte';
 
+  const pkg = getPackage('@apsc/keyboard-shortcut-action');
   setTitle(document.title.replace(/(•).*$/, '$1 Keyboard shortcut action'));
 </script>
 
 <section class="prose max-w-none my-4">
-  <HomeLink class="float-right" />
+  <PackageLinks
+    class="float-right after:clear-right"
+    links={{ npm: pkg.npm, github: pkg.github }}
+  />
   <h1 class="text-2xl">
     Action to call a function by keyboard shortcut for Svelte directive <code>use</code>
   </h1>
-  <a
-    class="float-right"
-    href="https://www.npmjs.com/package/@apsc/keyboard-shortcut-action"
-    target="_blank"
-    rel="noreferrer"
-  >
-    <img class="max-w-[4em]" src={npmLogo} alt="NPM logo" />
-  </a>
   <ul class="leading-6 mb-8">
     <li>allows to reduce keyboard event handling code</li>
     <li>

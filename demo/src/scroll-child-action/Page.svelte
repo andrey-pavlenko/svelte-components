@@ -1,27 +1,23 @@
 <script lang="ts">
-  import { setTitle, HomeLink, Tabs, TabList, Tab, TabPanel } from '../_components';
+  import { setTitle, Tabs, TabList, Tab, TabPanel } from '../_components';
   import Api from './Api.svelte';
   import VerticalDemo from './vertical-demo/Main.svelte';
   import HorizontalDemo from './horizontal-demo/Main.svelte';
-  import npmLogo from '../npm-logo.svg';
+  import PackageLinks from '../_components/PackageLinks.svelte';
+  import { getPackage } from '../MainPage.svelte';
 
+  const pkg = getPackage('@apsc/scroll-child-action');
   setTitle(document.title.replace(/(•).*$/, '$1 Scroll child action'));
 </script>
 
 <section class="prose max-w-none my-4">
-  <HomeLink class="float-right" />
+  <PackageLinks
+    class="float-right after:clear-right"
+    links={{ npm: pkg.npm, github: pkg.github }}
+  />
   <h1 class="text-2xl">
     Action to scroll the child to parent viewport Svelte directive <code>use</code>
   </h1>
-  <a
-    class="float-right"
-    href="https://www.npmjs.com/package/@apsc/scroll-child-action"
-    target="_blank"
-    rel="noreferrer"
-  >
-    <img class="max-w-[4em]" src={npmLogo} alt="NPM logo" />
-  </a>
-
   <ul class="leading-6 mb-8">
     <li>no dependencies</li>
     <li>useful for components like dropdown</li>
